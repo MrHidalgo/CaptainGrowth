@@ -1,0 +1,37 @@
+@import "../../../_mixin/mixin";
+@import "../../../_function/function";
+@import "../../../_variable/sprite";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			      : return-value(color, white);
+///
+/// MAIN
+///
+.social {
+
+
+	&__btn {
+		margin-left: 15px;
+
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+@each $className, $iconName in
+			("vk", $sp-i-vk-group),
+			("fb", $sp-i-fb-group)
+{
+	.social__#{$className} {
+		display: inline-block;
+
+		vertical-align: middle;
+
+		@include retina-sprite($iconName);
+	}
+}

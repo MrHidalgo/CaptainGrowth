@@ -1,0 +1,33 @@
+//- HEAD
+mixin headSite(titleName, styleFile, arrFontName)
+    head
+        //- META TAGS
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+        //- TITLE
+        title!= titleName
+
+        //- FAVICON
+        link(rel="icon" type="image/png" href="./image/favicon.png")
+
+        //- LINK CSS
+        - for(var i = 0, styleFileLength = styleFile.length; i < styleFileLength; i++)
+            link(href= styleFile[i], rel="stylesheet")
+
+        //- LINK FONTS
+        - for(var j = 0, arrFontNameLength = arrFontName.length; j < arrFontNameLength; j++)
+            link(href= arrFontName[j], rel='stylesheet')
+
+
+//- BTN MENU BURGER
+mixin btnMenuBurger(className)
+    a(
+        href="javascript:void(0);"
+        title=""
+        class="btn-menu btn-menu_js " + className
+    )
+        span.btn-menu__line.btn-menu__line-0
+        span.btn-menu__line.btn-menu__line-1
+        span.btn-menu__line.btn-menu__line-2

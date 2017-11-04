@@ -1,0 +1,10 @@
+{
+  "styleLinkIndex" : [
+    "./style/common.css"
+  ],
+
+  "scriptLink" : [
+    "./vendor/js/jquery-3.2.1.min.js",
+    "./script/main.js"
+  ]
+}

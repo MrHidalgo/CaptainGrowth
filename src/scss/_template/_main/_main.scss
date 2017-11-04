@@ -1,0 +1,163 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_variable/variable";
+///
+/// MAIN BLOCK
+///
+html {
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: $w-all;
+  min-height: 100vh;
+  @include mixinRespondTo(mobile-max) {
+    overflow-x: hidden;
+  }
+
+  &.open-menu,
+  &.open-popup {
+    overflow: hidden;
+  }
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  position: relative;
+
+  margin: 0;
+  padding: 0;
+
+  line-height: 1.42857143;
+  font-size: 14px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  //font-family: $f-OS-semibold;
+
+  background-color: $c-white;
+
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+p,
+h1, h2, h3, h4, h5, h6,
+hr {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: #222;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  outline: none;
+}
+
+input[type="text"] {
+  appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  //position: absolute;
+  //width: 0;
+  //height: 0;
+  //opacity: 0;
+  //border: none;
+  //margin: 0;
+  //padding: 0;
+  //filter: alpha(opacity=0);
+  //-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  //outline: 0;
+}
+
+.clearfix {
+  *zoom: 1;
+
+  &:after {
+    clear: both;
+  }
+
+  &:before,
+  &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+}

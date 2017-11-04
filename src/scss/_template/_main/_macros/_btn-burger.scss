@@ -1,0 +1,100 @@
+@import "../../../_mixin/mixin";
+@import "../../../_variable/variable";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white			      : return-value(color, white);
+$c-nero 			      : return-value(color, nero);
+///
+/// MAIN
+///
+.btn-menu {
+	@include mixinDimensions(34px, 25px);
+
+
+	&.active {
+		.btn-menu__line {
+			width: 34px;
+
+			background-color: $c-white;
+
+
+			&-0,
+			&-1,
+			&-2 {
+				transition: all .5s ease-in-out;
+			}
+
+
+			&-0 {
+				top: 11px;
+				transform: rotate(-135deg);
+			}
+			&-1 {
+				opacity: 0;
+			}
+			&-2 {
+				bottom: 11px;
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+
+	&:hover {
+		@include respond-to(large-min) {
+			.btn-menu__line {
+				background-color: $c-aqua;
+			}
+		}
+	}
+	&:active {
+		.btn-menu__line {
+			background-color: $c-magenta;
+		}
+	}
+
+
+	&__line {
+		position: absolute;
+		right: 0;
+
+		@include mixinDimensions(34px, 3px);
+
+		background-color: $c-white;
+
+		transition: all .3s ease-in-out;
+		@include respond-to(small-max) {
+			background-color: $c-white;
+		}
+
+
+		&-0 {
+			width: 34px;
+
+			top: 0;
+		}
+		&-1 {
+			width: 23px;
+
+			top: 11px;
+		}
+		&-2 {
+			width: 30px;
+
+			bottom: 0;
+		}
+	}
+}
+@media screen and (min-width: 1025px){
+	.btn-menu {
+		&:hover {
+			.btn-menu__line {
+				width: 34px;
+				transition: all .3s ease-in-out;
+			}
+		}
+	}
+}

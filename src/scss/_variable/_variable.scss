@@ -1,0 +1,605 @@
+@import "../_function/function";
+
+////
+/// @group  Variable
+////
+
+///
+/// @name   object
+///
+
+$object: (
+		red : (
+				50 : "#FFEBEE",
+				100 : "#FFCDD2",
+				200 : "#EF9A9A",
+				300 : "#E57373",
+				400 : "#EF5350",
+				500 : "#F44336",
+				600 : "#E53935",
+				700 : "#D32F2F",
+				800 : "#C62828",
+				900 : "#B71C1C",
+				A100 : "#FF8A80",
+				A200 : "#FF5252",
+				A400 : "#FF1744",
+				A700 : "#D50000",
+		),
+		pink : (
+				50 : "#FCE4EC",
+				100 : "#F8BBD0",
+				200 : "#F48FB1",
+				300 : "#F06292",
+				400 : "#EC407A",
+				500 : "#E91E63",
+				600 : "#D81B60",
+				700 : "#C2185B",
+				800 : "#AD1457",
+				900 : "#880E4F",
+				A100 : "#FF80AB",
+				A200 : "#FF4081",
+				A400 : "#F50057",
+				A700 : "#C51162",
+		),
+		purple : (
+				50 : "#F3E5F5",
+				100 : "#E1BEE7",
+				200 : "#CE93D8",
+				300 : "#BA68C8",
+				400 : "#AB47BC",
+				500 : "#9C27B0",
+				600 : "#8E24AA",
+				700 : "#7B1FA2",
+				800 : "#6A1B9A",
+				900 : "#4A148C",
+				A100 : "#EA80FC",
+				A200 : "#E040FB",
+				A400 : "#D500F9",
+				A700 : "#AA00FF",
+		),
+		deepPurple : (
+				50 : "#EDE7F6",
+				100 : "#D1C4E9",
+				200 : "#B39DDB",
+				300 : "#9575CD",
+				400 : "#7E57C2",
+				500 : "#673AB7",
+				600 : "#5E35B1",
+				700 : "#512DA8",
+				800 : "#4527A0",
+				900 : "#311B92",
+				A100 : "#B388FF",
+				A200 : "#7C4DFF",
+				A400 : "#651FFF",
+				A700 : "#6200EA",
+		),
+		indigo : (
+				50 : "#E8EAF6",
+				100 : "#C5CAE9",
+				200 : "#9FA8DA",
+				300 : "#7986CB",
+				400 : "#5C6BC0",
+				500 : "#3F51B5",
+				600 : "#3949AB",
+				700 : "#303F9F",
+				800 : "#283593",
+				900 : "#1A237E",
+				A100 : "#8C9EFF",
+				A200 : "#536DFE",
+				A400 : "#3D5AFE",
+				A700 : "#304FFE",
+		),
+		blue : (
+				50 : "#E3F2FD",
+				100 : "#BBDEFB",
+				200 : "#90CAF9",
+				300 : "#64B5F6",
+				400 : "#42A5F5",
+				500 : "#2196F3",
+				600 : "#1E88E5",
+				700 : "#1976D2",
+				800 : "#1565C0",
+				900 : "#0D47A1",
+				A100 : "#82B1FF",
+				A200 : "#448AFF",
+				A400 : "#2979FF",
+				A700 : "#2962FF",
+		),
+		lightBlue : (
+				50 : "#E1F5FE",
+				100 : "#B3E5FC",
+				200 : "#81D4FA",
+				300 : "#4FC3F7",
+				400 : "#29B6F6",
+				500 : "#03A9F4",
+				600 : "#039BE5",
+				700 : "#0288D1",
+				800 : "#0277BD",
+				900 : "#01579B",
+				A100 : "#80D8FF",
+				A200 : "#40C4FF",
+				A400 : "#00B0FF",
+				A700 : "#0091EA",
+		),
+		cyan : (
+				50 : "#E0F7FA",
+				100 : "#B2EBF2",
+				200 : "#80DEEA",
+				300 : "#4DD0E1",
+				400 : "#26C6DA",
+				500 : "#00BCD4",
+				600 : "#00ACC1",
+				700 : "#0097A7",
+				800 : "#00838F",
+				900 : "#006064",
+				A100 : "#84FFFF",
+				A200 : "#18FFFF",
+				A400 : "#00E5FF",
+				A700 : "#00B8D4",
+		),
+		teal : (
+				50 : "#E0F2F1",
+				100 : "#B2DFDB",
+				200 : "#80CBC4",
+				300 : "#4DB6AC",
+				400 : "#26A69A",
+				500 : "#009688",
+				600 : "#00897B",
+				700 : "#00796B",
+				800 : "#00695C",
+				900 : "#004D40",
+				A100 : "#A7FFEB",
+				A200 : "#64FFDA",
+				A400 : "#1DE9B6",
+				A700 : "#00BFA5",
+		),
+		green : (
+				50 : "#E8F5E9",
+				100 : "#C8E6C9",
+				200 : "#A5D6A7",
+				300 : "#81C784",
+				400 : "#66BB6A",
+				500 : "#4CAF50",
+				600 : "#43A047",
+				700 : "#388E3C",
+				800 : "#2E7D32",
+				900 : "#1B5E20",
+				A100 : "#B9F6CA",
+				A200 : "#69F0AE",
+				A400 : "#00E676",
+				A700 : "#00C853",
+		),
+		lightGreen : (
+				50 : "#F1F8E9",
+				100 : "#DCEDC8",
+				200 : "#C5E1A5",
+				300 : "#AED581",
+				400 : "#9CCC65",
+				500 : "#8BC34A",
+				600 : "#7CB342",
+				700 : "#689F38",
+				800 : "#558B2F",
+				900 : "#33691E",
+				A100 : "#CCFF90",
+				A200 : "#B2FF59",
+				A400 : "#76FF03",
+				A700 : "#64DD17",
+		),
+		lime : (
+				50 : "#F9FBE7",
+				100 : "#F0F4C3",
+				200 : "#E6EE9C",
+				300 : "#DCE775",
+				400 : "#D4E157",
+				500 : "#CDDC39",
+				600 : "#C0CA33",
+				700 : "#AFB42B",
+				800 : "#9E9D24",
+				900 : "#827717",
+				A100 : "#F4FF81",
+				A200 : "#EEFF41",
+				A400 : "#C6FF00",
+				A700 : "#AEEA00",
+		),
+		yellow : (
+				50 : "#FFFDE7",
+				100 : "#FFF9C4",
+				200 : "#FFF59D",
+				300 : "#FFF176",
+				400 : "#FFEE58",
+				500 : "#FFEB3B",
+				600 : "#FDD835",
+				700 : "#FBC02D",
+				800 : "#F9A825",
+				900 : "#F57F17",
+				A100 : "#FFFF8D",
+				A200 : "#FFFF00",
+				A400 : "#FFEA00",
+				A700 : "#FFD600",
+		),
+		amber : (
+				50 : "#FFF8E1",
+				100 : "#FFECB3",
+				200 : "#FFE082",
+				300 : "#FFD54F",
+				400 : "#FFCA28",
+				500 : "#FFC107",
+				600 : "#FFB300",
+				700 : "#FFA000",
+				800 : "#FF8F00",
+				900 : "#FF6F00",
+				A100 : "#FFE57F",
+				A200 : "#FFD740",
+				A400 : "#FFC400",
+				A700 : "#FFAB00",
+		),
+		orange : (
+				50 : "#FFF3E0",
+				100 : "#FFE0B2",
+				200 : "#FFCC80",
+				300 : "#FFB74D",
+				400 : "#FFA726",
+				500 : "#FF9800",
+				600 : "#FB8C00",
+				700 : "#F57C00",
+				800 : "#EF6C00",
+				900 : "#E65100",
+				A100 : "#FFD180",
+				A200 : "#FFAB40",
+				A400 : "#FF9100",
+				A700 : "#FF6D00",
+		),
+		deepOrange : (
+				50 : "#FBE9E7",
+				100 : "#FFCCBC",
+				200 : "#FFAB91",
+				300 : "#FF8A65",
+				400 : "#FF7043",
+				500 : "#FF5722",
+				600 : "#F4511E",
+				700 : "#E64A19",
+				800 : "#D84315",
+				900 : "#BF360C",
+				A100 : "#FF9E80",
+				A200 : "#FF6E40",
+				A400 : "#FF3D00",
+				A700 : "#DD2C00",
+		),
+		brown : (
+				50 : "#EFEBE9",
+				100 : "#D7CCC8",
+				200 : "#BCAAA4",
+				300 : "#A1887F",
+				400 : "#8D6E63",
+				500 : "#795548",
+				600 : "#6D4C41",
+				700 : "#5D4037",
+				800 : "#4E342E",
+				900 : "#3E2723",
+		),
+		grey : (
+				50 : "#FAFAFA",
+				100 : "#F5F5F5",
+				200 : "#EEEEEE",
+				300 : "#E0E0E0",
+				400 : "#BDBDBD",
+				500 : "#9E9E9E",
+				600 : "#757575",
+				700 : "#616161",
+				800 : "#424242",
+				900 : "#212121",
+		),
+		blueGrey : (
+				50 : "#ECEFF1",
+				100 : "#CFD8DC",
+				200 : "#B0BEC5",
+				300 : "#90A4AE",
+				400 : "#78909C",
+				500 : "#607D8B",
+				600 : "#546E7A",
+				700 : "#455A64",
+				800 : "#37474F",
+				900 : "#263238",
+		),
+		colors : (
+				white : #fff,
+				black : #000,
+				primary : #4285F4,
+				default : #2BBBAD,
+				secondary : #AA66CC,
+				success : #00C851,
+				info : #33B5E5,
+				warning : #FF8800,
+				danger : #CC0000,
+		),
+		fontsFamily : (),
+		dimension : (
+				all : 100%
+		),
+);
+
+$w-all: return-value(dimension, all);
+
+$c-white: return-value(colors, white);
+$c-black: return-value(colors, black);
+
+$c-primary: return-value(colors, primary);
+$c-default: return-value(colors, default);
+$c-secondary: return-value(colors, secondary);
+$c-success: return-value(colors, success);
+$c-info: return-value(colors, info);
+$c-warning: return-value(colors, warning);
+$c-danger: return-value(colors, danger);
+
+$c-red50: return-value(red, 50);
+$c-red100: return-value(red, 100);
+$c-red200: return-value(red, 200);
+$c-red300: return-value(red, 300);
+$c-red400: return-value(red, 400);
+$c-red500: return-value(red, 500);
+$c-red600: return-value(red, 600);
+$c-red700: return-value(red, 700);
+$c-red800: return-value(red, 800);
+$c-red900: return-value(red, 900);
+$c-redA100: return-value(red, A100);
+$c-redA200: return-value(red, A200);
+$c-redA400: return-value(red, A400);
+$c-redA700: return-value(red, A700);
+
+$c-pink50: return-value(pink, 50);
+$c-pink100: return-value(pink, 100);
+$c-pink200: return-value(pink, 200);
+$c-pink300: return-value(pink, 300);
+$c-pink400: return-value(pink, 400);
+$c-pink500: return-value(pink, 500);
+$c-pink600: return-value(pink, 600);
+$c-pink700: return-value(pink, 700);
+$c-pink800: return-value(pink, 800);
+$c-pink900: return-value(pink, 900);
+$c-pinkA100: return-value(pink, A100);
+$c-pinkA200: return-value(pink, A200);
+$c-pinkA400: return-value(pink, A400);
+$c-pinkA700: return-value(pink, A700);
+
+$c-purple50: return-value(purple, 50);
+$c-purple100: return-value(purple, 100);
+$c-purple200: return-value(purple, 200);
+$c-purple300: return-value(purple, 300);
+$c-purple400: return-value(purple, 400);
+$c-purple500: return-value(purple, 500);
+$c-purple600: return-value(purple, 600);
+$c-purple700: return-value(purple, 700);
+$c-purple800: return-value(purple, 800);
+$c-purple900: return-value(purple, 900);
+$c-purpleA100: return-value(purple, A100);
+$c-purpleA200: return-value(purple, A200);
+$c-purpleA400: return-value(purple, A400);
+$c-purpleA700: return-value(purple, A700);
+
+$c-deepPurple50: return-value(deepPurple, 50);
+$c-deepPurple100: return-value(deepPurple, 100);
+$c-deepPurple200: return-value(deepPurple, 200);
+$c-deepPurple300: return-value(deepPurple, 300);
+$c-deepPurple400: return-value(deepPurple, 400);
+$c-deepPurple500: return-value(deepPurple, 500);
+$c-deepPurple600: return-value(deepPurple, 600);
+$c-deepPurple700: return-value(deepPurple, 700);
+$c-deepPurple800: return-value(deepPurple, 800);
+$c-deepPurple900: return-value(deepPurple, 900);
+$c-deepPurpleA100: return-value(deepPurple, A100);
+$c-deepPurpleA200: return-value(deepPurple, A200);
+$c-deepPurpleA400: return-value(deepPurple, A400);
+$c-deepPurpleA700: return-value(deepPurple, A700);
+
+$c-indigo50: return-value(indigo, 50);
+$c-indigo100: return-value(indigo, 100);
+$c-indigo200: return-value(indigo, 200);
+$c-indigo300: return-value(indigo, 300);
+$c-indigo400: return-value(indigo, 400);
+$c-indigo500: return-value(indigo, 500);
+$c-indigo600: return-value(indigo, 600);
+$c-indigo700: return-value(indigo, 700);
+$c-indigo800: return-value(indigo, 800);
+$c-indigo900: return-value(indigo, 900);
+$c-indigoA100: return-value(indigo, A100);
+$c-indigoA200: return-value(indigo, A200);
+$c-indigoA400: return-value(indigo, A400);
+$c-indigoA700: return-value(indigo, A700);
+
+$c-blue50: return-value(blue, 50);
+$c-blue100: return-value(blue, 100);
+$c-blue200: return-value(blue, 200);
+$c-blue300: return-value(blue, 300);
+$c-blue400: return-value(blue, 400);
+$c-blue500: return-value(blue, 500);
+$c-blue600: return-value(blue, 600);
+$c-blue700: return-value(blue, 700);
+$c-blue800: return-value(blue, 800);
+$c-blue900: return-value(blue, 900);
+$c-blueA100: return-value(blue, A100);
+$c-blueA200: return-value(blue, A200);
+$c-blueA400: return-value(blue, A400);
+$c-blueA700: return-value(blue, A700);
+
+$c-lightBlue50: return-value(lightBlue, 50);
+$c-lightBlue100: return-value(lightBlue, 100);
+$c-lightBlue200: return-value(lightBlue, 200);
+$c-lightBlue300: return-value(lightBlue, 300);
+$c-lightBlue400: return-value(lightBlue, 400);
+$c-lightBlue500: return-value(lightBlue, 500);
+$c-lightBlue600: return-value(lightBlue, 600);
+$c-lightBlue700: return-value(lightBlue, 700);
+$c-lightBlue800: return-value(lightBlue, 800);
+$c-lightBlue900: return-value(lightBlue, 900);
+$c-lightBlueA100: return-value(lightBlue, A100);
+$c-lightBlueA200: return-value(lightBlue, A200);
+$c-lightBlueA400: return-value(lightBlue, A400);
+$c-lightBlueA700: return-value(lightBlue, A700);
+
+$c-cyan50: return-value(cyan, 50);
+$c-cyan100: return-value(cyan, 100);
+$c-cyan200: return-value(cyan, 200);
+$c-cyan300: return-value(cyan, 300);
+$c-cyan400: return-value(cyan, 400);
+$c-cyan500: return-value(cyan, 500);
+$c-cyan600: return-value(cyan, 600);
+$c-cyan700: return-value(cyan, 700);
+$c-cyan800: return-value(cyan, 800);
+$c-cyan900: return-value(cyan, 900);
+$c-cyanA100: return-value(cyan, A100);
+$c-cyanA200: return-value(cyan, A200);
+$c-cyanA400: return-value(cyan, A400);
+$c-cyanA700: return-value(cyan, A700);
+
+$c-teal50: return-value(teal, 50);
+$c-teal100: return-value(teal, 100);
+$c-teal200: return-value(teal, 200);
+$c-teal300: return-value(teal, 300);
+$c-teal400: return-value(teal, 400);
+$c-teal500: return-value(teal, 500);
+$c-teal600: return-value(teal, 600);
+$c-teal700: return-value(teal, 700);
+$c-teal800: return-value(teal, 800);
+$c-teal900: return-value(teal, 900);
+$c-tealA100: return-value(teal, A100);
+$c-tealA200: return-value(teal, A200);
+$c-tealA400: return-value(teal, A400);
+$c-tealA700: return-value(teal, A700);
+
+$c-green50: return-value(green, 50);
+$c-green100: return-value(green, 100);
+$c-green200: return-value(green, 200);
+$c-green300: return-value(green, 300);
+$c-green400: return-value(green, 400);
+$c-green500: return-value(green, 500);
+$c-green600: return-value(green, 600);
+$c-green700: return-value(green, 700);
+$c-green800: return-value(green, 800);
+$c-green900: return-value(green, 900);
+$c-greenA100: return-value(green, A100);
+$c-greenA200: return-value(green, A200);
+$c-greenA400: return-value(green, A400);
+$c-greenA700: return-value(green, A700);
+
+$c-lightGreen50: return-value(lightGreen, 50);
+$c-lightGreen100: return-value(lightGreen, 100);
+$c-lightGreen200: return-value(lightGreen, 200);
+$c-lightGreen300: return-value(lightGreen, 300);
+$c-lightGreen400: return-value(lightGreen, 400);
+$c-lightGreen500: return-value(lightGreen, 500);
+$c-lightGreen600: return-value(lightGreen, 600);
+$c-lightGreen700: return-value(lightGreen, 700);
+$c-lightGreen800: return-value(lightGreen, 800);
+$c-lightGreen900: return-value(lightGreen, 900);
+$c-lightGreenA100: return-value(lightGreen, A100);
+$c-lightGreenA200: return-value(lightGreen, A200);
+$c-lightGreenA400: return-value(lightGreen, A400);
+$c-lightGreenA700: return-value(lightGreen, A700);
+
+$c-lime50: return-value(lime, 50);
+$c-lime100: return-value(lime, 100);
+$c-lime200: return-value(lime, 200);
+$c-lime300: return-value(lime, 300);
+$c-lime400: return-value(lime, 400);
+$c-lime500: return-value(lime, 500);
+$c-lime600: return-value(lime, 600);
+$c-lime700: return-value(lime, 700);
+$c-lime800: return-value(lime, 800);
+$c-lime900: return-value(lime, 900);
+$c-limeA100: return-value(lime, A100);
+$c-limeA200: return-value(lime, A200);
+$c-limeA400: return-value(lime, A400);
+$c-limeA700: return-value(lime, A700);
+
+$c-yellow50: return-value(yellow, 50);
+$c-yellow100: return-value(yellow, 100);
+$c-yellow200: return-value(yellow, 200);
+$c-yellow300: return-value(yellow, 300);
+$c-yellow400: return-value(yellow, 400);
+$c-yellow500: return-value(yellow, 500);
+$c-yellow600: return-value(yellow, 600);
+$c-yellow700: return-value(yellow, 700);
+$c-yellow800: return-value(yellow, 800);
+$c-yellow900: return-value(yellow, 900);
+$c-yellowA100: return-value(yellow, A100);
+$c-yellowA200: return-value(yellow, A200);
+$c-yellowA400: return-value(yellow, A400);
+$c-yellowA700: return-value(yellow, A700);
+
+$c-amber50: return-value(amber, 50);
+$c-amber100: return-value(amber, 100);
+$c-amber200: return-value(amber, 200);
+$c-amber300: return-value(amber, 300);
+$c-amber400: return-value(amber, 400);
+$c-amber500: return-value(amber, 500);
+$c-amber600: return-value(amber, 600);
+$c-amber700: return-value(amber, 700);
+$c-amber800: return-value(amber, 800);
+$c-amber900: return-value(amber, 900);
+$c-amberA100: return-value(amber, A100);
+$c-amberA200: return-value(amber, A200);
+$c-amberA400: return-value(amber, A400);
+$c-amberA700: return-value(amber, A700);
+
+$c-orange50: return-value(orange, 50);
+$c-orange100: return-value(orange, 100);
+$c-orange200: return-value(orange, 200);
+$c-orange300: return-value(orange, 300);
+$c-orange400: return-value(orange, 400);
+$c-orange500: return-value(orange, 500);
+$c-orange600: return-value(orange, 600);
+$c-orange700: return-value(orange, 700);
+$c-orange800: return-value(orange, 800);
+$c-orange900: return-value(orange, 900);
+$c-orangeA100: return-value(orange, A100);
+$c-orangeA200: return-value(orange, A200);
+$c-orangeA400: return-value(orange, A400);
+$c-orangeA700: return-value(orange, A700);
+
+$c-deepOrange50: return-value(deepOrange, 50);
+$c-deepOrange100: return-value(deepOrange, 100);
+$c-deepOrange200: return-value(deepOrange, 200);
+$c-deepOrange300: return-value(deepOrange, 300);
+$c-deepOrange400: return-value(deepOrange, 400);
+$c-deepOrange500: return-value(deepOrange, 500);
+$c-deepOrange600: return-value(deepOrange, 600);
+$c-deepOrange700: return-value(deepOrange, 700);
+$c-deepOrange800: return-value(deepOrange, 800);
+$c-deepOrange900: return-value(deepOrange, 900);
+$c-deepOrangeA100: return-value(deepOrange, A100);
+$c-deepOrangeA200: return-value(deepOrange, A200);
+$c-deepOrangeA400: return-value(deepOrange, A400);
+$c-deepOrangeA700: return-value(deepOrange, A700);
+
+$c-brown50: return-value(brown, 50);
+$c-brown100: return-value(brown, 100);
+$c-brown200: return-value(brown, 200);
+$c-brown300: return-value(brown, 300);
+$c-brown400: return-value(brown, 400);
+$c-brown500: return-value(brown, 500);
+$c-brown600: return-value(brown, 600);
+$c-brown700: return-value(brown, 700);
+$c-brown800: return-value(brown, 800);
+$c-brown900: return-value(brown, 900);
+
+$c-grey50: return-value(grey, 50);
+$c-grey100: return-value(grey, 100);
+$c-grey200: return-value(grey, 200);
+$c-grey300: return-value(grey, 300);
+$c-grey400: return-value(grey, 400);
+$c-grey500: return-value(grey, 500);
+$c-grey600: return-value(grey, 600);
+$c-grey700: return-value(grey, 700);
+$c-grey800: return-value(grey, 800);
+$c-grey900: return-value(grey, 900);
+
+$c-blueGrey50: return-value(blueGrey, 50);
+$c-blueGrey100: return-value(blueGrey, 100);
+$c-blueGrey200: return-value(blueGrey, 200);
+$c-blueGrey300: return-value(blueGrey, 300);
+$c-blueGrey400: return-value(blueGrey, 400);
+$c-blueGrey500: return-value(blueGrey, 500);
+$c-blueGrey600: return-value(blueGrey, 600);
+$c-blueGrey700: return-value(blueGrey, 700);
+$c-blueGrey800: return-value(blueGrey, 800);
+$c-blueGrey900: return-value(blueGrey, 900);

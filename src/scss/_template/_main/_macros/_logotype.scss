@@ -1,0 +1,63 @@
+@import "../../../_mixin/mixin";
+@import "../../../_variable/variable";
+///
+/// MAIN
+///
+.logotype {
+  cursor: pointer;
+  //display: inline-block;
+  //position: relative;
+  //@include mixinDimensions(280px, 70px);
+
+  &--img {
+    height: (150px / 2) + 15;
+    @include respond-to(small-max) {
+      height: 75px;
+    }
+  }
+/*
+  &__img {
+    position: absolute;
+    top: 0;
+
+    &-left {
+      left: 0;
+    }
+    &-right {
+      right: 0;
+    }
+  }
+
+  &_size {
+    height: (140px / 2);
+  }
+
+  &__title {
+    position: absolute;
+    left: 50px;
+    line-height: 70px;
+    font: {
+      size: 31px;
+      family: $f-PN-semibold;
+    };
+    color: $c-eclipse;
+
+    &_color {
+      &-1 {}
+      &-2 {
+        color: $c-lochmara;
+      }
+    }
+  }
+
+  &__sub-title {
+    position: absolute;
+    left: 60px;
+    bottom: 0;
+    color: $c-eclipse;
+    font: {
+      size: 14px;
+      family: $f-PN-bold;
+    };
+  }*/
+}

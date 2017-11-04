@@ -1,0 +1,152 @@
+////
+/// @group  Mixin
+////
+
+/// 
+/// Mixin setting the width and height element.
+///
+/// @name   mixinDimensions
+///
+/// @param  {String}  $width             - The width property sets the width of an element.
+/// @param  {String}  $height  [$width]  - The height property sets the height of an element.
+///
+/// @see    $object
+///
+/// @example
+///   <selector> {
+///     @include mixinDimensions(100%);
+///     @include mixinDimensions(100%, 50%);
+///   }
+///
+@mixin mixinDimensions($width, $height:$width) {
+  width : $width;
+  height: $height;
+}
+
+
+///
+/// Mixin generate animation. It uses an additional function :
+/// - **map-get()**   - returns the value in a map associated with the given key. If the map doesn’t have such a key, returns null;
+/// - **map-merge()** - Merges two maps together into a new map. Keys in $map2 will take precedence over keys in $map1;
+///
+/// @link http://sass-lang.com/documentation/Sass/Script/Functions.html#map_get-instance_method       map-get()
+/// @link http://sass-lang.com/documentation/Sass/Script/Functions.html#map_merge-instance_method     map-merge()
+///
+/// @name   mixinKeyframes
+///
+/// @param  {String}  $keyName - Animation Name
+/// @param  {Object}  $options
+///
+/// @example
+///   <selector> {
+///     @include moduleKeyframes(clockLeft,
+///       (
+///         opacityStart      : 0.8,
+///         opacityEnd        : 1,
+///         transformStart    : rotate(360deg)
+///       )
+///       ||
+///       (
+///         opacityStart      : 0.5,
+///         opacityEnd        : 1,
+///         transformDouble   : (rotate(-360deg) scale(0.5))
+///       )
+///     );
+///   }
+///
+@mixin mixinKeyframes($keyName, $options: ()) {
+  $configuration: map-merge((), $options);
+
+  @keyframes #{$keyName} {
+    from{
+      opacity   : map-get($configuration, opacityStart);
+      transform : map-get($configuration, transformStart);
+      transform : map-get($configuration, transformDouble);
+    }
+    to{
+      opacity   : map-get($configuration, opacityEnd);
+      transform : map-get($configuration, transformEnd);
+    }
+  }
+}
+
+
+///
+/// Mixin centered elements
+///
+@mixin mixinCentered() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+///
+/// Mixin box-shadow
+///
+$boxShadowObj : (
+	"1" : "0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)",
+	"2" : "0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3)",
+	"3" : "0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3)",
+	"4" : "0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3)",
+	"5" : "0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3)",
+) !default;
+
+@mixin mixinBoxShadow($name) {
+	@if map-has-key($boxShadowObj, $name) {
+		box-shadow: #{inspect(map_get($boxShadowObj, $name))};
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$boxShadowObj}`. Please make sure it is defined in `$boxShadowObj` map.";
+	}
+
+}
+
+///
+/// Mixin media queries.
+///
+/// @name     respond-to
+///
+/// @param    {String}  $media [$text-mobile | $text-tablet | $text-small | $text-medium | $text-large] - Value that identifies one of the options and breakpoint.
+///
+/// @see      $object
+///
+/// @example
+///   <selector> {
+///     @include mixinRespond($text-mobile) { @content };
+///   }
+///   <selector> {
+///     @include mixinRespond($text-medium) { @content };
+///   }
+///
+$breakpointsMedia: (
+	"mobile-max"        : "(max-width: 767px)",
+	"mobile-min"        : "(min-width: 290px)",
+	"mobile"            : "(min-width: 290px) and (max-width: 767px)",
+
+	"small-mobile"      : "(max-width: 575px)",
+	"large-mobile"      : "(min-width: 576px) and (max-width: 767px)",
+
+	"tablet-max"        : "(max-width: 991px)",
+	"tablet-min"        : "(max-width: 768px)",
+	"tablet"            : "(min-width: 768px) and (max-width: 991px)",
+
+	"small-desktop-max" : "(max-width: 1199px)",
+	"small-desktop-min" : "(min-width: 992px)",
+	"small-desktop"     : "(min-width: 992px) and (max-width: 1199px)",
+
+	"medium-desktop-max": "(max-width: 1366px)",
+	"medium-desktop-min": "(min-width: 1200px)",
+	"medium-desktop"    : "(min-width: 1200px) and (max-width: 1366px)",
+
+	"large-desktop"     : "(min-width: 1367px)"
+) !default;
+
+@mixin mixinRespondTo($name) {
+	@if map-has-key($breakpointsMedia, $name) {
+		@media screen and #{inspect(map-get($breakpointsMedia, $name))} {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpointsMedia}`. Please make sure it is defined in `$breakpointsMedia` map.";
+	}
+}
