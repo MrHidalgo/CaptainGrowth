@@ -2,56 +2,48 @@
 /// Mixin generate @font-face
 ///
 @mixin mixinFontFace($fontName, $fontPath, $fontExtension: eot woff2 woff ttf svg) {
-	$src: null;
-	$srcEot: null;
+  $src: null;
+  $srcEot: null;
 
-	$extensionModObj: (
-		eot: "?iefix",
-		svg: "#" + $fontName
-	);
+  $extensionModObj: (
+      eot: "?iefix",
+      svg: "#" + $fontName
+  );
 
-	$formats: (
-		eot: "embedded-opentype",
-		otf: "opentype",
-		ttf: "truetype"
-	);
+  $formats: (
+      eot: "embedded-opentype",
+      otf: "opentype",
+      ttf: "truetype"
+  );
 
-	@each $ext in $fontExtension {
+  @each $ext in $fontExtension {
 
+    $extensionModsValue: if(map-has-key($extensionModObj, $ext), $ext + map-get($extensionModObj, $ext), $ext);
 
-		$extensionModsValue:
-			if(map-has-key($extensionModObj, $ext), $ext + map-get($extensionModObj, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
 
-		$format:
-			if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    @if ($ext == "eot") {
+      $srcEot: append($srcEot, url(quote($fontPath + $fontName + "." + $ext)));
+      $src: append($src,
+          url(quote($fontPath + $fontName + "." + $extensionModsValue)) format(quote($format)), comma
+      );
+    } @else {
+      $src: append($src,
+          url(quote($fontPath + $fontName + "." + $extensionModsValue)) format(quote($format)), comma
+      );
+    }
+  }
 
+  @font-face {
+    font-family: quote($fontName);
 
-		@if($ext == "eot") {
-			$srcEot:
-				append($srcEot, url(quote($fontPath + $fontName + "." + $ext)));
-			$src:
-				append($src,
-					url(quote($fontPath + $fontName + "." + $extensionModsValue)) format(quote($format)), comma
-				);
-		} @else {
-			$src:
-				append($src,
-					url(quote($fontPath + $fontName + "." + $extensionModsValue)) format(quote($format)), comma
-				);
-		}
-	}
+    src: $srcEot;
+    src: $src;
 
-	@font-face {
-		font-family: quote($fontName);
-
-		src: $srcEot;
-		src: $src;
-
-		font-style: normal;
-		font-weight: normal;
-	}
+    font-style: normal;
+    font-weight: normal;
+  }
 }
-
 
 ///
 /// CALL MIXIN FOR BUILD @FONT-FACE
@@ -60,3 +52,7 @@
 ///
 /// @include mixinFontFace("JournalRegular", "../fonts/", eot woff2 woff ttf svg);
 ///
+@include mixinFontFace("Rubik-Black", "../fonts/", ttf);
+@include mixinFontFace("Rubik-Bold", "../fonts/", ttf);
+@include mixinFontFace("Rubik-Medium", "../fonts/", ttf);
+@include mixinFontFace("Rubik-Regular", "../fonts/", ttf);

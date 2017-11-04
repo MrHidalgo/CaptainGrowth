@@ -1,7 +1,6 @@
 /// ADDITIONALLY
 %container {
 	position: relative;
-	height: 100%;
 	margin: {
 		left: auto;
 		right: auto;
@@ -15,7 +14,6 @@
 // MAIN
 .container {
 	@extend %container;
-	min-width: 300px;
 
 	&-fluid {
 		@extend %container;
@@ -24,35 +22,66 @@
 }
 
 // MEDIA QUERY
-@media only screen and (max-width: 575px) {
+@media (min-width: 576px) {
 	.container {
-		padding-left: 0;
-		padding-right: 0;
+		max-width: 540px;
 	}
 }
-@media only screen and (max-width: 767px) {
+
+@media (min-width: 768px) {
 	.container {
-		min-width: 290px;
-		max-width: 767px;
+		max-width: 720px;
 	}
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+@media (min-width: 992px) {
 	.container {
-		max-width:  750px;
+		max-width: 960px;
 	}
 }
-@media only screen and (max-width: 991px) {
+
+@media (min-width: 1200px) {
 	.container {
-		max-width:  970px;
+		max-width: 1140px;
 	}
 }
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+@media (min-width: 1440px) {
 	.container {
-		max-width: 1170px;
+		max-width: 1370px;
 	}
 }
-@media only screen and (min-width: 1200px) {
-	.container {
-		max-width: 1330px;
-	}
-}
+//
+//
+//@media only screen and (max-width: 575px) {
+//	.container {
+//		padding-left: 0;
+//		padding-right: 0;
+//	}
+//}
+//@media only screen and (max-width: 767px) {
+//	.container {
+//		min-width: 290px;
+//		max-width: 767px;
+//	}
+//}
+//@media only screen and (min-width: 768px) and (max-width: 991px) {
+//	.container {
+//		max-width:  750px;
+//	}
+//}
+//@media only screen and (max-width: 991px) {
+//	.container {
+//		max-width:  970px;
+//	}
+//}
+//@media only screen and (min-width: 992px) and (max-width: 1199px) {
+//	.container {
+//		max-width: 1170px;
+//	}
+//}
+//@media only screen and (min-width: 1200px) {
+//	.container {
+//		max-width: 1330px;
+//	}
+//}

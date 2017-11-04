@@ -41,7 +41,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  //font-family: $f-OS-semibold;
+  font-family: $f-RubikRegular;
 
   background-color: $c-white;
 
@@ -83,6 +83,11 @@ button[disabled] {
   cursor: not-allowed;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 [type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
@@ -113,15 +118,8 @@ ul {
 }
 
 a {
-  outline: none;
   text-decoration: none;
   color: #222;
-
-  &:hover,
-  &:active,
-  &:focus {
-    outline: none;
-  }
 }
 
 input {
