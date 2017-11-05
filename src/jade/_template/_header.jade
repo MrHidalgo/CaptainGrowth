@@ -1,0 +1,116 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var loginItem = [
+        "Log in",
+        "Try for free"
+    ];
+    var headerTitle = "Aut<span class='header__title_letter'></span>mate your </br> marketing analytics </br> with AI";
+    var headerSubTitle = "Captain Growth extracts valuable insight from your data. </br> You act on what really matters.";
+    var headerBtn = "Get insights for free";
+    var socialName = [
+        "facebook",
+        "googleDrive",
+        "googleAnalytics"
+    ];
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin headerMainImage(imageSizeHeight)
+    -
+        var imageHeight = (imageSizeHeight / 2);
+
+    img(
+        src="./image/img-header.png"
+        class="header__img"
+        title=""
+        height!= imageHeight
+    )
+
+
+mixin login(arrName)
+    .header__login
+        - for(var i = 0; i < arrName.length; i++)
+            a(
+                href="javascript:void(0);"
+                class="header__login-btn"
+                title!= arrName[i]
+            )!= arrName[i]
+
+
+mixin blockTitle(titleName, subTitleName, btnName)
+    .header__title-wrap
+        h1.header__title!= titleName
+        p.header__subtitle!= subTitleName
+
+        button(
+            type="button"
+            class="header__btn"
+            title!= btnName
+        )!= btnName
+
+
+mixin headerSocial(arrName)
+    .header__social
+        .header__social-block
+            | Available for:
+
+        -for(var i = 0; i < arrName.length; i++)
+            .header__social-block
+                a(
+                    href="javascript:void(0);"
+                    title!= arrName[i]
+                    class="header__social-btn header__social-btn_" + arrName[i]
+                )
+                    i.header__social-btn--icon
+
+                    if(i !== 0)
+                        i.header__social-btn--line
+                        span.header__social-btn--text!= "Soon"
+
+
+//- ====================
+//- MAIN
+//- ====================
+header.header#header
+
+    .header_img
+        -
+            var imgBigSize = (548 / 2);
+            var imgSmallSmoothSize = (112 / 2);
+            var imgBigSmoothSize = (174 / 2);
+
+        img(
+            src="./image/img-circle_some.png"
+            class="header_img-big"
+            title=""
+            height!= imgBigSize
+        )
+        img(
+            src="./image/img-circleS-small_some.png"
+            class="header_img-smallS"
+            title=""
+            height!= imgSmallSmoothSize
+        )
+        img(
+            src="./image/img-circleS-big_some.png"
+            class="header_img-bigS"
+            title=""
+            height!= imgBigSmoothSize
+        )
+
+    .header__row
+        +headerMainImage(1568)
+
+    .container.clearfix
+
+        +logotype(104, "header_logotype")
+        +login(loginItem)
+
+    .container-default
+        +blockTitle(headerTitle, headerSubTitle, headerBtn)
+        +headerSocial(socialName)
+

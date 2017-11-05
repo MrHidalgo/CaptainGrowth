@@ -1,0 +1,15 @@
+//- ====================
+//- LOGOTYPE
+//- ====================
+mixin logotype(imageSizeHeight, classNameWrapModify)
+    -
+        var heightImage = imageSizeHeight / 2;
+
+    div(class!= classNameWrapModify)
+        .logotype
+            img(
+                src="./image/logotype.png"
+                title="Logotype Captain Growth"
+                class="logotype__img"
+                height!= heightImage
+            )

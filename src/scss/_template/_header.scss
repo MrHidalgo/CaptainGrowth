@@ -1,0 +1,219 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.header {
+	position: relative;
+	min-height: 784px + 140px;
+	padding: {
+		top: 55px;
+		bottom: 140px;
+	}
+	
+	// POSITION
+	&__row {}
+	
+	// MODIFY
+	.header_logotype {
+		.logotype {
+			float: left;
+		}
+	}
+	.container-default {
+		padding-top: 155px;
+	}
+	&_img {
+		&-big,
+		&-smallS,
+		&-bigS {
+			z-index: 0;
+			position: absolute;
+		}
+		&-big {
+			left: 0;
+			top: 0;
+		}
+		&-smallS {
+			left: 102px;
+			top: 377px;
+		}
+		&-bigS {
+			left: 11px;
+			top: 621px;
+		}
+	}
+	
+	// IMG
+	&__img {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	
+	// LOGIN
+	&__login {
+		float: right;
+		
+		&-btn {
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 20px;
+			height: 28px;
+			line-height: 28px;
+			
+			&:first-child {
+				position: relative;
+				margin:{
+					left: 0;
+					right: 20px;
+				}
+				color: $c-royalBlue;
+				
+				&:before {
+					content: "";
+					position: absolute;
+					left: 50%;
+					bottom: 0;
+					@include mixinDimensions(36px, 1px);
+					margin-left: -18px;
+					background-color: $c-royalBlue;
+				}
+				
+				&:after {
+					content: "";
+					position: absolute;
+					top: 5px;
+					right: -20px;
+					@include mixinDimensions(1px, 18px);
+					background-color: $c-slateGrey;
+				}
+			}
+			
+			&:last-child {
+				background-color: $c-mediumTurquoise;
+				border-radius: 2em;
+				padding: {
+					left: 10px;
+					right: 10px;
+				};
+				color: $c-white;
+			}
+		}
+	}
+	
+	// TITLE
+	&__title {
+		font: {
+			family: $f-RubikBold;
+			size: 36px;
+		}
+		color: $c-eclipse;
+		line-height: 1.2;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+		
+		&_letter {
+			display: inline-block;
+			@include retina-sprite($sp-i-letter-o-group);
+		}
+	}
+	
+	// SUB TITLE
+	&__subtitle {
+		font-size: 18px;
+		line-height: 1.2;
+		margin-bottom: 50px;
+	}
+	
+	// BTN
+	&__btn {
+		position: relative;
+		@include mixinDimensions(455px, 84px);
+		margin-bottom: 70px;
+		background-color: $c-mediumTurquoise;
+		border: none;
+		border-radius: 5em;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		font-size: 22px;
+		color: $c-white;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			border-radius: 5em;
+			@include mixinDimensions(84px);
+			border: {
+				width: 12px;
+				style: solid;
+				color: $c-royalBlue;
+			}
+		}
+	}
+	
+	// SOCIAL
+	&__social {
+		&-block {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			width: 90px;
+			
+			&:first-child {
+				padding-top: 20px;
+			}
+		}
+		
+		&-btn {
+			display: block;
+			
+			&--icon {
+				display: block;
+			}
+			&--line {
+				display: block;
+				@include mixinDimensions(1px, 28px);
+				background-color: $c-logan;
+				margin: {
+					top: 10px;
+					bottom: 10px;
+					left: 10px;
+				};
+			}
+			&--text {
+				position: absolute;
+				left: -5px;
+				bottom: -25px;
+				font-size: 14px;
+				color: $c-logan;
+				transform: rotate(-90deg);
+			}
+			&_facebook {
+				.header__social-btn--icon {
+					@include retina-sprite($sp-i-facebook-group);
+				}
+			}
+			&_googleDrive {
+				padding-top: 15px;
+				
+				.header__social-btn--icon {
+					@include retina-sprite($sp-i-google-drive-group);
+				}
+			}
+			&_googleAnalytics {
+				padding-top: 15px;
+				
+				.header__social-btn--icon {
+					@include retina-sprite($sp-i-google-analytics-group);
+				}
+			}
+		}
+	}
+}
+

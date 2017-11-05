@@ -6,17 +6,21 @@
 
 @font-face { font-family: "Rubik-Regular"; src: url("../fonts/Rubik-Regular.ttf") format("truetype"); font-style: normal; font-weight: normal; }
 
- .container, .container-fluid { position: relative; margin-left: auto; margin-right: auto; padding-left: 15px; padding-right: 15px; }
+ .container, .container-fluid, .container-default { position: relative; margin-left: auto; margin-right: auto; padding-left: 15px; padding-right: 15px; }
 
  .container-fluid { max-width: 100%; }
 
-@media (min-width: 576px) {  .container { max-width: 540px; } }
+@media (min-width: 576px) {  .container { max-width: 540px; }
+   .container-default { max-width: 540px; } }
 
-@media (min-width: 768px) {  .container { max-width: 720px; } }
+@media (min-width: 768px) {  .container { max-width: 720px; }
+   .container-default { max-width: 720px; } }
 
-@media (min-width: 992px) {  .container { max-width: 960px; } }
+@media (min-width: 992px) {  .container { max-width: 960px; }
+   .container-default { max-width: 960px; } }
 
-@media (min-width: 1200px) {  .container { max-width: 1140px; } }
+@media (min-width: 1200px) {  .container { max-width: 1140px; }
+   .container-default { max-width: 1140px; } }
 
 @media (min-width: 1440px) {  .container { max-width: 1370px; } }
 
@@ -30,7 +34,7 @@
 
  html { -webkit-tap-highlight-color: transparent; }
 
- body { position: relative; margin: 0; padding: 0; line-height: 1.42857143; font-size: 14px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "Rubik-Regular"; background-color: #f7f7f7; overflow-x: hidden; }
+ body { position: relative; margin: 0; padding: 0; line-height: 1.42857143; font-size: 14px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "Rubik-Regular"; color: #6f7c9b; background-color: #f7f7f7; overflow-x: hidden; }
 
  * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
@@ -69,6 +73,74 @@
  .clearfix:after { clear: both; }
 
  .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
+
+ .header { position: relative; min-height: 924px; padding-top: 55px; padding-bottom: 140px; }
+
+ .header .header_logotype .logotype { float: left; }
+
+ .header .container-default { padding-top: 155px; }
+
+ .header_img-big, .header_img-smallS, .header_img-bigS { z-index: 0; position: absolute; }
+
+ .header_img-big { left: 0; top: 0; }
+
+ .header_img-smallS { left: 102px; top: 377px; }
+
+ .header_img-bigS { left: 11px; top: 621px; }
+
+ .header__img { position: absolute; top: 0; right: 0; }
+
+ .header__login { float: right; }
+
+ .header__login-btn { display: inline-block; vertical-align: top; margin-left: 20px; height: 28px; line-height: 28px; }
+
+ .header__login-btn:first-child { position: relative; margin-left: 0; margin-right: 20px; color: #3564db; }
+
+ .header__login-btn:first-child:before { content: ""; position: absolute; left: 50%; bottom: 0; width: 36px; height: 1px; margin-left: -18px; background-color: #3564db; }
+
+ .header__login-btn:first-child:after { content: ""; position: absolute; top: 5px; right: -20px; width: 1px; height: 18px; background-color: #6f7c9b; }
+
+ .header__login-btn:last-child { background-color: #51d5cf; -webkit-border-radius: 2em; -moz-border-radius: 2em; border-radius: 2em; padding-left: 10px; padding-right: 10px; color: #fff; }
+
+ .header__title { font-family: "Rubik-Bold"; font-size: 36px; color: #3e3d3d; line-height: 1.2; margin-bottom: 15px; text-transform: uppercase; }
+
+ .header__title_letter { display: inline-block; background-image: url(../image/sprite.png); background-position: -25px 0px; width: 26px; height: 26px; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .header__title_letter { background-image: url(../image/sprite@2x.png); -webkit-background-size: 77px 64px; -moz-background-size: 77px 64px; background-size: 77px 64px; } }
+
+ .header__subtitle { font-size: 18px; line-height: 1.2; margin-bottom: 50px; }
+
+ .header__btn { position: relative; width: 455px; height: 84px; margin-bottom: 70px; background-color: #51d5cf; border: none; -webkit-border-radius: 5em; -moz-border-radius: 5em; border-radius: 5em; -webkit-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); -moz-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); font-size: 22px; color: #fff; }
+
+ .header__btn:before { content: ""; position: absolute; left: 0; top: 0; -webkit-border-radius: 5em; -moz-border-radius: 5em; border-radius: 5em; width: 84px; height: 84px; border-width: 12px; border-style: solid; border-color: #3564db; }
+
+ .header__social-block { position: relative; display: inline-block; vertical-align: top; width: 90px; }
+
+ .header__social-block:first-child { padding-top: 20px; }
+
+ .header__social-btn { display: block; }
+
+ .header__social-btn--icon { display: block; }
+
+ .header__social-btn--line { display: block; width: 1px; height: 28px; background-color: #a3a0bf; margin-top: 10px; margin-bottom: 10px; margin-left: 10px; }
+
+ .header__social-btn--text { position: absolute; left: -5px; bottom: -25px; font-size: 14px; color: #a3a0bf; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); transform: rotate(-90deg); }
+
+ .header__social-btn_facebook .header__social-btn--icon { background-image: url(../image/sprite.png); background-position: 0px 0px; width: 20px; height: 38px; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .header__social-btn_facebook .header__social-btn--icon { background-image: url(../image/sprite@2x.png); -webkit-background-size: 77px 64px; -moz-background-size: 77px 64px; background-size: 77px 64px; } }
+
+ .header__social-btn_googleDrive { padding-top: 15px; }
+
+ .header__social-btn_googleDrive .header__social-btn--icon { background-image: url(../image/sprite.png); background-position: 0px -43px; width: 21px; height: 21px; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .header__social-btn_googleDrive .header__social-btn--icon { background-image: url(../image/sprite@2x.png); -webkit-background-size: 77px 64px; -moz-background-size: 77px 64px; background-size: 77px 64px; } }
+
+ .header__social-btn_googleAnalytics { padding-top: 15px; }
+
+ .header__social-btn_googleAnalytics .header__social-btn--icon { background-image: url(../image/sprite.png); background-position: -56px 0px; width: 21px; height: 21px; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .header__social-btn_googleAnalytics .header__social-btn--icon { background-image: url(../image/sprite@2x.png); -webkit-background-size: 77px 64px; -moz-background-size: 77px 64px; background-size: 77px 64px; } }
 
  .contacts { min-height: 532px; padding-top: 147px; }
 
@@ -132,7 +204,7 @@
 
  .footer .footer_social .social__btn_facebook { background-image: url(../image/sprite.png); background-position: 0px 0px; width: 20px; height: 38px; }
 
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .footer .footer_social .social__btn_facebook { background-image: url(../image/sprite@2x.png); -webkit-background-size: 20px 38px; -moz-background-size: 20px 38px; background-size: 20px 38px; } }
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .footer .footer_social .social__btn_facebook { background-image: url(../image/sprite@2x.png); -webkit-background-size: 77px 64px; -moz-background-size: 77px 64px; background-size: 77px 64px; } }
 
  .footer__menu { font-size: 0; }
 

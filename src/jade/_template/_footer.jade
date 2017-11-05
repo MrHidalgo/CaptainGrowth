@@ -27,20 +27,6 @@ mixin footerMenu(arrMenuName)
                 )!= arrMenuName[i]
 
 
-mixin logotype(imageSizeHeight)
-    -
-        var heightImage = imageSizeHeight / 2;
-
-    .footer_logotype
-        .logotype
-            img(
-                src="./image/logotype.png"
-                title="Logotype Captain Growth"
-                class="logotype__img"
-                height!= heightImage
-            )
-
-
 mixin copyright()
     .footer_copyright
         p.copyright!= "©Copyright 2017"
@@ -54,6 +40,7 @@ mixin social()
                 title= "Facebook"
             )
 
+
 //- ====================
 //- MAIN
 //- ====================
@@ -62,7 +49,7 @@ footer.footer#footer
 
         .footer_row
             .footer_left
-                +logotype(104)
+                +logotype(104, "footer_logotype")
                 +copyright()
 
             .footer_right
