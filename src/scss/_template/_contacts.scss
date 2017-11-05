@@ -1,0 +1,149 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.contacts {
+	min-height: 532px;
+	padding-top: 147px;
+	
+	// POSITION
+	&__row {
+		height: 252px;
+		background-color: $c-royalBlue;
+	}
+	&_row {
+		font-size: 0;
+		padding-left: 415px;
+		color: $c-white;
+	}
+	&_right,
+	&_left {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+	}
+	&_right {
+		@include mixinDimensions(570px, 252px);
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&_left {
+		width: calc(#{$w-all} - 570px);
+	}
+	
+	// ECLIPSE
+	&__circle {
+		position: absolute;
+		top: -147px;
+		left: -45px;
+		@include mixinDimensions(526px);
+		border-radius: $w-all;
+		border: {
+			width: 100px;
+			style: solid;
+			color: $c-royalBlue;
+		}
+		background-color: $c-whiteSmoke;
+		
+		&-img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	
+	// TITLE
+	&__title {
+		font: {
+			size: 28px;
+			family: $f-RubikMedium;
+		}
+		line-height: 1.2;
+		margin-bottom: 15px;
+	}
+	
+	// TEXT
+	&__text {
+		font-size: 18px;
+		line-height: 1.2;
+	}
+	
+	// FORM
+	&__form {
+		padding-top: 55px;
+		
+		&-input,
+		&-btn {
+			@include mixinDimensions($w-all, 52px);
+			color: $c-white;
+			border-radius: 2em;
+		}
+		&-input {
+			border: {
+				width: 2px;
+				style: solid;
+				color: $c-white;
+			};
+			background-color: transparent;
+			padding: {
+				right: 25px;
+				left: 25px;
+			}
+			margin-bottom: 30px;
+			font-size: 18px;
+			
+			&::-webkit-input-placeholder {
+				color: $c-white;
+			}
+			&::-moz-placeholder {
+				color: $c-white;
+			}
+			&:-ms-input-placeholder {
+				color: $c-white;
+			}
+			&:-moz-placeholder {
+				color: $c-white;
+			}
+		}
+		&-btn {
+			border: none;
+			box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+			background-color: $c-mediumTurquoise;
+			font-size: 22px;
+		}
+	}
+}
+
+.Rounded_Rectangle_14 {
+	border-width: 2px;
+	border-color: rgb(255, 255, 255);
+	border-style: solid;
+	position: absolute;
+	left: 1245px;
+	top: 7653px;
+	width: 396px;
+	height: 52px;
+	z-index: 23;
+}
+
+.Rounded_Rectangle_6_copy_2 {
+	background-image: -moz-linear-gradient( -178deg, rgb(81,213,207) 0%, rgb(72,65,153) 100%);
+	background-image: -webkit-linear-gradient( -178deg, rgb(81,213,207) 0%, rgb(72,65,153) 100%);
+	background-image: -ms-linear-gradient( -178deg, rgb(81,213,207) 0%, rgb(72,65,153) 100%);
+	box-shadow: 0px 15px 48px 0px rgba(53, 99, 219, 0.14);
+	position: absolute;
+	left: 1247px;
+	top: 7739px;
+	width: 400px;
+	height: 56px;
+	z-index: 26;
+}
+
+

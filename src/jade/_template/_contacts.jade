@@ -1,0 +1,53 @@
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin circle(imageSizeHeight)
+    -
+        var imageHeight = (imageSizeHeight / 2);
+
+    .contacts__circle
+        img(
+            src="./image/img-contacts.png"
+            title="contacts man in circle"
+            class="contacts__circle-img"
+            height!= imageHeight
+        )
+
+
+mixin contactsForm(placeholderNameInput, btnName)
+    .contacts__form
+        input(
+            type="text"
+            class="contacts__form-input"
+            name=""
+            placeholder!= placeholderNameInput
+        )
+
+        button(
+            type="button"
+            class="contacts__form-btn"
+            title!= btnName
+        )!= btnName
+
+
+
+//- ====================
+//- MAIN
+//- ====================
+section.contacts#contacts
+    .contacts__row
+
+        .container
+
+            .contacts_row
+                +circle(316)
+
+                .contacts_right
+
+                    p.contacts__title!= "Would like to know how </br> we create world first AI marketer?"
+                    p.contacts__text!= "Subscribe to our blog. Mistakes, machine learning </br> and rock-n-roll - all truth here."
+
+                .contacts_left
+
+                    +contactsForm("Enter Email", "E-mail me your hot AI stories")
+
