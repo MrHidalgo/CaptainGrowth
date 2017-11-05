@@ -1,0 +1,125 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.doit {
+	position: relative;
+	padding: {
+		top: 45px;
+		bottom: 150px;
+	};
+	
+	// POSITION
+	
+	// MODIFY
+	&_img {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include mixinDimensions($w-all);
+		
+		&-bigS,
+		&-smallS {
+			z-index: 0;
+			position: absolute;
+		}
+		&-bigS {
+			&_0 {
+				top: 15%;
+				left: 5px;
+			}
+			&_1 {
+				top: 50%;
+				right: 30px;
+			}
+		}
+		&-smallS {
+			&_0 {
+				top: 50%;
+				left: 75px;
+			}
+			&_1 {
+				top: 15%;
+				right: 175px;
+			}
+		}
+	}
+	&_row {
+		font-size: 0;
+	}
+	&_left,
+	&_right {
+		display: inline-block;
+		vertical-align: top;
+	}
+	&_left {
+		padding-top: 85px;
+		width: 400px;
+	}
+	&_right {
+		padding-left: 70px;
+		width: calc(#{$w-all} - 400px);
+	}
+	
+	// LIST
+	&__list {
+		margin-top: 100px;
+	}
+	
+	// ITEM
+	&__item {
+		&_left,
+		&_right {
+			display: inline-block;
+			vertical-align: top;
+		}
+		&_left {
+			width: 100px;
+		}
+		&_right {
+			width: calc(#{$w-all} - 100px);
+			padding-top: 7px;
+			font-size: 18px;
+		}
+		&-circle {
+			@include mixinDimensions(64px);
+			line-height: 56px;
+			border: {
+				width: 6px;
+				style: solid;
+				color: $c-royalBlue;
+				radius: $w-all;
+			}
+			margin-right: 30px;
+			text-align: center;
+			
+			&--num {
+				font: {
+					size: 14px;
+					family: $f-RubikBlack;
+				};
+				color: $c-royalBlue;
+			}
+		}
+		&-dot {
+			display: block;
+			@include mixinDimensions(6px);
+			margin:{
+				bottom: 5px;
+				left: 29px;
+			}
+			background-color: $c-mediumTurquoise;
+			border-radius: $w-all;
+			
+			&:first-of-type {
+				margin-top: 5px;
+			}
+		}
+	}
+}

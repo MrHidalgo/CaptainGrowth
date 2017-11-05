@@ -230,6 +230,44 @@
 
  .insight__btn { width: 400px; height: 52px; color: #fff; -webkit-border-radius: 2em; -moz-border-radius: 2em; border-radius: 2em; border: none; -webkit-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); -moz-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); background-color: #51d5cf; font-size: 22px; }
 
+ .doit { position: relative; padding-top: 45px; padding-bottom: 150px; }
+
+ .doit_img { z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+ .doit_img-bigS, .doit_img-smallS { z-index: 0; position: absolute; }
+
+ .doit_img-bigS_0 { top: 15%; left: 5px; }
+
+ .doit_img-bigS_1 { top: 50%; right: 30px; }
+
+ .doit_img-smallS_0 { top: 50%; left: 75px; }
+
+ .doit_img-smallS_1 { top: 15%; right: 175px; }
+
+ .doit_row { font-size: 0; }
+
+ .doit_left, .doit_right { display: inline-block; vertical-align: top; }
+
+ .doit_left { padding-top: 85px; width: 400px; }
+
+ .doit_right { padding-left: 70px; width: -webkit-calc(100% - 400px); width: -moz-calc(100% - 400px); width: calc(100% - 400px); }
+
+ .doit__list { margin-top: 100px; }
+
+ .doit__item_left, .doit__item_right { display: inline-block; vertical-align: top; }
+
+ .doit__item_left { width: 100px; }
+
+ .doit__item_right { width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px); width: calc(100% - 100px); padding-top: 7px; font-size: 18px; }
+
+ .doit__item-circle { width: 64px; height: 64px; line-height: 56px; border-width: 6px; border-style: solid; border-color: #3564db; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; margin-right: 30px; text-align: center; }
+
+ .doit__item-circle--num { font-size: 14px; font-family: "Rubik-Black"; color: #3564db; }
+
+ .doit__item-dot { display: block; width: 6px; height: 6px; margin-bottom: 5px; margin-left: 29px; background-color: #51d5cf; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; }
+
+ .doit__item-dot:first-of-type { margin-top: 5px; }
+
  .contacts { min-height: 532px; padding-top: 147px; }
 
  .contacts__row { height: 252px; background-color: #3564db; }

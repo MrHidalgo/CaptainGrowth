@@ -1,0 +1,93 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var doitTitle = "How does Captain";
+    var doitTitleGradient = "do it for you?";
+    var doitNum = [
+        "01",
+        "02",
+        "03"
+    ];
+    var doitArrList = [
+        "Find the segment, which goes better or worse than normal",
+        "Define the exact level, where the problem is",
+        "Score the importance: is it valueable enough?"
+    ];
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin doitImage(imageSizeHeight)
+    -
+        var imageHeight = (imageSizeHeight / 2);
+
+    img(
+        src="./image/img-doit.png"
+        class="doit__img"
+        title=""
+        height!= imageHeight
+    )
+
+
+mixin doitList(arrText, arrNum)
+    ul.doit__list
+        -for(var i = 0; i < arrText.length; i++)
+            li.doit__item
+                .doit__item_left
+                    .doit__item-circle
+                        span.doit__item-circle--num!= arrNum[i]
+
+                    if(i !== arrText.length - 1)
+                        -for(var j = 0; j < 8; j++)
+                            i.doit__item-dot
+
+                .doit__item_right!= arrText[i]
+
+
+//- ====================
+//- MAIN
+//- ====================
+section.doit#doit
+
+    .doit_img
+        -
+            var imgSmallSmoothSize = (112 / 2);
+            var imgBigSmoothSize = (174 / 2);
+
+        img(
+            src="./image/img-circleS-big_some.png"
+            class="doit_img-bigS doit_img-bigS_0"
+            title=""
+            height!= imgBigSmoothSize
+        )
+        img(
+            src="./image/img-circleS-small_some.png"
+            class="doit_img-smallS doit_img-smallS_0"
+            title=""
+            height!= imgSmallSmoothSize
+        )
+        img(
+            src="./image/img-circleS-big_some.png"
+            class="doit_img-bigS doit_img-bigS_1"
+            title=""
+            height!= imgBigSmoothSize
+        )
+        img(
+            src="./image/img-circleS-small_some.png"
+            class="doit_img-smallS doit_img-smallS_1"
+            title=""
+            height!= imgSmallSmoothSize
+        )
+
+    .container
+
+        .doit_row
+            .doit_left
+                +mainTitle(2, doitTitle, doitTitleGradient)
+
+                +doitList(doitArrList, doitNum)
+
+            .doit_right
+                +doitImage(1644)
