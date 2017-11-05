@@ -1,0 +1,46 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var insightTitle = "We usually find around 100 insights for a new user. </br> It takes us 2 minutes. Get your for free.";
+    var insightBtnText = "Get my insights";
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin circle(imageSizeHeight)
+    -
+        var imageHeight = (imageSizeHeight / 2);
+
+    .contacts__circle
+        img(
+            src="./image/img-insight.png"
+            title="contacts man in circle"
+            class="contacts__circle-img"
+            height!= imageHeight
+        )
+
+
+mixin content()
+    p.insight__title!= insightTitle
+    button(
+        type="button"
+        class="insight__btn"
+        title!= insightBtnText
+    )!= insightBtnText
+
+
+//- ====================
+//- MAIN
+//- ====================
+section.insight#insight
+    .insight__row
+
+        .container
+            .insight_row
+
+                +circle(446)
+
+                .insight_container
+                    +content()

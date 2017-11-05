@@ -1,0 +1,73 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.insight {
+	min-height: 532px;
+	padding-top: 147px;
+	
+	// POSITION
+	&__row {
+		height: 252px;
+		background-color: $c-royalBlue;
+	}
+	&_row {
+		font-size: 0;
+		padding-left: 550px;
+		color: $c-white;
+	}
+	&_container {
+		@include mixinDimensions(#{$w-all}, 252px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	// ECLIPSE
+	&__circle {
+		position: absolute;
+		top: -147px;
+		left: -45px;
+		@include mixinDimensions(526px);
+		border-radius: $w-all;
+		border: {
+			width: 100px;
+			style: solid;
+			color: $c-royalBlue;
+		}
+		background-color: $c-whiteSmoke;
+		
+		&-img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	
+	// TITLE
+	&__title {
+		font: {
+			size: 28px;
+			family: $f-RubikMedium;
+		}
+		line-height: 1.2;
+		margin-bottom: 15px;
+	}
+	
+	// BTN
+	&__btn {
+		@include mixinDimensions(400px, 52px);
+		color: $c-white;
+		border-radius: 2em;
+		border: none;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		background-color: $c-mediumTurquoise;
+		font-size: 22px;
+	}
+}

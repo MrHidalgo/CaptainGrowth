@@ -172,13 +172,13 @@
 
  .save_img-left { top: 50%; margin-top: -188px; left: 0; }
 
- .save_img-right { top: 0; right: 0; }
+ .save_img-right { bottom: 0; right: 0; }
 
  .save_img-bigS_0 { top: 75%; left: 50px; }
 
- .save_img-bigS_1 { top: 10%; right: 345px; }
+ .save_img-bigS_1 { top: 15%; right: 345px; }
 
- .save_img-smallS { top: 25%; right: 50px; }
+ .save_img-smallS { top: 30%; right: 50px; }
 
  .save__block { width: 370px; min-height: 365px; padding: 35px 35px 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; background-color: #f7f7f7; -webkit-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); -moz-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); }
 
@@ -213,6 +213,22 @@
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .save__block-item--icon { background-image: url(../image/sprite@2x.png); -webkit-background-size: 113px 111px; -moz-background-size: 113px 111px; background-size: 113px 111px; } }
 
  .save__block-item--text { font-size: 18px; width: -webkit-calc(100% - 20px); width: -moz-calc(100% - 20px); width: calc(100% - 20px); }
+
+ .insight { min-height: 532px; padding-top: 147px; }
+
+ .insight__row { height: 252px; background-color: #3564db; }
+
+ .insight_row { font-size: 0; padding-left: 550px; color: #fff; }
+
+ .insight_container { width: 100%; height: 252px; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -moz-box-orient: vertical; -moz-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -moz-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+ .insight__circle { position: absolute; top: -147px; left: -45px; width: 526px; height: 526px; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; border-width: 100px; border-style: solid; border-color: #3564db; background-color: #f7f7f7; }
+
+ .insight__circle-img { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+ .insight__title { font-size: 28px; font-family: "Rubik-Medium"; line-height: 1.2; margin-bottom: 15px; }
+
+ .insight__btn { width: 400px; height: 52px; color: #fff; -webkit-border-radius: 2em; -moz-border-radius: 2em; border-radius: 2em; border: none; -webkit-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); -moz-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); background-color: #51d5cf; font-size: 22px; }
 
  .contacts { min-height: 532px; padding-top: 147px; }
 
