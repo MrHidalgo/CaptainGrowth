@@ -28,6 +28,12 @@
 		padding-top: 155px;
 	}
 	&_img {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include mixinDimensions($w-all);
+		
 		&-big,
 		&-smallS,
 		&-bigS {

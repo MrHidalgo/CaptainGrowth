@@ -13,3 +13,41 @@ mixin logotype(imageSizeHeight, classNameWrapModify)
                 class="logotype__img"
                 height!= heightImage
             )
+
+//- ====================
+//- TITLE
+//- ====================
+mixin mainTitle(caseNum, titleText, gradientText)
+    mixin title(txtTitle)
+        != txtTitle
+
+    mixin gradient(txtGradient)
+        svg(
+            width="100%" height="30px" xmlns="http://www.w3.org/2000/svg"
+        )
+            defs()
+                linearGradient(
+                    id="gradientText" x1="0" y1="100%" x2="100%" y2="100%"
+                )
+                    stop(offset="0%" stop-color="#48439a")
+                    stop(offset="100%" stop-color="#51d1ce")
+            text(
+                fill="url(#gradientText)" x="0" y="100%"
+            )!= txtGradient
+
+    p.main__title
+        case caseNum
+            when 1
+                +title(titleText)
+                +gradient(gradientText)
+            when 2
+            when 3
+            when 4
+            when 6
+            when 7
+                +gradient(gradientText)
+                +title(titleText)
+            when 5
+                +gradient(gradientText)
+            default
+                | Error

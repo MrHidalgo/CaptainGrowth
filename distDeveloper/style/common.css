@@ -74,11 +74,15 @@
 
  .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
 
+ .main__title { font-family: "Rubik-Bold"; font-size: 36px; color: #3e3d3d; line-height: 1.2; margin-bottom: 30px; text-transform: uppercase; }
+
  .header { position: relative; min-height: 924px; padding-top: 55px; padding-bottom: 140px; }
 
  .header .header_logotype .logotype { float: left; }
 
  .header .container-default { padding-top: 155px; }
+
+ .header_img { z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
  .header_img-big, .header_img-smallS, .header_img-bigS { z-index: 0; position: absolute; }
 
@@ -141,6 +145,22 @@
  .header__social-btn_googleAnalytics .header__social-btn--icon { background-image: url(../image/sprite.png); background-position: -56px 0px; width: 21px; height: 21px; }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .header__social-btn_googleAnalytics .header__social-btn--icon { background-image: url(../image/sprite@2x.png); -webkit-background-size: 77px 64px; -moz-background-size: 77px 64px; background-size: 77px 64px; } }
+
+ .data { position: relative; padding-bottom: 110px; }
+
+ .data_img { z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+ .data_img-left, .data_img-right, .data_img-smallS, .data_img-bigS { z-index: 0; position: absolute; }
+
+ .data_img-left { top: 100px; left: 0; }
+
+ .data_img-right { top: 50%; right: 0; margin-top: -188px; }
+
+ .data_img-smallS { top: 75%; right: 75px; }
+
+ .data_img-bigS { top: 50px; right: 175px; }
+
+ .data__subTitle { font-size: 18px; margin-bottom: 65px; }
 
  .contacts { min-height: 532px; padding-top: 147px; }
 

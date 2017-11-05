@@ -1,0 +1,70 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var dataTitle = "It’s never been so easy ";
+    var dataTitleGradient = "to be data-driven.";
+    var dataSubTitle = "With a Captain you get ideas on what to improve and how to grow every day. All based on your data </br> Get your insights, make right decisions, act and grow.";
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin imgData(imageSizeHeight)
+    -
+        var imageSize = (imageSizeHeight / 2);
+
+    img(
+        src="./image/img-data.png"
+        class="data__img"
+        title=""
+        height!= imageSize
+    )
+
+//- ====================
+//- MAIN
+//- ====================
+section.data#data
+
+    .data_img
+        -
+            var imgSizeLeft = (1458 / 2);
+            var imgSizeRight = (752 / 2);
+            var imgSmallSmoothSize = (112 / 2);
+            var imgBigSmoothSize = (174 / 2);
+
+        img(
+            src="./image/img-circle-0_some.png"
+            title=""
+            class="data_img-left"
+            height!= imgSizeLeft
+        )
+        img(
+            src="./image/img-circle-1_some.png"
+            title=""
+            class="data_img-right"
+            height!= imgSizeRight
+        )
+        img(
+            src="./image/img-circleS-small_some.png"
+            class="data_img-smallS"
+            title=""
+            height!= imgSmallSmoothSize
+        )
+        img(
+            src="./image/img-circleS-big_some.png"
+            class="data_img-bigS"
+            title=""
+            height!= imgBigSmoothSize
+        )
+
+    .container-default
+
+        +mainTitle(1, dataTitle, dataTitleGradient)
+
+        p.data__subTitle!= dataSubTitle
+
+        +imgData(1288)
+
+
+

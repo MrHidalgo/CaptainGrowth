@@ -1,0 +1,55 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.data {
+	position: relative;
+	padding-bottom: 110px;
+	
+	// POSITION
+	
+	// MODIFY
+	&_img {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include mixinDimensions($w-all);
+		
+		&-left,
+		&-right,
+		&-smallS,
+		&-bigS {
+			z-index: 0;
+			position: absolute;
+		}
+		&-left {
+			top: 100px;
+			left: 0;
+		}
+		&-right {
+			top: 50%;
+			right: 0;
+			margin-top: -(752px / 4);
+		}
+		&-smallS {
+			top: 75%;
+			right: 75px;
+		}
+		&-bigS {
+			top: 50px;
+			right: 175px;
+		}
+	}
+	
+	// SUBTITLE
+	&__subTitle {
+		font-size: 18px;
+		margin-bottom: 65px;
+	}
+}
