@@ -336,9 +336,9 @@ $w-all: return-value(dimension, all);
 
 // font-family
 $f-RubikRegular: return-value(fontsFamily, RubikRegular);
-$f-RubikRegular: return-value(fontsFamily, RubikMedium);
-$f-RubikRegular: return-value(fontsFamily, RubikBold);
-$f-RubikRegular: return-value(fontsFamily, RubikBlack);
+$f-RubikMedium: return-value(fontsFamily, RubikMedium);
+$f-RubikBold: return-value(fontsFamily, RubikBold);
+$f-RubikBlack: return-value(fontsFamily, RubikBlack);
 
 // color
 $c-white: return-value(colors, white);

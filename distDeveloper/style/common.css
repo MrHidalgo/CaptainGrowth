@@ -30,7 +30,7 @@
 
  html { -webkit-tap-highlight-color: transparent; }
 
- body { position: relative; margin: 0; padding: 0; line-height: 1.42857143; font-size: 14px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "Rubik-Black"; background-color: #fff; overflow-x: hidden; }
+ body { position: relative; margin: 0; padding: 0; line-height: 1.42857143; font-size: 14px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "Rubik-Regular"; background-color: #f7f7f7; overflow-x: hidden; }
 
  * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
@@ -69,3 +69,35 @@
  .clearfix:after { clear: both; }
 
  .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
+
+ .footer { min-height: 220px; }
+
+ .footer_row { font-size: 0; }
+
+ .footer_left, .footer_right { display: inline-block; vertical-align: top; font-size: 18px; }
+
+ .footer_left { width: 470px; padding-top: 78px; }
+
+ .footer_right { width: -webkit-calc(100% - 470px); width: -moz-calc(100% - 470px); width: calc(100% - 470px); padding-top: 84px; }
+
+ .footer_logotype .logotype__img { display: block; }
+
+ .footer_copyright { padding-top: 28px; }
+
+ .footer_copyright .copyright { font-size: 14px; color: #6f7c9b; }
+
+ .footer .footer_social { padding-top: 30px; }
+
+ .footer .footer_social .social__btn { display: block; float: right; }
+
+ .footer .footer_social .social__btn_facebook { background-image: url(../image/sprite.png); background-position: 0px 0px; width: 20px; height: 38px; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .footer .footer_social .social__btn_facebook { background-image: url(../image/sprite@2x.png); -webkit-background-size: 20px 38px; -moz-background-size: 20px 38px; background-size: 20px 38px; } }
+
+ .footer__menu { font-size: 0; }
+
+ .footer__menu-item { display: inline-block; vertical-align: top; padding-right: 29px; }
+
+ .footer__menu-item:last-child { padding-right: 0; }
+
+ .footer__menu-btn { font-size: 16px; color: #6f7c9b; }

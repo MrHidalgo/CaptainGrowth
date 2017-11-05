@@ -7,11 +7,11 @@ const gulp              =   require('gulp')
     , scss              =   require('gulp-sass')
     , stripCssComments  =   require('gulp-strip-css-comments')
     , sourcemaps        =   require('gulp-sourcemaps')
-    , notify            =   require('gulp-notify')
     , cssmin            =   require('gulp-cssmin')
     , rename            =   require('gulp-rename')
     , debug             =   require('gulp-debug')
     , logger            =   require('gulp-logger')
+    , notify            =   require('gulp-notify')
     , changedInPlace    =   require('gulp-changed-in-place');
 
 
@@ -102,6 +102,11 @@ exports.styleMainTask = function(taskName) {
             //.pipe(
             //    gulp.dest(distFolderProduction)
             //)
+            .pipe(notify(
+                {
+                    message: 'SCSS task complete'
+                }
+            ))
 	});
 };
 

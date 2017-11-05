@@ -1,0 +1,70 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var footerMenuArr = [
+        "About us",
+        "Success stories",
+        "Pricing",
+        "How it works",
+        "AI blog",
+        "Tips&Tricks",
+        "Privacy Policy",
+        "Terms of Use"
+    ];
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin footerMenu(arrMenuName)
+    ul.footer__menu
+        -for(var i = 0; i < arrMenuName.length; i++)
+            li.footer__menu-item
+                a.footer__menu-btn(
+                    href="javascript:void(0);"
+                    title!= arrMenuName[i]
+                )!= arrMenuName[i]
+
+
+mixin logotype(imageSizeHeight)
+    -
+        var heightImage = imageSizeHeight / 2;
+
+    .footer_logotype
+        .logotype
+            img(
+                src="./image/logotype.png"
+                title="Logotype Captain Growth"
+                class="logotype__img"
+                height!= heightImage
+            )
+
+
+mixin copyright()
+    .footer_copyright
+        p.copyright!= "©Copyright 2017"
+
+
+mixin social()
+    .footer_social
+        .social
+            a.social__btn.social__btn_facebook(
+                href= "javascript:void(0);"
+                title= "Facebook"
+            )
+
+//- ====================
+//- MAIN
+//- ====================
+footer.footer#footer
+    .container
+
+        .footer_row
+            .footer_left
+                +logotype(104)
+                +copyright()
+
+            .footer_right
+                +footerMenu(footerMenuArr)
+                +social()

@@ -1,5 +1,6 @@
 const gulp      =   require('gulp')
     , plumber   =   require('gulp-plumber')
+    , notify    =   require('gulp-notify')
     , imagemin  =   require('gulp-tinypng');
 
 
@@ -29,6 +30,11 @@ exports.mainImageTask = function (taskName) {
             )
             .pipe(
                 gulp.dest(distFolderDeveloper)
-            );
+            )
+            .pipe(notify(
+                {
+                    message: 'Tiny image task complete'
+                }
+            ))
     });
 };

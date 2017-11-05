@@ -6,6 +6,7 @@ const gulp              =   require('gulp')
     , debug             =   require('gulp-debug')
     , babel             =   require('gulp-babel')
     , concat            =   require('gulp-concat')
+    , notify            =   require('gulp-notify')
     , changedInPlace    =   require('gulp-changed-in-place');
 
 
@@ -76,5 +77,10 @@ exports.mainScriptTask = function (taskName, fileName) {
             //.pipe(
             //    gulp.dest(distFolderProduction)
             //);
+            .pipe(notify(
+                {
+                    message: 'JS task complete'
+                }
+            ))
     });
 };

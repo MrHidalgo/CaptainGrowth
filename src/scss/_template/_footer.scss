@@ -1,0 +1,80 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.footer {
+	min-height: 220px;
+	
+	// POSITION
+	&_row {
+		font-size: 0;
+	}
+	&_left,
+	&_right {
+		display: inline-block;
+		vertical-align: top;
+		
+		font-size: 18px;
+	}
+	&_left {
+		width: 470px;
+		padding-top: 78px;
+	}
+	&_right {
+		width: calc(#{$w-all} - 470px);
+		padding-top: 84px;
+	}
+	
+	// MODIFY
+	&_logotype {
+		.logotype__img {
+			display: block;
+		}
+	}
+	
+	&_copyright {
+		padding-top: 28px;
+		
+		.copyright {
+			font-size: 14px;
+			color: $c-slateGrey;
+		}
+	}
+	.footer_social {
+		padding-top: 30px;
+		
+		.social {
+			&__btn {
+				display: block;
+				float: right;
+				&_facebook {
+					@include retina-sprite($sp-i-facebook-group);
+				}
+			}
+		}
+	}
+	
+	// MENU
+	&__menu {
+		font-size: 0;
+		
+		&-item {
+			display: inline-block;
+			vertical-align: top;
+			padding-right: 29px;
+			
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		&-btn {
+			font-size: 16px;
+			color: $c-slateGrey;
+		}
+	}
+}

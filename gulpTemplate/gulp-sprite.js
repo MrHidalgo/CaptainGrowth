@@ -5,6 +5,7 @@ const gulp                =   require('gulp')
     , pngComp           =   require('imagemin-pngquant')
     , changedInPlace    =   require('gulp-changed-in-place')
     , debug             =   require('gulp-debug')
+    , notify            =   require('gulp-notify')
     , imagemin          =   require('gulp-tinypng');
 
 
@@ -31,6 +32,11 @@ exports.imageSprites = function (taskName) {
 
 
         const spriteData = gulp.src(src)
+            .pipe(notify(
+                {
+                    message: 'Sprite task complete'
+                }
+            ))
             .pipe(
                 plumber(plumberOption)
             )

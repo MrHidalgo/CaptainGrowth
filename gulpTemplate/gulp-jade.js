@@ -9,6 +9,7 @@ const gulp              =   require('gulp')
     , path              =   require('path')
     , foreach           =   require('gulp-foreach')
     , debug             =   require('gulp-debug')
+    , notify            =   require('gulp-notify')
     , changedInPlace    =   require('gulp-changed-in-place');
 
 
@@ -79,6 +80,11 @@ exports.jadeMainTask = function (taskName) {
             )
             .pipe(
                 gulp.dest(distFolderDeveloper)
-            );
+            )
+            .pipe(notify(
+                {
+                    message: 'JADE task complete'
+                }
+            ));
     })
 };
