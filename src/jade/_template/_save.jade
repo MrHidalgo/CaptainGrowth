@@ -1,0 +1,110 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var saveTitle = "and optimizes the whole marketing funnel";
+    var saveTitleGradient = "It saves up to 50% of your ad spendings";
+    var saveBlockTitle = [
+        "E-commerce",
+        "Agencies",
+        "Digital marketers"
+    ];
+    var saveIconName = [
+        "ecommerce",
+        "agencies",
+        "digitalMarketers"
+    ];
+    var saveNum = [
+        "01",
+        "02",
+        "03"
+    ];
+    var saveArrData = [
+        [
+            "Optimize your ad spendings",
+            "Get higher conversion rate and lower CPA",
+            "Make data driven decisions"
+        ],
+        [
+            "Control multiple projects better - never miss on important things in your campaigns",
+            "Get a competitive advantage with the AI tool",
+            "Outperfrom campaigns KPIs - bring added value to a client"
+        ],
+        [
+            "Get valuable analytics effortlessly",
+            "Be aware of important changes and trends in your data",
+            "React fast and leverage opprotunities"
+        ]
+    ];
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin saveBlock(arrTitle, arrIconName, arrNum, arrList)
+    -for(var i = 0; i < arrTitle.length; i++)
+        .save__block(class="save__block_" + i)
+
+            .save__block-header.clearfix
+                i.save__block-icon(class="save__block-icon--" + arrIconName[i])
+                span.save__block-num!= arrNum[i]
+
+            p.save__block-title!= arrTitle[i]
+
+            ul.save__block-list
+                -for(var j = 0; j < arrList[i].length; j++)
+                    li.save__block-item
+                        i.save__block-item--icon
+                        span.save__block-item--text!= arrList[i][j]
+
+
+
+//- ====================
+//- MAIN
+//- ====================
+section.save#save
+
+    .save_img
+        -
+            var imgSizeLeft = (752 / 2);
+            var imgSizeRight = (1456 / 2);
+            var imgSmallSmoothSize = (112 / 2);
+            var imgBigSmoothSize = (174 / 2);
+
+        img(
+            src="./image/img-circle-2_some.png"
+            title=""
+            class="save_img-left"
+            height!= imgSizeLeft
+        )
+        img(
+            src="./image/img-circle-3_some.png"
+            title=""
+            class="save_img-right"
+            height!= imgSizeRight
+        )
+        img(
+            src="./image/img-circleS-big_some.png"
+            class="save_img-bigS save_img-bigS_0"
+            title=""
+            height!= imgBigSmoothSize
+        )
+        img(
+            src="./image/img-circleS-big_some.png"
+            class="save_img-bigS save_img-bigS_1"
+            title=""
+            height!= imgBigSmoothSize
+        )
+        img(
+            src="./image/img-circleS-small_some.png"
+            class="save_img-smallS"
+            title=""
+            height!= imgSmallSmoothSize
+        )
+
+    .container
+
+        +mainTitle(2, saveTitle, saveTitleGradient)
+
+        .save__block-wrap
+            +saveBlock(saveBlockTitle, saveIconName, saveNum, saveArrData)

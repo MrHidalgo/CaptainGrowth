@@ -1,0 +1,137 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.save {
+	position: relative;
+	padding: {
+		top: 45px;
+		bottom: 140px;
+	}
+	
+	// POSITION
+	
+	// MODIFY
+	.main__title {
+		margin-bottom: 110px;
+	}
+	&_img {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include mixinDimensions($w-all);
+		
+		&-left,
+		&-right,
+		&-bigS,
+		&-smallS {
+			z-index: 0;
+			position: absolute;
+		}
+		&-left {
+			top: 50%;
+			margin-top: -(752px / 4);
+			left: 0;
+		}
+		&-right {
+			top: 0;
+			right: 0;
+		}
+		&-bigS {
+			&_0 {
+				top: 75%;
+				left: 50px;
+			}
+			&_1 {
+				top: 10%;
+				right: 345px;
+			}
+		}
+		&-smallS {
+			top: 25%;
+			right: 50px;
+		}
+	}
+	
+	// BLOCK
+	&__block {
+		width: 370px;
+		min-height: 365px;
+		padding: 35px 35px 15px;
+		border-radius: 15px;
+		background-color: $c-whiteSmoke;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		
+		&-wrap {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		
+		&-header {}
+		&-icon {
+			float: left;
+			
+			&--ecommerce {
+				@include retina-sprite($sp-i-ecommerce-group);
+			}
+			&--agencies {
+				@include retina-sprite($sp-i-agencies-group);
+			}
+			&--digitalMarketers {
+				@include retina-sprite($sp-i-digital-marketers-group);
+			}
+		}
+		&-num {
+			float: right;
+			margin-top: 10px;
+			color: $c-royalBlue;
+			font: {
+				size: 14px;
+				family: $f-RubikBlack;
+			}
+		}
+		&-title {
+			font: {
+				size: 22px;
+				family: $f-RubikMedium;
+			}
+			color: $c-eclipse;
+			margin: {
+				top: 25px;
+				bottom: 35px;
+			};
+		}
+		&-list {}
+		&-item {
+			margin-bottom: 25px;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+			
+			&--icon,
+			&--text {
+				display: inline-block;
+				vertical-align: top;
+			}
+			&--icon {
+				margin: {
+					top: 7px;
+					right: 10px;
+				}
+				@include retina-sprite($sp-i-list-circle-group);
+			}
+			&--text {
+				font-size: 18px;
+				width: calc(#{$w-all} - 20px);
+			}
+		}
+	}
+}
