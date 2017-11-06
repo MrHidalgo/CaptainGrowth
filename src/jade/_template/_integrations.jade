@@ -1,0 +1,59 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var integrationsTitleGradient = "Integrations";
+    var integrationsArrTitle = [
+        "Facebook Ads",
+        "Google Adwords",
+        "Google Analytics"
+    ];
+    var integrationsArrIcon = [
+        "facebook",
+        "googleAdwords",
+        "googleAnalytics"
+    ];
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin integrationsBlock(arrTitle, arrIcon)
+    .integrations__block-wrap
+        -for(var i = 0; i < arrTitle.length; i++)
+            .integrations__block(class="integrations__block-" + i)
+                i.integrations__block-icon(class="integrations__block-icon--" + arrIcon[i])
+                p.integrations__block-title!= arrTitle[i]
+
+                if(i === 0)
+                    a.integrations__block-text.integrations__block-text_connect(
+                        href="javascript:void(0);"
+                        title="Connect"
+                    )!= "Connect"
+                else
+                    span.integrations__block-text.integrations__block-text_big!= "soon"
+                    span.integrations__block-dot
+                    span.integrations__block-dot
+                    span.integrations__block-dot
+
+
+//- ====================
+//- MAIN
+//- ====================
+section.integrations#integrations
+
+    .integrations_img
+        -
+            var imgSizeRight = (1456 / 2);
+
+        img(
+            src="./image/img-circle-3_some.png"
+            title=""
+            class="integrations_img-right"
+            height!= imgSizeRight
+        )
+
+    .container
+        +mainTitle(3, false, integrationsTitleGradient)
+
+        +integrationsBlock(integrationsArrTitle, integrationsArrIcon)
