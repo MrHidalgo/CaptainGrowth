@@ -12,7 +12,7 @@
     var socialName = [
         "facebook",
         "googleDrive",
-        "googleAnalytics"
+        "googleAnalyticsGray"
     ];
 
 
@@ -23,12 +23,14 @@ mixin headerMainImage(imageSizeHeight)
     -
         var imageHeight = (imageSizeHeight / 2);
 
-    img(
-        src="./image/img-header.png"
-        class="header__img"
-        title=""
-        height!= imageHeight
-    )
+    i.header__img
+
+    //img(
+    //    src="./image/img-header.png"
+    //    class="header__img"
+    //    title=""
+    //    height!= imageHeight
+    //)
 
 
 mixin login(arrName)
@@ -83,24 +85,28 @@ header.header#header
             var imgSmallSmoothSize = (112 / 2);
             var imgBigSmoothSize = (174 / 2);
 
-        img(
-            src="./image/img-circle_some.png"
-            class="header_img-big"
-            title=""
-            height!= imgBigSize
-        )
-        img(
-            src="./image/img-circleS-small_some.png"
-            class="header_img-smallS"
-            title=""
-            height!= imgSmallSmoothSize
-        )
-        img(
-            src="./image/img-circleS-big_some.png"
-            class="header_img-bigS"
-            title=""
-            height!= imgBigSmoothSize
-        )
+        i.header_img-big
+        i.header_img-smallS
+        i.header_img-bigS
+
+        //img(
+        //    src="./image/img-circle_some.png"
+        //    class="header_img-big"
+        //    title=""
+        //    height!= imgBigSize
+        //)
+        //img(
+        //    src="./image/img-circleS-small_some.png"
+        //    class="header_img-smallS"
+        //    title=""
+        //    height!= imgSmallSmoothSize
+        //)
+        //img(
+        //    src="./image/img-circleS-big_some.png"
+        //    class="header_img-bigS"
+        //    title=""
+        //    height!= imgBigSmoothSize
+        //)
 
     .header__row
         +headerMainImage(1568)

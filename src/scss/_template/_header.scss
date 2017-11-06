@@ -9,10 +9,10 @@
 ///
 .header {
 	position: relative;
-	min-height: 784px + 140px;
+	min-height: 882px;
 	padding: {
-		top: 55px;
-		bottom: 140px;
+		top: 57px;
+		bottom: 127px;
 	}
 	
 	// POSITION
@@ -25,7 +25,7 @@
 		}
 	}
 	.container-default {
-		padding-top: 155px;
+		padding-top: 161px;
 	}
 	&_img {
 		z-index: 0;
@@ -56,14 +56,25 @@
 	
 	// IMG
 	&__img {
-		position: absolute;
-		top: 0;
-		right: 0;
+		//position: absolute;
+		//top: 0;
+		//right: 0;
+		//@include mixinDimensions((1988px / 2), (1568px / 2));
+		//background-image: url("../image/img-header.png");
+		//background-position: calc(1920px - (1988px / 2)) 0;
+		//background-repeat: no-repeat;
+		//background-size: 994px;
+		//background-attachment: fixed;
 	}
 	
 	// LOGIN
 	&__login {
 		float: right;
+		padding: {
+			right: 20px;
+			top: 10px;
+		}
+		
 		
 		&-btn {
 			display: inline-block;
@@ -94,7 +105,7 @@
 					content: "";
 					position: absolute;
 					top: 5px;
-					right: -20px;
+					right: -25px;
 					@include mixinDimensions(1px, 18px);
 					background-color: $c-slateGrey;
 				}
@@ -125,6 +136,10 @@
 		
 		&_letter {
 			display: inline-block;
+			margin: {
+				left: 1.5px;
+				right: 1.5px;
+			};
 			@include retina-sprite($sp-i-letter-o-group);
 		}
 	}
@@ -133,14 +148,14 @@
 	&__subtitle {
 		font-size: 18px;
 		line-height: 1.2;
-		margin-bottom: 50px;
+		margin-bottom: 47px;
 	}
 	
 	// BTN
 	&__btn {
 		position: relative;
 		@include mixinDimensions(455px, 84px);
-		margin-bottom: 70px;
+		margin-bottom: 75px;
 		background-color: $c-mediumTurquoise;
 		border: none;
 		border-radius: 5em;
@@ -172,7 +187,9 @@
 			width: 90px;
 			
 			&:first-child {
-				padding-top: 20px;
+				padding-top: 21px;
+				width: 123px;
+				font-size: 16px;
 			}
 		}
 		
@@ -194,8 +211,8 @@
 			}
 			&--text {
 				position: absolute;
-				left: -5px;
-				bottom: -25px;
+				left: -2px;
+				bottom: -30px;
 				font-size: 14px;
 				color: $c-logan;
 				transform: rotate(-90deg);
@@ -206,17 +223,20 @@
 				}
 			}
 			&_googleDrive {
-				padding-top: 15px;
+				padding: {
+					top: 16px;
+					left: 5px;
+				}
 				
 				.header__social-btn--icon {
 					@include retina-sprite($sp-i-google-drive-group);
 				}
 			}
-			&_googleAnalytics {
+			&_googleAnalyticsGray {
 				padding-top: 15px;
 				
 				.header__social-btn--icon {
-					@include retina-sprite($sp-i-google-analytics-group);
+					@include retina-sprite($sp-i-google-analytics-gray-group);
 				}
 			}
 		}

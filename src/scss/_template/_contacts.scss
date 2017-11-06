@@ -18,7 +18,7 @@
 	}
 	&_row {
 		font-size: 0;
-		padding-left: 415px;
+		padding-left: 400px;
 		color: $c-white;
 	}
 	&_right,
@@ -41,7 +41,7 @@
 	&__circle {
 		position: absolute;
 		top: -147px;
-		left: -45px;
+		left: -60px;
 		@include mixinDimensions(526px);
 		border-radius: $w-all;
 		border: {

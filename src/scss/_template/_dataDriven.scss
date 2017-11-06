@@ -9,7 +9,7 @@
 ///
 .data {
 	position: relative;
-	padding-bottom: 110px;
+	padding-bottom: 120px;
 	
 	// POSITION
 	
@@ -50,6 +50,7 @@
 	// SUBTITLE
 	&__subTitle {
 		font-size: 18px;
-		margin-bottom: 65px;
+		margin-bottom: 57px;
+		line-height: 1.2;
 	}
 }

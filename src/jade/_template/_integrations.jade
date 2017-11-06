@@ -28,7 +28,7 @@ mixin integrationsBlock(arrTitle, arrIcon)
                 if(i === 0)
                     a.integrations__block-text.integrations__block-text_connect(
                         href="javascript:void(0);"
-                        title="Connect"
+                        title=""
                     )!= "Connect"
                 else
                     span.integrations__block-text.integrations__block-text_big!= "soon"
@@ -53,7 +53,8 @@ section.integrations#integrations
             height!= imgSizeRight
         )
 
-    .container
+    .container-default
+
         +mainTitle(3, false, integrationsTitleGradient)
 
         +integrationsBlock(integrationsArrTitle, integrationsArrIcon)

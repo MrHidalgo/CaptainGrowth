@@ -9,7 +9,7 @@
 ///
 .insight {
 	min-height: 532px;
-	padding-top: 147px;
+	padding-top: 142px;
 	
 	// POSITION
 	&__row {
@@ -18,7 +18,7 @@
 	}
 	&_row {
 		font-size: 0;
-		padding-left: 550px;
+		padding-left: 570px;
 		color: $c-white;
 	}
 	&_container {
@@ -32,7 +32,7 @@
 	&__circle {
 		position: absolute;
 		top: -147px;
-		left: -45px;
+		left: -60px;
 		@include mixinDimensions(526px);
 		border-radius: $w-all;
 		border: {

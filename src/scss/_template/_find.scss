@@ -52,6 +52,7 @@
 		}
 	}
 	.main__title {
+		padding-top: 30px;
 		margin-bottom: 120px;
 	}
 	
@@ -59,7 +60,7 @@
 	&__block {
 		width: 370px;
 		min-height: 275px;
-		padding: 35px 35px 15px;
+		padding: 30px 30px 15px;
 		border-radius: 15px;
 		background-color: $c-whiteSmoke;
 		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);

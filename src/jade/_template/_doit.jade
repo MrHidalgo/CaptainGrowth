@@ -40,7 +40,7 @@ mixin doitList(arrText, arrNum)
                         span.doit__item-circle--num!= arrNum[i]
 
                     if(i !== arrText.length - 1)
-                        -for(var j = 0; j < 8; j++)
+                        -for(var j = 0; j < 9; j++)
                             i.doit__item-dot
 
                 .doit__item_right!= arrText[i]
@@ -81,7 +81,7 @@ section.doit#doit
             height!= imgSmallSmoothSize
         )
 
-    .container
+    .container-default
 
         .doit_row
             .doit_left
