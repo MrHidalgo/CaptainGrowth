@@ -100,6 +100,7 @@
 			}
 			color: $c-eclipse;
 			line-height: 1.2;
+			margin-bottom: 10px;
 		}
 		&-subTitle {
 			font: {
@@ -107,7 +108,7 @@
 				family: $f-RubikMedium;
 			}
 			color: $c-royalBlue;
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 		}
 		&-text {
 			font: {
@@ -115,7 +116,18 @@
 			}
 			
 			&_color {
+				display: block;
+				margin: {
+					top: 10px;
+					bottom: 10px;
+				}
+				font: {
+					size: 28px;
+					family: $f-RubikMedium;
+				}
 				color: $c-royalBlue;
+				line-height: 1.2;
+				
 			}
 		}
 		&-arrow {
@@ -142,7 +154,7 @@
 	// BTN
 	&__btn {
 		position: relative;
-		left: -110px;
+		left: -40px;
 		display: block;
 		@include mixinDimensions(455px, 84px);
 		margin: {
