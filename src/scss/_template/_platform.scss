@@ -1,0 +1,84 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.platform {
+	position: relative;
+	padding-bottom: 110px;
+	
+	// POSITION
+	// MODIFY
+	&_img {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include mixinDimensions($w-all);
+		
+		&-left,
+		&-bigS {
+			z-index: 0;
+			position: absolute;
+		}
+		&-left {
+			top: -50px;
+			left: 0;
+		}
+		&-bigS {
+			&_0 {
+				top: 40%;
+				left: 50px;
+			}
+			&_1 {
+				top: 65%;
+				right: 50px;
+			}
+		}
+	}
+	.main__title {
+		margin-bottom: 120px;
+	}
+	
+	// BLOCK
+	&__block {
+		margin-right: 70px;
+		
+		&-wrap {
+			display: flex;
+			flex-direction: row;
+			align-items: baseline;
+			justify-content: flex-start;
+		}
+		&-image,
+		&-num,
+		&-title {
+			margin-bottom: 15px;
+		}
+		&-image {
+			display: block;
+		}
+		&-num {
+			color: $c-royalBlue;
+			font: {
+				size: 14px;
+				family: $f-RubikBlack;
+			}
+		}
+		&-title {
+			font: {
+				size: 22px;
+				family: $f-RubikMedium;
+			}
+			color: $c-eclipse;
+		}
+		&-text {
+			font-size: 18px;
+			line-height: 1.2;
+		}
+	}
+}

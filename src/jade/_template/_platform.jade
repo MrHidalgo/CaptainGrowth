@@ -1,0 +1,85 @@
+//- ====================
+//- DATA
+//- ====================
+-
+	var platformTitle = "- be aware of what matters.";
+	var platformTitleGradient = "Any time, on any platform";
+	var platformBlockTitle = [
+		"Insights feed",
+		"E-mail reports",
+		"Slack bot"
+	];
+	var platformNum = [
+		"01",
+		"02",
+		"03"
+	];
+	var platformText = [
+		"For deep and detailed insights </br> exploration",
+		"To summarize your insights </br> weekly or monthly",
+		"For urgent issues"
+	];
+	var platformImageSrc = [
+		"./image/img-insightsFeed.png",
+		"./image/img-emailReports.png",
+		"./image/img-slackBot.png"
+	];
+	var platformImageSize = [
+		(728 / 2),
+		(728 / 2),
+		(450 / 2)
+	];
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin platformBlock(arrTitle, arrNum, arrText, arrImageSrc, arrImageSize)
+	.platform__block-wrap
+		- for(var i = 0; i < arrTitle.length; i++)
+			.platform__block(class="platform__block-" + i)
+				img(
+					src!= arrImageSrc[i]
+					class="platform__block-image"
+					title!= arrTitle[i]
+					height!= arrImageSize[i]
+				)
+
+				p.platform__block-num!= arrNum[i]
+				p.platform__block-title!= arrTitle[i]
+				p.platform__block-text!= arrText[i]
+
+//- ====================
+//- MAIN
+//- ====================
+section.platform#platform
+
+	.platform_img
+		-
+			var imgSizeLeft = (752 / 2);
+			var imgBigSmoothSize = (174 / 2);
+
+		img(
+			src="./image/img-circle-2_some.png"
+			title=""
+			class="platform_img-left"
+			height!= imgSizeLeft
+		)
+		img(
+			src="./image/img-circleS-big_some.png"
+			class="platform_img-bigS platform_img-bigS_0"
+			title=""
+			height!= imgBigSmoothSize
+		)
+		img(
+			src="./image/img-circleS-big_some.png"
+			class="platform_img-bigS platform_img-bigS_1"
+			title=""
+			height!= imgBigSmoothSize
+		)
+
+	.container
+
+		+mainTitle(2, platformTitle, platformTitleGradient)
+
+		+platformBlock(platformBlockTitle, platformNum, platformText, platformImageSrc, platformImageSize)

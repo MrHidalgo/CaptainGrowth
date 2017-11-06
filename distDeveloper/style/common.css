@@ -320,7 +320,7 @@
 
  .find__block-item--text { display: inline-block; vertical-align: top; font-size: 18px; }
 
- .integrations { position: relative; padding-top: 140px; padding-bottom: 300px; }
+ .integrations { position: relative; padding-top: 140px; padding-bottom: 250px; }
 
  .integrations_img { z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
@@ -365,6 +365,34 @@
  .integrations__block-dot:nth-of-type(3) { opacity: .75; }
 
  .integrations__block-dot:nth-of-type(4) { opacity: .5; }
+
+ .platform { position: relative; padding-bottom: 110px; }
+
+ .platform_img { z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+ .platform_img-left, .platform_img-bigS { z-index: 0; position: absolute; }
+
+ .platform_img-left { top: -50px; left: 0; }
+
+ .platform_img-bigS_0 { top: 40%; left: 50px; }
+
+ .platform_img-bigS_1 { top: 65%; right: 50px; }
+
+ .platform .main__title { margin-bottom: 120px; }
+
+ .platform__block { margin-right: 70px; }
+
+ .platform__block-wrap { display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -moz-box-orient: horizontal; -moz-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-align: baseline; -webkit-align-items: baseline; -moz-box-align: baseline; -ms-flex-align: baseline; align-items: baseline; -webkit-box-pack: start; -webkit-justify-content: flex-start; -moz-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+
+ .platform__block-image, .platform__block-num, .platform__block-title { margin-bottom: 15px; }
+
+ .platform__block-image { display: block; }
+
+ .platform__block-num { color: #3564db; font-size: 14px; font-family: "Rubik-Black"; }
+
+ .platform__block-title { font-size: 22px; font-family: "Rubik-Medium"; color: #3e3d3d; }
+
+ .platform__block-text { font-size: 18px; line-height: 1.2; }
 
  .contacts { min-height: 532px; padding-top: 147px; }
 
