@@ -1,0 +1,106 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var findTitle = "can the Captain find?";
+    var findTitleGradient = "Which insights";
+    var findArrNum = [
+        "01",
+        "02",
+        "03"
+    ];
+    var findArrTitle = [
+        "Timeseries",
+        "Neighbours ",
+        "Competitors"
+    ];
+    var findArrIcon = [
+        "timeseries",
+        "neighbours ",
+        "competitors"
+    ];
+    var findArrText = [
+        "Something gets better or worse than it used to be",
+        "Something gets better or worse than it used to be",
+        "Some of your metrics differ too much from industry averages"
+    ];
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin findBlock(arrTitle, arrIconName, arrNum, arrList)
+    -for(var i = 0; i < arrTitle.length; i++)
+        .find__block(class="find__block_" + i)
+
+            .find__block-header.clearfix
+                i.find__block-icon(class="find__block-icon--" + arrIconName[i])
+                span.find__block-num!= arrNum[i]
+
+            p.find__block-title.clearfix
+                != arrTitle[i]
+                if(i === arrTitle.length - 1)
+                    button(
+                        type="button"
+                        class="find__block-btn"
+                        title="soon..."
+                    )!= "soon"
+                        i.find__block-btn--dot
+                        i.find__block-btn--dot
+                        i.find__block-btn--dot
+
+            ul.find__block-list
+                li.find__block-item
+                    span.find__block-item--text!= arrList[i]
+
+
+//- ====================
+//- MAIN
+//- ====================
+section.find#find
+
+    .find_img
+        -
+            var imgSizeLeft = (1458 / 2);
+            var imgSizeRight = (752 / 2);
+            var imgSmallSmoothSize = (112 / 2);
+            var imgBigSmoothSize = (174 / 2);
+
+        img(
+            src="./image/img-circle-0_some.png"
+            title=""
+            class="find_img-left"
+            height!= imgSizeLeft
+        )
+        img(
+            src="./image/img-circle-1_some.png"
+            title=""
+            class="find_img-right"
+            height!= imgSizeRight
+        )
+        img(
+            src="./image/img-circleS-big_some.png"
+            class="doit_img-bigS find_img-bigS_0"
+            title=""
+            height!= imgBigSmoothSize
+        )
+        img(
+            src="./image/img-circleS-big_some.png"
+            class="find_img-bigS find_img-bigS_1"
+            title=""
+            height!= imgBigSmoothSize
+        )
+        img(
+            src="./image/img-circleS-small_some.png"
+            class="find_img-smallS"
+            title=""
+            height!= imgSmallSmoothSize
+        )
+
+
+    .container
+
+        +mainTitle(2, findTitle, findTitleGradient)
+
+        .find__block-wrap
+            +findBlock(findArrTitle, findArrIcon, findArrNum, findArrText)

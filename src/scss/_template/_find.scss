@@ -1,0 +1,145 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.find {
+	position: relative;
+	padding-bottom: 260px;
+	
+	// POSITION
+	// MODIFY
+	&_img {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include mixinDimensions($w-all);
+		
+		&-left,
+		&-right,
+		&-bigS,
+		&-smallS {
+			z-index: 0;
+			position: absolute;
+		}
+		&-left {
+			top: -10%;
+			left: 0;
+		}
+		&-right {
+			top: 40%;
+			right: 0;
+			margin-top: -(752px / 4);
+		}
+		&-bigS {
+			&_0 {
+				top: 75%;
+				left: 15px;
+			}
+			&_1 {
+				top: 15%;
+				right: 200px;
+			}
+		}
+		&-smallS {
+			top: 80%;
+			right: 15px;
+		}
+	}
+	.main__title {
+		margin-bottom: 120px;
+	}
+	
+	// BLOCK
+	&__block {
+		width: 370px;
+		min-height: 275px;
+		padding: 35px 35px 15px;
+		border-radius: 15px;
+		background-color: $c-whiteSmoke;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		
+		&-wrap {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		&-icon {
+			float: left;
+			
+			&--timeseries {
+				@include retina-sprite($sp-i-timeseries-group);
+			}
+			&--neighbours {
+				@include retina-sprite($sp-i-neighbours-group);
+			}
+			&--competitors {
+				@include retina-sprite($sp-i-competitors-group);
+			}
+		}
+		&-num {
+			float: right;
+			color: $c-royalBlue;
+			font: {
+				size: 14px;
+				family: $f-RubikBlack;
+			}
+		}
+		&-title {
+			font: {
+				size: 22px;
+				family: $f-RubikMedium;
+			}
+			color: $c-eclipse;
+			margin: {
+				top: 25px;
+				bottom: 35px;
+			};
+		}
+		&-btn {
+			float: right;
+			position: relative;
+			top: -4px;
+			@include mixinDimensions(132px, 39px);
+			background-color: $c-royalBlue;
+			border-radius: 2em;
+			border: none;
+			color: $c-white;
+			font-size: 18px;
+			
+			&--dot {
+				display: inline-block;
+				vertical-align: middle;
+				@include mixinDimensions(4px);
+				margin: {
+					left: 3px;
+					right: 3px;
+				};
+				border-radius: $w-all;
+				background-color: $c-white;
+				
+				&:nth-of-type(1) {
+					margin-left: 10px;
+				}
+				&:nth-of-type(2) {
+					opacity: .75;
+				}
+				&:nth-of-type(3) {
+					opacity: .5;
+				}
+			}
+		}
+		&-item {
+			&--text {
+				display: inline-block;
+				vertical-align: top;
+				font-size: 18px;
+			}
+		}
+	}
+}
