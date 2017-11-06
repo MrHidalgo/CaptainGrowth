@@ -1,0 +1,104 @@
+//- ====================
+//- DATA
+//- ====================
+-
+	var changeTitle = "analytics goes (runs).";
+	var changeTitleGradient = "We change the way";
+	var changeArrTitle = [
+		"Old-school analytics",
+		"Captain Growth analytics"
+	];
+	var changeArrSubTitle = [
+		"80% of time - analysis",
+		"100% of time - action"
+	];
+	var changeArrBadge = [
+		"old",
+		"new"
+	];
+	var changeArrText = [
+		"You spend time researching charts, tables, dashboards and reports. The bigger part of data there is useless, and you go on until you find an insight. </br> <span class='change__block-text_color'>20% time - action</span> </br> Being limited on time, you act on thing you have noticed and you have time to fix.",
+		"You got a feed of actionable insights extracted from your data and sorted by importance. No need to explore data anymore - go straight to explaining it and acting on it."
+	];
+	var changeArrIcon = [
+		"analysis",
+		"action"
+	];
+	var changeBtn = "Captain, please change it!";
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin changeBlock(arrTitle, arrSubTitle, arrBadge, arrText, arrIcon)
+	.change__block-wrap
+		-for(var i = 0; i < arrTitle.length; i++)
+			.change__block(class="change__block-" + i)
+				.change__block-header.clearfix
+					i.change__block-icon(class="change__block-icon--" + arrIcon[i])
+
+					span.change__block-badge!= arrBadge[i]
+
+				p.change__block-title!= arrTitle[i]
+				p.change__block-subTitle!= arrSubTitle[i]
+
+				p.change__block-text!= arrText[i]
+
+				if(i === 0)
+					.change__block-arrow
+						i.change__block-arrow-0
+						i.change__block-arrow-1
+						i.change__block-arrow-2
+
+
+mixin changeBtn(btnValue)
+	button(
+		type="button"
+		class="change__btn"
+		title!= btnValue
+	)!= btnValue
+
+//- ====================
+//- MAIN
+//- ====================
+section.change#change
+
+	.change_img
+		-
+			var imgSizeLeft = (1458 / 2);
+			var imgSizeRight = (1052 / 2);
+			var imgSmallSmoothSize = (112 / 2);
+			var imgBigSmoothSize = (174 / 2);
+
+		img(
+			src="./image/img-circle-0_some.png"
+			title=""
+			class="change_img-left"
+			height!= imgSizeLeft
+		)
+		img(
+			src="./image/img-circle-4_some.png"
+			title=""
+			class="change_img-right"
+			height!= imgSizeRight
+		)
+		img(
+			src="./image/img-circleS-big_some.png"
+			class="change_img-bigS"
+			title=""
+			height!= imgBigSmoothSize
+		)
+		img(
+			src="./image/img-circleS-small_some.png"
+			class="change_img-smallS"
+			title=""
+			height!= imgSmallSmoothSize
+		)
+
+	.container
+
+		+mainTitle(2, changeTitle, changeTitleGradient)
+
+		+changeBlock(changeArrTitle, changeArrSubTitle, changeArrBadge, changeArrText, changeArrIcon)
+
+		+changeBtn(changeBtn)
