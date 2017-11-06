@@ -98,6 +98,12 @@
 			}
 			margin-bottom: 30px;
 			font-size: 18px;
+			transition: border-color 0.25s ease-in-out;
+			
+			&:focus {
+				border-color: $c-mediumTurquoise;
+				transition: border-color 0.25s ease-in-out;
+			}
 			
 			&::-webkit-input-placeholder {
 				color: $c-white;
@@ -117,33 +123,13 @@
 			box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
 			background-color: $c-mediumTurquoise;
 			font-size: 22px;
+			outline: none;
+			transition: background-color 0.25s ease-in-out;
+			
+			&:active {
+				background-color: $c-darkSlateBlue;
+				transition: background-color 0.25s ease-in-out;
+			}
 		}
 	}
 }
-
-.Rounded_Rectangle_14 {
-	border-width: 2px;
-	border-color: rgb(255, 255, 255);
-	border-style: solid;
-	position: absolute;
-	left: 1245px;
-	top: 7653px;
-	width: 396px;
-	height: 52px;
-	z-index: 23;
-}
-
-.Rounded_Rectangle_6_copy_2 {
-	background-image: -moz-linear-gradient( -178deg, rgb(81,213,207) 0%, rgb(72,65,153) 100%);
-	background-image: -webkit-linear-gradient( -178deg, rgb(81,213,207) 0%, rgb(72,65,153) 100%);
-	background-image: -ms-linear-gradient( -178deg, rgb(81,213,207) 0%, rgb(72,65,153) 100%);
-	box-shadow: 0px 15px 48px 0px rgba(53, 99, 219, 0.14);
-	position: absolute;
-	left: 1247px;
-	top: 7739px;
-	width: 400px;
-	height: 56px;
-	z-index: 26;
-}
-
-

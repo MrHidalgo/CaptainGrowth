@@ -112,6 +112,13 @@
 			border: none;
 			color: $c-white;
 			font-size: 18px;
+			outline: none;
+			transition: background-color 0.25s ease-in-out;
+			
+			&:active {
+				background-color: $c-darkSlateBlue;
+				transition: background-color 0.25s ease-in-out;
+			}
 			
 			&--dot {
 				display: inline-block;

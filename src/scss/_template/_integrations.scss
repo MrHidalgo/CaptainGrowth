@@ -78,6 +78,23 @@
 			&_connect {
 				display: inline-block;
 				
+				&:hover {
+					color: $c-mediumTurquoise;
+					transition: color 0.25s ease-in-out;
+					
+					&:before {
+						background-color: $c-mediumTurquoise;
+						transition: background-color 0.25s ease-in-out;
+					}
+				}
+				&:active {
+					&:before {
+						width: 65%;
+						margin-left: -(65% / 2);
+						transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out;
+					}
+				}
+				
 				&:before {
 					content: "";
 					position: absolute;
@@ -86,6 +103,7 @@
 					margin-left: -(93% / 2);
 					@include mixinDimensions(93%, 1px);
 					background-color: $c-royalBlue;
+					transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out;
 				}
 			}
 			&_big {

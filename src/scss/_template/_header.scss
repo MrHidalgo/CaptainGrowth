@@ -90,6 +90,24 @@
 					right: 20px;
 				}
 				color: $c-royalBlue;
+				transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+				
+				&:hover {
+					color: $c-mediumTurquoise;
+					transition: color 0.25s ease-in-out;
+					
+					&:before {
+						background-color: $c-mediumTurquoise;
+						transition: background-color 0.25s ease-in-out;
+					}
+				}
+				&:active {
+					&:before {
+						width: 24px;
+						margin-left: -12px;
+						transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out;
+					}
+				}
 				
 				&:before {
 					content: "";
@@ -99,6 +117,7 @@
 					@include mixinDimensions(36px, 1px);
 					margin-left: -18px;
 					background-color: $c-royalBlue;
+					transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out;
 				}
 				
 				&:after {
@@ -119,6 +138,16 @@
 					right: 10px;
 				};
 				color: $c-white;
+				transition: background-color 0.25s ease-in-out;
+				
+				&:hover {
+					background-color: $c-royalBlue;
+					transition: background-color 0.25s ease-in-out;
+				}
+				&:active {
+					background-color: $c-darkSlateBlue;
+					transition: background-color 0.25s ease-in-out;
+				}
 			}
 		}
 	}
@@ -162,7 +191,24 @@
 		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
 		font-size: 22px;
 		color: $c-white;
+		outline: none;
+		transition: background-color 0.25s ease-in-out;
 		
+		&:hover,
+		&:active {
+			&:before {
+				opacity: 0;
+				transition: opacity 0.25s ease-in-out;
+			}
+		}
+		&:hover {
+			background-color: $c-royalBlue;
+			transition: background-color 0.25s ease-in-out;
+		}
+		&:active {
+			background-color: $c-darkSlateBlue;
+			transition: background-color 0.25s ease-in-out;
+		}
 		&:before {
 			content: "";
 			position: absolute;
@@ -175,6 +221,7 @@
 				style: solid;
 				color: $c-royalBlue;
 			}
+			transition: opacity 0.25s ease-in-out;
 		}
 	}
 	

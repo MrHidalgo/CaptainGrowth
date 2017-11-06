@@ -74,7 +74,17 @@
 		}
 		&-btn {
 			font-size: 16px;
-			color: $c-slateGrey
+			color: $c-slateGrey;
+			transition: color 0.25s ease-in-out;
+			
+			&:hover {
+				color: $c-royalBlue;
+				transition: color 0.25s ease-in-out;
+			}
+			&:active {
+				color: $c-darkSlateBlue;
+				transition: color 0.25s ease-in-out;
+			}
 		}
 	}
 }
