@@ -22,11 +22,11 @@
 		font-size: 18px;
 	}
 	&_left {
-		width: 470px;
+		width: 270px;
 		padding-top: 78px;
 	}
 	&_right {
-		width: calc(#{$w-all} - 470px);
+		width: calc(#{$w-all} - 270px);
 		padding-top: 84px;
 	}
 	

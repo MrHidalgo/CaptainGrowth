@@ -18,7 +18,7 @@
 	}
 	&_row {
 		font-size: 0;
-		padding-left: 400px;
+		padding-left: 380px;
 		color: $c-white;
 	}
 	&_right,
@@ -28,13 +28,13 @@
 		vertical-align: top;
 	}
 	&_right {
-		@include mixinDimensions(570px, 252px);
+		@include mixinDimensions(420px, 252px);
 		display: inline-flex;
 		flex-direction: column;
 		justify-content: center;
 	}
 	&_left {
-		width: calc(#{$w-all} - 570px);
+		width: calc(#{$w-all} - 420px);
 	}
 	
 	// ECLIPSE
