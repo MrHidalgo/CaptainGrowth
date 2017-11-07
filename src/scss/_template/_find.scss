@@ -13,6 +13,9 @@
 	@include mixinRespondTo(small-desktop) {
 		padding-bottom: 150px;
 	}
+	@include mixinRespondTo(tablet) {
+		padding-bottom: 60px;
+	}
 	
 	// POSITION
 	// MODIFY
@@ -109,11 +112,31 @@
 			padding: 25px 25px 15px;
 			width: 300px;
 		}
+		@include mixinRespondTo(tablet) {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 95px;
+			
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
 		
 		&-wrap {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+			@include mixinRespondTo(tablet) {
+				display: block;
+				position: relative;
+				white-space: nowrap;
+				overflow-y: auto;
+				padding: {
+					left: 30px;
+					right: 30px;
+					bottom: 50px;
+				};
+			}
 		}
 		&-header {
 			min-height: 84px;
@@ -205,6 +228,9 @@
 				line-height: 1.2;
 				@include mixinRespondTo(small-desktop) {
 					font-size: 16px;
+				}
+				@include mixinRespondTo(tablet) {
+					white-space: normal;
 				}
 			}
 		}

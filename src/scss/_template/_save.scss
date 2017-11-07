@@ -109,11 +109,31 @@
 			padding: 25px 25px 15px;
 			width: 300px;
 		}
+		@include mixinRespondTo(tablet) {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 80px;
+			
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
 		
 		&-wrap {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+			@include mixinRespondTo(tablet) {
+				display: block;
+				position: relative;
+				white-space: nowrap;
+				overflow-y: auto;
+				padding: {
+					left: 15px;
+					right: 15px;
+					bottom: 50px;
+				};
+			}
 		}
 		&-icon {
 			float: left;
@@ -176,6 +196,9 @@
 				width: calc(#{$w-all} - 20px);
 				@include mixinRespondTo(small-desktop) {
 					font-size: 16px;
+				}
+				@include mixinRespondTo(tablet) {
+					white-space: normal;
 				}
 			}
 		}

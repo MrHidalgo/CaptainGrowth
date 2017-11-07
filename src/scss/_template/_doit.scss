@@ -93,6 +93,10 @@
 	&_left {
 		padding-top: 100px;
 		width: 400px;
+		@include mixinRespondTo(tablet) {
+			width: calc(#{$w-all} - 300px);
+			padding-right: 50px;
+		}
 	}
 	&_right {
 		padding: {
@@ -100,6 +104,13 @@
 			top: 20px;
 		}
 		width: calc(#{$w-all} - 400px);
+		@include mixinRespondTo(tablet) {
+			width: 300px;
+			padding: {
+				left: 45px;
+				top: 70px;
+			}
+		}
 	}
 	
 	// LIST
@@ -154,6 +165,21 @@
 			
 			&:first-of-type {
 				margin-top: 5px;
+			}
+		}
+	}
+	
+	// IMAGE
+	&__img {
+		display: block;
+		@include mixinRespondTo(tablet) {
+			display: none;
+		}
+		
+		&_medium {
+			display: none;
+			@include mixinRespondTo(tablet) {
+				display: block;
 			}
 		}
 	}

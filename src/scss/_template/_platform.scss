@@ -78,6 +78,15 @@
 			display: inline-block;
 			vertical-align: top;
 		}
+		@include mixinRespondTo(tablet) {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 30px;
+			
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
 		
 		&-wrap {
 			display: flex;
@@ -89,6 +98,17 @@
 				position: relative;
 				white-space: nowrap;
 				overflow-y: auto;
+				padding-bottom: 50px;
+			}
+			@include mixinRespondTo(tablet) {
+				position: relative;
+				white-space: nowrap;
+				overflow-y: auto;
+				padding: {
+					left: 30px;
+					right: 30px;
+					bottom: 50px;
+				}
 			}
 		}
 		&-image,

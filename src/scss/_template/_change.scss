@@ -92,13 +92,27 @@
 		border-radius: 15px;
 		background-color: $c-whiteSmoke;
 		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		@include mixinRespondTo(tablet) {
+			display: inline-block;
+			vertical-align: top;
+		}
 		
 		&-wrap {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
-			
 			margin-bottom: 80px;
+			@include mixinRespondTo(tablet) {
+				display: block;
+				position: relative;
+				white-space: nowrap;
+				overflow-y: auto;
+				padding: {
+					left: 30px;
+					right: 30px;
+					bottom: 50px;
+				};
+			}
 		}
 		&-0 {
 			margin-right: 100px;
@@ -145,6 +159,9 @@
 		&-text {
 			font: {
 				size: 18px;
+			}
+			@include mixinRespondTo(tablet) {
+				white-space: normal;
 			}
 			
 			&_color {
@@ -202,6 +219,9 @@
 		outline: none;
 		transition: background-color 0.25s ease-in-out;
 		@include mixinRespondTo(small-desktop) {
+			left: auto;
+		}
+		@include mixinRespondTo(tablet) {
 			left: auto;
 		}
 		

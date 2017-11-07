@@ -19,15 +19,22 @@
 //- ====================
 //- FUNCTION/PROCEDURE
 //- ====================
-mixin doitImage(imageSizeHeight)
+mixin doitImage(imageSizeHeight, imageSizeMediumHeight)
     -
         var imageHeight = (imageSizeHeight / 2);
+        var imageMediumHeight = (imageSizeMediumHeight / 2);
 
     img(
         src="./image/img-doit.png"
         class="doit__img"
         title=""
         height!= imageHeight
+    )
+    img(
+        src="./image/img-doit_medium.png"
+        class="doit__img doit__img_medium"
+        title=""
+        height!= imageMediumHeight
     )
 
 
@@ -66,4 +73,4 @@ section.doit#doit
                 +doitList(doitArrList, doitNum)
 
             .doit_right
-                +doitImage(1644)
+                +doitImage(1644, 1306)

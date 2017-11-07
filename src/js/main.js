@@ -13,6 +13,9 @@ function pushOffsetValue(arrElem, arr) {
 	});
 }
 
+/**
+ *
+ */
 $(window).on("change resize load", function() {
 	let arrLeftSmoothImage  = [],
 		arrRightSmoothImage = [];
@@ -48,11 +51,18 @@ $(window).on("change resize load", function() {
 		mainLargeImage.removeAttr("style");
 	}
 	
-	if ((widthWindow > '991') && (widthWindow < WINWIDTH_MEDIUM)) {
+	if ((widthWindow > '767') && (widthWindow < WINWIDTH_MEDIUM)) {
+		let widthOffset = 0;
+		
+		if(widthWindow > '767' && widthWindow < '992') {
+			widthOffset = 150;
+		} else {
+			widthOffset = 50;
+		}
 		
 		mainMediumImage.each(function(idx, item) {
 			$(item).css({
-				right: -(offsetMediumEl - 50)
+				right: -(offsetMediumEl - widthOffset)
 			});
 		});
 		

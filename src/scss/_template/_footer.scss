@@ -9,6 +9,9 @@
 ///
 .footer {
 	min-height: 220px;
+	@include mixinRespondTo(tablet) {
+		min-height: 170px;
+	}
 	
 	// POSITION
 	&_row {
@@ -24,14 +27,24 @@
 	&_left {
 		width: 270px;
 		padding-top: 78px;
+		@include mixinRespondTo(tablet) {
+			width: 60%;
+		}
 	}
 	&_right {
 		width: calc(#{$w-all} - 270px);
 		padding-top: 84px;
+		
+		@include mixinRespondTo(tablet) {
+			width: 40%;
+		}
 	}
 	
 	// MODIFY
 	&_logotype {
+		@include mixinRespondTo(tablet) {
+			float: left;
+		}
 		.logotype__img {
 			display: block;
 		}
@@ -39,6 +52,10 @@
 	
 	&_copyright {
 		padding-top: 28px;
+		@include mixinRespondTo(tablet) {
+			float: right;
+			padding-top: 15px;
+		}
 		
 		.copyright {
 			font-size: 14px;
@@ -49,6 +66,9 @@
 		padding-top: 30px;
 		@include mixinRespondTo(small-desktop) {
 			padding-top: 10px;
+		}
+		@include mixinRespondTo(tablet) {
+			padding-top: 0;
 		}
 		
 		.social {
@@ -65,6 +85,9 @@
 	// MENU
 	&__menu {
 		font-size: 0;
+		@include mixinRespondTo(tablet) {
+			display: none;
+		}
 		
 		&-item {
 			display: inline-block;

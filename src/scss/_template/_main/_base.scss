@@ -16,6 +16,9 @@
 		line-height: 1.1;
 		margin-bottom: 30px;
 		text-transform: uppercase;
+		@include mixinRespondTo(tablet) {
+			font-size: 32px;
+		}
 	}
 }
 

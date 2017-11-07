@@ -88,6 +88,21 @@
 	
 	// IMG
 	&__img {
+		display: block;
 		max-width: 100%;
+		margin: {
+			left: auto;
+			right: auto;
+		};
+		@include mixinRespondTo(tablet) {
+			display: none;
+		}
+		
+		&_medium {
+			display: none;
+			@include mixinRespondTo(tablet) {
+				display: block;
+			}
+		}
 	}
 }

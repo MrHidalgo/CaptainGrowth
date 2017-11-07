@@ -21,6 +21,12 @@
 				bottom: 25px;
 			}
 		}
+		@include mixinRespondTo(tablet) {
+			padding: {
+				top: 25px;
+				bottom: 25px;
+			}
+		}
 	}
 	&_row {
 		font-size: 0;
@@ -28,6 +34,9 @@
 		color: $c-white;
 		@include mixinRespondTo(small-desktop) {
 			padding-left: 430px;
+		}
+		@include mixinRespondTo(tablet) {
+			padding-left: 270px;
 		}
 	}
 	&_right,
@@ -48,10 +57,19 @@
 			min-height: 0;
 			padding-bottom: 15px;
 		}
+		@include mixinRespondTo(tablet) {
+			display: block;
+			width: $w-all;
+			min-height: 0;
+			padding-bottom: 15px;
+		}
 	}
 	&_left {
 		width: calc(#{$w-all} - 420px);
 		@include mixinRespondTo(small-desktop) {
+			width: $w-all;
+		}
+		@include mixinRespondTo(tablet) {
 			width: $w-all;
 		}
 	}
@@ -72,6 +90,11 @@
 		@include mixinRespondTo(small-desktop) {
 			top: -137px;
 		}
+		@include mixinRespondTo(tablet) {
+			top: -97px;
+			left: -85px;
+			@include mixinDimensions(446px);
+		}
 		
 		&-img {
 			position: absolute;
@@ -89,6 +112,9 @@
 		}
 		line-height: 1.2;
 		margin-bottom: 15px;
+		@include mixinRespondTo(tablet) {
+			font-size: 24px;
+		}
 	}
 	
 	// TEXT
@@ -103,12 +129,18 @@
 		@include mixinRespondTo(small-desktop) {
 			padding-top: 0;
 		}
+		@include mixinRespondTo(tablet) {
+			padding-top: 0;
+		}
 		
 		&-input,
 		&-btn {
 			@include mixinDimensions($w-all, 52px);
 			color: $c-white;
 			border-radius: 2em;
+			@include mixinRespondTo(tablet) {
+				width: 400px;
+			}
 		}
 		&-input {
 			border: {

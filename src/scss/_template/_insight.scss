@@ -23,16 +23,24 @@
 		@include mixinRespondTo(small-desktop) {
 			padding-left: 460px;
 		}
+		@include mixinRespondTo(tablet) {
+			padding-left: 275px;
+		}
 	}
 	&_container {
 		@include mixinDimensions(#{$w-all}, 252px);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		@include mixinRespondTo(tablet) {
+			position: relative;
+			z-index: 5;
+		}
 	}
 	
 	// ECLIPSE
 	&__circle {
+		z-index: 0;
 		position: absolute;
 		top: -147px;
 		left: -60px;
@@ -44,6 +52,11 @@
 			color: $c-royalBlue;
 		}
 		background-color: $c-whiteSmoke;
+		@include mixinRespondTo(tablet) {
+			top: -97px;
+			left: -85px;
+			@include mixinDimensions(446px);
+		}
 		
 		&-img {
 			position: absolute;
@@ -61,6 +74,9 @@
 		}
 		line-height: 1.2;
 		margin-bottom: 15px;
+		@include mixinRespondTo(tablet) {
+			font-size: 24px;
+		}
 	}
 	
 	// BTN

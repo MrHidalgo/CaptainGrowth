@@ -14,6 +14,12 @@
 		top: 57px;
 		bottom: 127px;
 	}
+	@include mixinRespondTo(tablet) {
+		padding: {
+			top: 47px;
+			bottom: 200px;
+		}
+	}
 	
 	// POSITION
 	&__row {}
@@ -28,6 +34,9 @@
 		padding-top: 161px;
 		@include mixinRespondTo(small-desktop) {
 			padding-top: 111px;
+		}
+		@include mixinRespondTo(tablet) {
+			padding-top: 112px;
 		}
 	}
 	&_img {
@@ -103,7 +112,7 @@
 		
 		&_medium {
 			display: none;
-			@media (min-width: 992px) and (max-width: 1366px) {
+			@media (min-width: 768px) and (max-width: 1366px) {
 				$imageSizeWidth: (1112px / 2);
 				$imageSizeHeight: (1112px / 2);
 				
@@ -126,6 +135,9 @@
 		padding: {
 			right: 20px;
 			top: 10px;
+		}
+		@include mixinRespondTo(tablet) {
+			padding-right: 0;
 		}
 		
 		
@@ -215,6 +227,10 @@
 		line-height: 1.2;
 		margin-bottom: 15px;
 		text-transform: uppercase;
+		@include mixinRespondTo(tablet) {
+			font-size: 32px;
+			width: 50%;
+		}
 		
 		&_letter {
 			display: inline-block;
@@ -231,6 +247,9 @@
 		font-size: 18px;
 		line-height: 1.2;
 		margin-bottom: 47px;
+		@include mixinRespondTo(tablet) {
+			width: 40%;
+		}
 	}
 	
 	// BTN
@@ -246,6 +265,12 @@
 		color: $c-white;
 		outline: none;
 		transition: background-color 0.25s ease-in-out;
+		@include mixinRespondTo(tablet) {
+			font-size: 20px;
+			width: 300px;
+			padding-left: 65px;
+			margin-bottom: 100px;
+		}
 		
 		&:hover,
 		&:active {
