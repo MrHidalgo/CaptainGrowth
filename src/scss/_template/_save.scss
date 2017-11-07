@@ -67,15 +67,33 @@
 			&_0 {
 				top: 75%;
 				left: 50px;
+				
+				$imgSrcBigS: "../image/img-circleS-big_some.png";
+				$imgBigSW: (174px / 2);
+				$imgBigSH: (174px / 2);
+				$imgPosBigS: unquote("top left");
+				@include imagePosition($imgSrcBigS, $imgBigSW, $imgBigSH, $imgPosBigS);
 			}
 			&_1 {
 				top: 15%;
 				right: 345px;
+				
+				$imgSrcBigS: "../image/img-circleS-big_some.png";
+				$imgBigSW: (174px / 2);
+				$imgBigSH: (174px / 2);
+				$imgPosBigS: unquote("top right");
+				@include imagePosition($imgSrcBigS, $imgBigSW, $imgBigSH, $imgPosBigS);
 			}
 		}
 		&-smallS {
 			top: 30%;
 			right: 50px;
+			
+			$imgSrcSmallS: "../image/img-circleS-small_some.png";
+			$imgSmallSW: (112px / 2);
+			$imgSmallSH: (112px / 2);
+			$imgPosSmallS: unquote("top right");
+			@include imagePosition($imgSrcSmallS, $imgSmallSW, $imgSmallSH, $imgPosSmallS);
 		}
 	}
 	

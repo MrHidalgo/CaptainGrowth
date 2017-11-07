@@ -1,45 +1,75 @@
 "use strict";
 
+/**
+ * @name pushOffsetValue
+ * @function
+ *
+ * @param arrElem
+ * @param arr
+ *
+ * @description
+ */
+function pushOffsetValue(arrElem, arr) {
+  arrElem.each(function (idx, item) {
+    arr.push(parseInt($(item).css("left")));
+  });
+}
+
+/**
+ *
+ */
 $(function () {
+  var arrLeftSmoothImage = [],
+      arrRightSmoothImage = [];
 
-    var imgRight = $(".resize_right"),
-        imgLeft = $(".resize_left");
+  var imgRight = $(".resize_right"),
+      imgLeft = $(".resize_left"),
+      imgLeftSmooth = $('.resize_left-s'),
+      imgRightSmooth = $('.resize_right-s');
 
-    console.log(imgRight);
-    console.log(imgLeft);
+  console.log('imgRightSmooth: ', imgRightSmooth);
 
-    $(window).on("change resize load", function () {
-        var WINWIDTH = 1920;
+  pushOffsetValue(imgLeftSmooth, arrLeftSmoothImage);
+  pushOffsetValue(imgRightSmooth, arrRightSmoothImage);
 
-        var widthWindow = $(this).width();
+  console.log("arrRightSmoothImage: ", arrRightSmoothImage);
 
-        if (widthWindow > '1365' && widthWindow < WINWIDTH) {
+  $(window).on("change resize load", function () {
+    var WINWIDTH = 1920;
 
-            imgRight.each(function (idx, item) {
-                var rightOffset = $(item).css("right");
+    var widthWindow = $(this).width(),
+        offsetEl = (WINWIDTH - widthWindow) / 2;
 
-                // console.log("rightOffset: ", parseFloat(rightOffset));
-                // console.log("rightOffset - ((WINWIDTH - widthWindow) / 2): ", parseFloat(rightOffset) - ((WINWIDTH - widthWindow) / 2));
+    if (widthWindow > '1365' && widthWindow < WINWIDTH) {
 
-                $(item).css({
-                    // right: parseFloat(rightOffset) - ((WINWIDTH - widthWindow) / 2)
-                    right: -((WINWIDTH - widthWindow) / 2)
-                });
-            });
+      imgLeft.each(function (idx, item) {
+        $(item).css({
+          left: -offsetEl
+        });
+      });
 
-            imgLeft.each(function (idx, item) {
-                var leftOffset = $(item).css("left");
+      imgRight.each(function (idx, item) {
+        $(item).css({
+          right: -offsetEl
+        });
+      });
 
-                // console.log("leftOffset: ", leftOffset);
-                // console.log("leftOffset - ((WINWIDTH - widthWindow) / 2): ", leftOffset - ((WINWIDTH - widthWindow) / 2));
+      imgLeftSmooth.each(function (idx, item) {
+        $(item).css({
+          left: arrLeftSmoothImage[idx] - offsetEl
+        });
+      });
 
-                $(item).css({
-                    left: -((WINWIDTH - widthWindow) / 2)
-                });
-            });
-        } else {
-            imgRight.removeAttr("style");
-            imgLeft.removeAttr("style");
-        }
-    });
+      imgRightSmooth.each(function (idx, item) {
+        $(item).css({
+          left: arrRightSmoothImage[idx] - offsetEl
+        });
+      });
+    } else {
+      imgLeft.removeAttr("style");
+      imgRight.removeAttr("style");
+      imgLeftSmooth.removeAttr("style");
+      imgRightSmooth.removeAttr("style");
+    }
+  });
 });

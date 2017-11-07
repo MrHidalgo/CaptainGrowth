@@ -61,10 +61,22 @@
 		&-bigS {
 			top: 50%;
 			left: 5px;
+			
+			$imgSrcBigS: "../image/img-circleS-big_some.png";
+			$imgBigSW: (174px / 2);
+			$imgBigSH: (174px / 2);
+			$imgPosBigS: unquote("top left");
+			@include imagePosition($imgSrcBigS, $imgBigSW, $imgBigSH, $imgPosBigS);
 		}
 		&-smallS {
 			top: 150px;
 			left: 120px;
+			
+			$imgSrcSmallS: "../image/img-circleS-small_some.png";
+			$imgSmallSW: (112px / 2);
+			$imgSmallSH: (112px / 2);
+			$imgPosSmallS: unquote("top right");
+			@include imagePosition($imgSrcSmallS, $imgSmallSW, $imgSmallSH, $imgPosSmallS);
 		}
 	}
 	.main__title {

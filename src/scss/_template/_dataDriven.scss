@@ -60,10 +60,22 @@
 		&-smallS {
 			top: 75%;
 			right: 75px;
+			
+			$imgSrcSmallS: "../image/img-circleS-small_some.png";
+			$imgSmallSW: (112px / 2);
+			$imgSmallSH: (112px / 2);
+			$imgPosSmallS: unquote("top right");
+			@include imagePosition($imgSrcSmallS, $imgSmallSW, $imgSmallSH, $imgPosSmallS);
 		}
 		&-bigS {
 			top: 50px;
 			right: 175px;
+			
+			$imgSrcBigS: "../image/img-circleS-big_some.png";
+			$imgBigSW: (174px / 2);
+			$imgBigSH: (174px / 2);
+			$imgPosBigS: unquote("top right");
+			@include imagePosition($imgSrcBigS, $imgBigSW, $imgBigSH, $imgPosBigS);
 		}
 	}
 	

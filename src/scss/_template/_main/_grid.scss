@@ -58,16 +58,10 @@
 
 @media (min-width: 1200px) {
 	.container {
-		max-width: 1200px;
+		max-width: 1170px;
 		
 		&-default {
-			max-width: 1200px;
+			max-width: 1170px;
 		}
-	}
-}
-
-@media (min-width: 1440px) {
-	.container {
-		max-width: 1400px;
 	}
 }

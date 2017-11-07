@@ -41,7 +41,6 @@ mixin platformBlock(arrTitle, arrNum, arrText, arrImageSrc, arrImageSize)
 				img(
 					src!= arrImageSrc[i]
 					class="platform__block-image"
-					title!= arrTitle[i]
 					height!= arrImageSize[i]
 				)
 
@@ -56,25 +55,8 @@ section.platform#platform
 
 	.platform_img
 		i.platform_img-left.resize_left
-		i.platform_img-bigS
-		i.platform_img-bigS
-
-
-		-
-			var imgBigSmoothSize = (174 / 2);
-
-		//img(
-		//	src="./image/img-circleS-big_some.png"
-		//	class="platform_img-bigS platform_img-bigS_0"
-		//	title=""
-		//	height!= imgBigSmoothSize
-		//)
-		//img(
-		//	src="./image/img-circleS-big_some.png"
-		//	class="platform_img-bigS platform_img-bigS_1"
-		//	title=""
-		//	height!= imgBigSmoothSize
-		//)
+		i.platform_img-bigS.platform_img-bigS_0.resize_left-s
+		i.platform_img-bigS.platform_img-bigS_1.resize_right-s
 
 	.container-default
 

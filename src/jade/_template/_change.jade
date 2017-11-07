@@ -55,7 +55,6 @@ mixin changeBtn(btnValue)
 	button(
 		type="button"
 		class="change__btn"
-		title!= btnValue
 	)!= btnValue
 
 //- ====================
@@ -66,8 +65,8 @@ section.change#change
 	.change_img
 		i.change_img-left.resize_left
 		i.change_img-right.resize_right
-		i.change_img-smallS
-		i.change_img-bigS
+		i.change_img-smallS.resize_left-s
+		i.change_img-bigS.resize_left-s
 
 		-
 			var imgSmallSmoothSize = (112 / 2);

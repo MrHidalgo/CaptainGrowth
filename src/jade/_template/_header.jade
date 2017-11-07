@@ -29,7 +29,6 @@ mixin login(arrName)
             a(
                 href="javascript:void(0);"
                 class="header__login-btn"
-                title!= arrName[i]
             )!= arrName[i]
 
 
@@ -41,7 +40,6 @@ mixin blockTitle(titleName, subTitleName, btnName)
         button(
             type="button"
             class="header__btn"
-            title!= btnName
         )!= btnName
 
 
@@ -54,7 +52,6 @@ mixin headerSocial(arrName)
             .header__social-block
                 a(
                     href="javascript:void(0);"
-                    title!= arrName[i]
                     class="header__social-btn header__social-btn_" + arrName[i]
                 )
                     i.header__social-btn--icon
@@ -71,8 +68,8 @@ header.header#header
 
     .header_img
         i.header_img-big.resize_left
-        i.header_img-smallS.resize_left
-        i.header_img-bigS.resize_left
+        i.header_img-smallS.resize_left-s
+        i.header_img-bigS.resize_left-s
 
 
     .header__row
