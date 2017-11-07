@@ -1,0 +1,33 @@
+-
+	var loginTitleGradient = "Log in";
+
+section.login#login
+
+	.login_img
+		i.login_img-big.resize_right
+
+		//i.login_img-smallS.login_img-smallS_0.resize_left-s
+		//i.login_img-smallS.login_img-smallS_1.resize_right-s
+
+		//i.login_img-bigS.login_img-bigS_0.resize_left-s
+		//i.login_img-bigS.login_img-bigS_1.resize_right-s
+
+	.container-default
+
+		.login__container
+			+mainTitle(3, false, loginTitleGradient)
+
+			.login__form
+
+				form.form
+					.login__form-wrpa
+						input(type="text")
+					.login__form-wrap
+						input(type="password")
+					.login__form-wrap
+						input(type="checkbox")
+
+					button(
+						type="button"
+						class="login__btn"
+					)!= "Log In"

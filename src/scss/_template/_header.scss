@@ -21,6 +21,11 @@
 		}
 	}
 	
+	&_login {
+		min-height: 0;
+		padding-bottom: 0;
+	}
+	
 	// POSITION
 	&__row {}
 	
@@ -142,11 +147,19 @@
 		
 		
 		&-btn {
+			position: relative;
 			display: inline-block;
 			vertical-align: top;
 			margin-left: 20px;
 			height: 28px;
 			line-height: 28px;
+			
+			&--icon {
+				position: absolute;
+				top: 0;
+				left: -40px;
+				@include retina-sprite($sp-i-close-group);
+			}
 			
 			&:first-child {
 				position: relative;
@@ -168,8 +181,8 @@
 				}
 				&:active {
 					&:before {
-						width: 24px;
-						margin-left: -12px;
+						width: 65%;
+						margin-left: -(65% / 2);
 						transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out;
 					}
 				}
@@ -179,8 +192,8 @@
 					position: absolute;
 					left: 50%;
 					bottom: 0;
-					@include mixinDimensions(36px, 1px);
-					margin-left: -18px;
+					@include mixinDimensions(90%, 1px);
+					margin-left: -(90% / 2);
 					background-color: $c-royalBlue;
 					transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out;
 				}

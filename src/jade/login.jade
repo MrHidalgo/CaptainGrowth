@@ -1,0 +1,21 @@
+include _mixin/mixin
+include _mixin/macrosMixin
+
+doctype html
+
+html(
+	lang="en"
+	class="js"
+)
+	+headSite("Captain Growth", linkSite.styleLinkIndex, "")
+
+	body.body#body
+
+		include _template/_headerLogin
+
+		include _template/_login
+
+		include _template/_footer
+
+	- for(var i = 0; i < linkSite.scriptLink.length; i++)
+		script(src= linkSite.scriptLink[i])

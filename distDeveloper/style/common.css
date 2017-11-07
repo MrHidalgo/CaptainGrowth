@@ -98,6 +98,8 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {  .header { padding-top: 47px; padding-bottom: 200px; } }
 
+ .header_login { min-height: 0; padding-bottom: 0; }
+
  .header .header_logotype .logotype { float: left; }
 
  .header .container-default { padding-top: 161px; }
@@ -128,7 +130,11 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {  .header__login { padding-right: 0; } }
 
- .header__login-btn { display: inline-block; vertical-align: top; margin-left: 20px; height: 28px; line-height: 28px; }
+ .header__login-btn { position: relative; display: inline-block; vertical-align: top; margin-left: 20px; height: 28px; line-height: 28px; }
+
+ .header__login-btn--icon { position: absolute; top: 0; left: -40px; background-image: url(../image/sprite.png); background-position: -197px -89px; width: 32px; height: 32px; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .header__login-btn--icon { background-image: url(../image/sprite@2x.png); -webkit-background-size: 354px 289px; -moz-background-size: 354px 289px; background-size: 354px 289px; } }
 
  .header__login-btn:first-child { position: relative; margin-left: 0; margin-right: 20px; color: #3564db; -webkit-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out, color 0.25s ease-in-out; -o-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out, color 0.25s ease-in-out; -moz-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out, color 0.25s ease-in-out; transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out, color 0.25s ease-in-out; }
 
@@ -136,9 +142,9 @@
 
  .header__login-btn:first-child:hover:before { background-color: #51d5cf; -webkit-transition: background-color 0.25s ease-in-out; -o-transition: background-color 0.25s ease-in-out; -moz-transition: background-color 0.25s ease-in-out; transition: background-color 0.25s ease-in-out; }
 
- .header__login-btn:first-child:active:before { width: 24px; margin-left: -12px; -webkit-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out; -o-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out; -moz-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out; transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out; }
+ .header__login-btn:first-child:active:before { width: 65%; margin-left: -32.5%; -webkit-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out; -o-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out; -moz-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out; transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out; }
 
- .header__login-btn:first-child:before { content: ""; position: absolute; left: 50%; bottom: 0; width: 36px; height: 1px; margin-left: -18px; background-color: #3564db; -webkit-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out; -o-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out; -moz-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out; transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out; }
+ .header__login-btn:first-child:before { content: ""; position: absolute; left: 50%; bottom: 0; width: 90%; height: 1px; margin-left: -45%; background-color: #3564db; -webkit-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out; -o-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out; -moz-transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out; transition: width 0.25s ease-in-out, margin-left 0.25s ease-in-out, background-color 0.25s ease-in-out; }
 
  .header__login-btn:first-child:after { content: ""; position: absolute; top: 5px; right: -25px; width: 1px; height: 18px; background-color: #6f7c9b; }
 
@@ -152,7 +158,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {  .header__title { font-size: 32px; width: 50%; } }
 
- .header__title_letter { display: inline-block; margin-left: 1.5px; margin-right: 1.5px; background-image: url(../image/sprite.png); background-position: -197px -89px; width: 26px; height: 26px; }
+ .header__title_letter { display: inline-block; margin-left: 1.5px; margin-right: 1.5px; background-image: url(../image/sprite.png); background-position: -180px -131px; width: 26px; height: 26px; }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .header__title_letter { background-image: url(../image/sprite@2x.png); -webkit-background-size: 354px 289px; -moz-background-size: 354px 289px; background-size: 354px 289px; } }
 
@@ -321,7 +327,7 @@
 
  .insight__btn:active .insight__btn-icon { opacity: 0; -webkit-transition: opacity 0.25s ease-in-out; -o-transition: opacity 0.25s ease-in-out; -moz-transition: opacity 0.25s ease-in-out; transition: opacity 0.25s ease-in-out; }
 
- .insight__btn-icon { opacity: 0; position: absolute; top: 16px; right: 35px; background-image: url(../image/sprite.png); background-position: -180px -131px; width: 29px; height: 20px; }
+ .insight__btn-icon { opacity: 0; position: absolute; top: 16px; right: 35px; background-image: url(../image/sprite.png); background-position: -211px -131px; width: 29px; height: 20px; }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {  .insight__btn-icon { background-image: url(../image/sprite@2x.png); -webkit-background-size: 354px 289px; -moz-background-size: 354px 289px; background-size: 354px 289px; } }
 
@@ -732,3 +738,37 @@
  .footer__menu-btn:hover { color: #3564db; -webkit-transition: color 0.25s ease-in-out; -o-transition: color 0.25s ease-in-out; -moz-transition: color 0.25s ease-in-out; transition: color 0.25s ease-in-out; }
 
  .footer__menu-btn:active { color: #484299; -webkit-transition: color 0.25s ease-in-out; -o-transition: color 0.25s ease-in-out; -moz-transition: color 0.25s ease-in-out; transition: color 0.25s ease-in-out; }
+
+ .login { position: relative; min-height: -webkit-calc(100vh - (220px + 115px)); min-height: -moz-calc(100vh - (220px + 115px)); min-height: calc(100vh - (220px + 115px)); }
+
+ .login .main__title { margin-bottom: 15px; }
+
+ .login_img { z-index: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+ .login_img-big, .login_img-smallS, .login_img-bigS { z-index: 0; position: absolute; }
+
+ .login_img-big { right: 0; top: 0; width: 562px; height: 728px; background-image: url("../image/img-circle-3_some.png"); background-position: top right; background-repeat: no-repeat; -webkit-background-size: 562px 562px; -moz-background-size: 562px; background-size: 562px; }
+
+ .login_img-smallS_0 { top: 30%; left: 110px; width: 56px; height: 56px; background-image: url("../image/img-circleS-small_some.png"); background-position: top left; background-repeat: no-repeat; -webkit-background-size: 56px 56px; -moz-background-size: 56px; background-size: 56px; }
+
+ .login_img-smallS_1 { top: 75%; right: 40px; width: 56px; height: 56px; background-image: url("../image/img-circleS-small_some.png"); background-position: top right; background-repeat: no-repeat; -webkit-background-size: 56px 56px; -moz-background-size: 56px; background-size: 56px; }
+
+ .login_img-bigS_0 { top: 70%; left: 10px; width: 87px; height: 87px; background-image: url("../image/img-circleS-big_some.png"); background-position: top left; background-repeat: no-repeat; -webkit-background-size: 87px 87px; -moz-background-size: 87px; background-size: 87px; }
+
+ .login_img-bigS_1 { top: 25%; right: 110px; width: 87px; height: 87px; background-image: url("../image/img-circleS-big_some.png"); background-position: top right; background-repeat: no-repeat; -webkit-background-size: 87px 87px; -moz-background-size: 87px; background-size: 87px; }
+
+ .login__container { width: 370px; margin-left: auto; margin-right: auto; }
+
+ .login__form { width: 100%; min-height: 352px; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; -webkit-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); -moz-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); }
+
+ .login__btn { position: relative; display: block; width: 230px; height: 84px; margin-left: auto; margin-right: auto; background-color: #51d5cf; border: none; -webkit-border-radius: 5em; -moz-border-radius: 5em; border-radius: 5em; -webkit-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); -moz-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); font-size: 22px; color: #fff; outline: none; padding-left: 60px; -webkit-transition: background-color 0.25s ease-in-out; -o-transition: background-color 0.25s ease-in-out; -moz-transition: background-color 0.25s ease-in-out; transition: background-color 0.25s ease-in-out; }
+
+@media screen and (min-width: 768px) and (max-width: 991px) {  .login__btn { font-size: 20px; width: 300px; padding-left: 65px; margin-bottom: 100px; } }
+
+ .login__btn:hover:before, .login__btn:active:before { opacity: 0; -webkit-transition: opacity 0.25s ease-in-out; -o-transition: opacity 0.25s ease-in-out; -moz-transition: opacity 0.25s ease-in-out; transition: opacity 0.25s ease-in-out; }
+
+ .login__btn:hover { background-color: #3564db; -webkit-transition: background-color 0.25s ease-in-out; -o-transition: background-color 0.25s ease-in-out; -moz-transition: background-color 0.25s ease-in-out; transition: background-color 0.25s ease-in-out; }
+
+ .login__btn:active { background-color: #484299; -webkit-transition: background-color 0.25s ease-in-out; -o-transition: background-color 0.25s ease-in-out; -moz-transition: background-color 0.25s ease-in-out; transition: background-color 0.25s ease-in-out; }
+
+ .login__btn:before { content: ""; position: absolute; left: 0; top: 0; -webkit-border-radius: 5em; -moz-border-radius: 5em; border-radius: 5em; width: 84px; height: 84px; border-width: 12px; border-style: solid; border-color: #3564db; -webkit-transition: opacity 0.25s ease-in-out; -o-transition: opacity 0.25s ease-in-out; -moz-transition: opacity 0.25s ease-in-out; transition: opacity 0.25s ease-in-out; }

@@ -1,0 +1,169 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.login {
+	position: relative;
+	// footer: 220
+	// header: 115
+	min-height: calc(100vh - (220px + 115px));
+	
+	.main__title {
+		margin-bottom: 15px;
+	}
+	
+	// IMG
+	&_img {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include mixinDimensions($w-all);
+		
+		@mixin imagePosition($src, $w, $h, $pos) {
+			@include mixinDimensions($w, $h);
+			background-image: url($src);
+			background-position: $pos;
+			background-repeat: no-repeat;
+			background-size: $w;
+		}
+		
+		&-big,
+		&-smallS,
+		&-bigS {
+			z-index: 0;
+			position: absolute;
+		}
+		&-big {
+			right: 0;
+			top: 0;
+			
+			$imgSrcBig: "../image/img-circle-3_some.png";
+			$imgBigW: (1124px / 2);
+			$imgBigH: (1456px / 2);
+			$imgPosBig: unquote("top right");
+			@include imagePosition($imgSrcBig, $imgBigW, $imgBigH, $imgPosBig);
+		}
+		&-smallS {
+			&_0 {
+				top: 30%;
+				left: 110px;
+				
+				$imgSrcSmallS: "../image/img-circleS-small_some.png";
+				$imgSmallSW: (112px / 2);
+				$imgSmallSH: (112px / 2);
+				$imgPosSmallS: unquote("top left");
+				@include imagePosition($imgSrcSmallS, $imgSmallSW, $imgSmallSH, $imgPosSmallS);
+			}
+			&_1 {
+				top: 75%;
+				right: 40px;
+				
+				$imgSrcSmallS: "../image/img-circleS-small_some.png";
+				$imgSmallSW: (112px / 2);
+				$imgSmallSH: (112px / 2);
+				$imgPosSmallS: unquote("top right");
+				@include imagePosition($imgSrcSmallS, $imgSmallSW, $imgSmallSH, $imgPosSmallS);
+			}
+		}
+		&-bigS {
+			&_0 {
+				top: 70%;
+				left: 10px;
+				
+				$imgSrcBigS: "../image/img-circleS-big_some.png";
+				$imgBigSW: (174px / 2);
+				$imgBigSH: (174px / 2);
+				$imgPosBigS: unquote("top left");
+				@include imagePosition($imgSrcBigS, $imgBigSW, $imgBigSH, $imgPosBigS);
+			}
+			&_1 {
+				top: 25%;
+				right: 110px;
+				
+				$imgSrcBigS: "../image/img-circleS-big_some.png";
+				$imgBigSW: (174px / 2);
+				$imgBigSH: (174px / 2);
+				$imgPosBigS: unquote("top right");
+				@include imagePosition($imgSrcBigS, $imgBigSW, $imgBigSH, $imgPosBigS);
+			}
+		}
+	}
+	
+	// CONTAINER
+	&__container {
+		width: 370px;
+		margin: {
+			left: auto;
+			right: auto;
+		};
+	}
+	
+	// FORM
+	&__form {
+		width: $w-all;
+		min-height: 352px;
+		border-radius: 15px;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+	}
+	
+	&__btn {
+		position: relative;
+		display: block;
+		@include mixinDimensions(230px, 84px);
+		margin: {
+			left: auto;
+			right: auto;
+		};
+		background-color: $c-mediumTurquoise;
+		border: none;
+		border-radius: 5em;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		font-size: 22px;
+		color: $c-white;
+		outline: none;
+		padding-left: 60px;
+		transition: background-color 0.25s ease-in-out;
+		@include mixinRespondTo(tablet) {
+			font-size: 20px;
+			width: 300px;
+			padding-left: 65px;
+			margin-bottom: 100px;
+		}
+		
+		&:hover,
+		&:active {
+			&:before {
+				opacity: 0;
+				transition: opacity 0.25s ease-in-out;
+			}
+		}
+		&:hover {
+			background-color: $c-royalBlue;
+			transition: background-color 0.25s ease-in-out;
+		}
+		&:active {
+			background-color: $c-darkSlateBlue;
+			transition: background-color 0.25s ease-in-out;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			border-radius: 5em;
+			@include mixinDimensions(84px);
+			border: {
+				width: 12px;
+				style: solid;
+				color: $c-royalBlue;
+			}
+			transition: opacity 0.25s ease-in-out;
+		}
+	}
+}

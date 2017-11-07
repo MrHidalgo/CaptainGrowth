@@ -39,6 +39,7 @@ $(window).on("change resize load", function() {
 	
 	console.log("widthWindow: ", widthWindow);
 	
+	// BIG DEVICE
 	if((widthWindow > '1348') && (widthWindow < WINWIDTH_LARGE)) {
 		
 		mainLargeImage.each(function(idx, item) {
@@ -51,6 +52,7 @@ $(window).on("change resize load", function() {
 		mainLargeImage.removeAttr("style");
 	}
 	
+	// MEDIUM DEVICE
 	if ((widthWindow > '767') && (widthWindow < WINWIDTH_MEDIUM)) {
 		let widthOffset = 0;
 		
@@ -70,6 +72,7 @@ $(window).on("change resize load", function() {
 		mainMediumImage.removeAttr("style");
 	}
 	
+	// OTHER IMAGE
 	if ((widthWindow > '290') && (widthWindow < WINWIDTH_LARGE)) {
 		
 		imgLeft.each(function(idx, item) {

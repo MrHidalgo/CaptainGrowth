@@ -1,0 +1,39 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var loginItem = [
+        "Close this page",
+        "Try for free"
+    ];
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+mixin login(arrName)
+    .header__login
+        - for(var i = 0; i < arrName.length; i++)
+            a(
+                href="javascript:void(0);"
+                class="header__login-btn"
+            )
+                if(i === 0)
+                    i.header__login-btn--icon
+
+                != arrName[i]
+
+
+//- ====================
+//- MAIN
+//- ====================
+header.header.header_login#header
+
+    .header_img
+        i.header_img-big.resize_left
+
+    .container.clearfix
+
+        +logotype(104, "header_logotype")
+        +login(loginItem)
+
