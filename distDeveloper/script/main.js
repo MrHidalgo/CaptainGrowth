@@ -39,8 +39,6 @@ $(window).on("change resize load", function () {
 	    offsetEl = (WINWIDTH_LARGE - widthWindow) / 2,
 	    offsetMediumEl = (WINWIDTH_MEDIUM - widthWindow) / 2;
 
-	console.log("widthWindow: ", widthWindow);
-
 	// BIG DEVICE
 	if (widthWindow > '1348' && widthWindow < WINWIDTH_LARGE) {
 

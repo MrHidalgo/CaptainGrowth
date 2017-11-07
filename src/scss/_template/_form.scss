@@ -1,0 +1,77 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.form {
+	
+	&__wrap {
+		position: relative;
+		width: $w-all;
+		margin-bottom: 25px;
+		
+		&_input {
+			height: 56px;
+			border-bottom: 2px solid $c-eclipse;
+		}
+		&_checkbox {
+			.form__link {
+				float: right;
+				font-size: 16px;
+				color: $c-mediumTurquoise;
+			}
+		}
+	}
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include mixinDimensions($w-all);
+		padding: 0 35px;
+		border: none;
+		background-color: transparent;
+		font: {
+			size: 16px;
+		};
+		
+		&::-webkit-input-placeholder {
+			color: rgba($c-eclipse, 0.55);
+		}
+		&::-moz-placeholder {
+			color: rgba($c-eclipse, 0.55);
+		}
+		&:-ms-input-placeholder {
+			color: rgba($c-eclipse, 0.55);
+		}
+		&:-moz-placeholder {
+			color: rgba($c-eclipse, 0.55);
+		}
+	}
+	&__checkbox {
+		margin-right: 23px;
+		color: rgba($c-eclipse, 0.55);
+	}
+	&__label {
+		cursor: pointer;
+		font-size: 16px;
+		color: rgba($c-eclipse, 0.55);
+	}
+	&__indication {
+		position: absolute;
+		top: 23px;
+		left: 0;
+		@include retina-sprite($sp-i-list-circle-group);
+	}
+	&__eye {
+		position: absolute;
+		top: 23px;
+		right: 0;
+		@include retina-sprite($sp-i-eye-group);
+	}
+	&__link {}
+	&__btn {}
+}

@@ -11,6 +11,7 @@ app.use(
         'index' : 'index.html'
     })
 );
+
 app.use(
     '/login',
     express.static('./distDeveloper/', {

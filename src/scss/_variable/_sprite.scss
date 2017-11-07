@@ -108,6 +108,17 @@ $sp-i-ecommerce-total-width: 354px;
 $sp-i-ecommerce-total-height: 289px;
 $sp-i-ecommerce-image: '../image/sprite.png';
 $sp-i-ecommerce: (246px, 238px, -246px, -238px, 51px, 38px, 354px, 289px, '../image/sprite.png', 'sp-i-ecommerce', );
+$sp-i-eye-name: 'sp-i-eye';
+$sp-i-eye-x: 207px;
+$sp-i-eye-y: 174px;
+$sp-i-eye-offset-x: -207px;
+$sp-i-eye-offset-y: -174px;
+$sp-i-eye-width: 22px;
+$sp-i-eye-height: 12px;
+$sp-i-eye-total-width: 354px;
+$sp-i-eye-total-height: 289px;
+$sp-i-eye-image: '../image/sprite.png';
+$sp-i-eye: (207px, 174px, -207px, -174px, 22px, 12px, 354px, 289px, '../image/sprite.png', 'sp-i-eye', );
 $sp-i-facebook-name: 'sp-i-facebook';
 $sp-i-facebook-x: 155px;
 $sp-i-facebook-y: 131px;
@@ -306,6 +317,17 @@ $sp-i-ecommerce-2x-total-width: 708px;
 $sp-i-ecommerce-2x-total-height: 578px;
 $sp-i-ecommerce-2x-image: '../image/sprite@2x.png';
 $sp-i-ecommerce-2x: (492px, 476px, -492px, -476px, 102px, 76px, 708px, 578px, '../image/sprite@2x.png', 'sp-i-ecommerce@2x', );
+$sp-i-eye-2x-name: 'sp-i-eye@2x';
+$sp-i-eye-2x-x: 414px;
+$sp-i-eye-2x-y: 348px;
+$sp-i-eye-2x-offset-x: -414px;
+$sp-i-eye-2x-offset-y: -348px;
+$sp-i-eye-2x-width: 44px;
+$sp-i-eye-2x-height: 24px;
+$sp-i-eye-2x-total-width: 708px;
+$sp-i-eye-2x-total-height: 578px;
+$sp-i-eye-2x-image: '../image/sprite@2x.png';
+$sp-i-eye-2x: (414px, 348px, -414px, -348px, 44px, 24px, 708px, 578px, '../image/sprite@2x.png', 'sp-i-eye@2x', );
 $sp-i-facebook-2x-name: 'sp-i-facebook@2x';
 $sp-i-facebook-2x-x: 310px;
 $sp-i-facebook-2x-y: 262px;
@@ -408,12 +430,12 @@ $sp-i-timeseries-2x: (310px, 0px, -310px, 0px, 172px, 168px, 708px, 578px, '../i
 $spritesheet-width: 354px;
 $spritesheet-height: 289px;
 $spritesheet-image: '../image/sprite.png';
-$spritesheet-sprites: ($sp-i-action, $sp-i-agencies, $sp-i-analysis, $sp-i-arrow, $sp-i-close, $sp-i-competitors, $sp-i-corner, $sp-i-digital-marketers, $sp-i-ecommerce, $sp-i-facebook, $sp-i-google-adwords, $sp-i-google-analytics, $sp-i-google-analytics-gray, $sp-i-google-drive, $sp-i-letter-o, $sp-i-list-circle, $sp-i-neighbours, $sp-i-timeseries, );
+$spritesheet-sprites: ($sp-i-action, $sp-i-agencies, $sp-i-analysis, $sp-i-arrow, $sp-i-close, $sp-i-competitors, $sp-i-corner, $sp-i-digital-marketers, $sp-i-ecommerce, $sp-i-eye, $sp-i-facebook, $sp-i-google-adwords, $sp-i-google-analytics, $sp-i-google-analytics-gray, $sp-i-google-drive, $sp-i-letter-o, $sp-i-list-circle, $sp-i-neighbours, $sp-i-timeseries, );
 $spritesheet: (354px, 289px, '../image/sprite.png', $spritesheet-sprites, );
 $retina-spritesheet-width: 708px;
 $retina-spritesheet-height: 578px;
 $retina-spritesheet-image: '../image/sprite@2x.png';
-$retina-spritesheet-sprites: ($sp-i-action-2x, $sp-i-agencies-2x, $sp-i-analysis-2x, $sp-i-arrow-2x, $sp-i-close-2x, $sp-i-competitors-2x, $sp-i-corner-2x, $sp-i-digital-marketers-2x, $sp-i-ecommerce-2x, $sp-i-facebook-2x, $sp-i-google-adwords-2x, $sp-i-google-analytics-2x, $sp-i-google-analytics-gray-2x, $sp-i-google-drive-2x, $sp-i-letter-o-2x, $sp-i-list-circle-2x, $sp-i-neighbours-2x, $sp-i-timeseries-2x, );
+$retina-spritesheet-sprites: ($sp-i-action-2x, $sp-i-agencies-2x, $sp-i-analysis-2x, $sp-i-arrow-2x, $sp-i-close-2x, $sp-i-competitors-2x, $sp-i-corner-2x, $sp-i-digital-marketers-2x, $sp-i-ecommerce-2x, $sp-i-eye-2x, $sp-i-facebook-2x, $sp-i-google-adwords-2x, $sp-i-google-analytics-2x, $sp-i-google-analytics-gray-2x, $sp-i-google-drive-2x, $sp-i-letter-o-2x, $sp-i-list-circle-2x, $sp-i-neighbours-2x, $sp-i-timeseries-2x, );
 $retina-spritesheet: (708px, 578px, '../image/sprite@2x.png', $retina-spritesheet-sprites, );
 
 // These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
@@ -437,6 +459,8 @@ $sp-i-digital-marketers-group-name: 'sp-i-digitalMarketers';
 $sp-i-digital-marketers-group: ('sp-i-digitalMarketers', $sp-i-digital-marketers, $sp-i-digital-marketers-2x, );
 $sp-i-ecommerce-group-name: 'sp-i-ecommerce';
 $sp-i-ecommerce-group: ('sp-i-ecommerce', $sp-i-ecommerce, $sp-i-ecommerce-2x, );
+$sp-i-eye-group-name: 'sp-i-eye';
+$sp-i-eye-group: ('sp-i-eye', $sp-i-eye, $sp-i-eye-2x, );
 $sp-i-facebook-group-name: 'sp-i-facebook';
 $sp-i-facebook-group: ('sp-i-facebook', $sp-i-facebook, $sp-i-facebook-2x, );
 $sp-i-google-adwords-group-name: 'sp-i-googleAdwords';
@@ -455,7 +479,7 @@ $sp-i-neighbours-group-name: 'sp-i-neighbours';
 $sp-i-neighbours-group: ('sp-i-neighbours', $sp-i-neighbours, $sp-i-neighbours-2x, );
 $sp-i-timeseries-group-name: 'sp-i-timeseries';
 $sp-i-timeseries-group: ('sp-i-timeseries', $sp-i-timeseries, $sp-i-timeseries-2x, );
-$retina-groups: ($sp-i-action-group, $sp-i-agencies-group, $sp-i-analysis-group, $sp-i-arrow-group, $sp-i-close-group, $sp-i-competitors-group, $sp-i-corner-group, $sp-i-digital-marketers-group, $sp-i-ecommerce-group, $sp-i-facebook-group, $sp-i-google-adwords-group, $sp-i-google-analytics-group, $sp-i-google-analytics-gray-group, $sp-i-google-drive-group, $sp-i-letter-o-group, $sp-i-list-circle-group, $sp-i-neighbours-group, $sp-i-timeseries-group, );
+$retina-groups: ($sp-i-action-group, $sp-i-agencies-group, $sp-i-analysis-group, $sp-i-arrow-group, $sp-i-close-group, $sp-i-competitors-group, $sp-i-corner-group, $sp-i-digital-marketers-group, $sp-i-ecommerce-group, $sp-i-eye-group, $sp-i-facebook-group, $sp-i-google-adwords-group, $sp-i-google-analytics-group, $sp-i-google-analytics-gray-group, $sp-i-google-drive-group, $sp-i-letter-o-group, $sp-i-list-circle-group, $sp-i-neighbours-group, $sp-i-timeseries-group, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

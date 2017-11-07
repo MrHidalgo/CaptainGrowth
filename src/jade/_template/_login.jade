@@ -6,28 +6,39 @@ section.login#login
 	.login_img
 		i.login_img-big.resize_right
 
-		//i.login_img-smallS.login_img-smallS_0.resize_left-s
-		//i.login_img-smallS.login_img-smallS_1.resize_right-s
+		i.login_img-smallS.login_img-smallS_0
+		i.login_img-smallS.login_img-smallS_1
+		i.login_img-bigS.login_img-bigS_0
+		i.login_img-bigS.login_img-bigS_1
 
-		//i.login_img-bigS.login_img-bigS_0.resize_left-s
-		//i.login_img-bigS.login_img-bigS_1.resize_right-s
 
-	.container-default
-
+	.login__row
 		.login__container
 			+mainTitle(3, false, loginTitleGradient)
 
 			.login__form
 
 				form.form
-					.login__form-wrpa
-						input(type="text")
-					.login__form-wrap
-						input(type="password")
-					.login__form-wrap
-						input(type="checkbox")
+
+					.form__wrap.form__wrap_input
+						.form__wrap-field
+							input(type="text" class="form__input" placeholder="Enter your e-mail")
+						i.form__indication
+
+					.form__wrap.form__wrap_input
+						.form__wrap-field
+							input(type="password" class="form__input" placeholder="Type your password")
+						i.form__indication
+						i.form__eye
+
+					.form__wrap.form__wrap_checkbox.clearfix
+						label.form__label
+							input(type="checkbox" class="form__checkbox")
+							!= "Stay loged in"
+
+						a(href="javascript:void(0);" class="form__link")!= "Forgot password?"
 
 					button(
 						type="button"
-						class="login__btn"
+						class="form__btn login__btn"
 					)!= "Log In"

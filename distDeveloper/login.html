@@ -21,13 +21,8 @@
       </div>
     </header>
     <section id="login" class="login">
-      <div class="login_img"><i class="login_img-big resize_right"></i>
-        <!--i.login_img-smallS.login_img-smallS_0.resize_left-s-->
-        <!--i.login_img-smallS.login_img-smallS_1.resize_right-s-->
-        <!--i.login_img-bigS.login_img-bigS_0.resize_left-s-->
-        <!--i.login_img-bigS.login_img-bigS_1.resize_right-s-->
-      </div>
-      <div class="container-default">
+      <div class="login_img"><i class="login_img-big resize_right"></i><i class="login_img-smallS login_img-smallS_0"></i><i class="login_img-smallS login_img-smallS_1"></i><i class="login_img-bigS login_img-bigS_0"></i><i class="login_img-bigS login_img-bigS_1"></i></div>
+      <div class="login__row">
         <div class="login__container">
           <p class="main__title">
             <svg width="100%" height="30px" xmlns="http://www.w3.org/2000/svg">
@@ -42,16 +37,22 @@
           </p>
           <div class="login__form">
             <form class="form">
-              <div class="login__form-wrpa">
-                <input type="text">
+              <div class="form__wrap form__wrap_input">
+                <div class="form__wrap-field">
+                  <input type="text" placeholder="Enter your e-mail" class="form__input">
+                </div><i class="form__indication"></i>
               </div>
-              <div class="login__form-wrap">
-                <input type="password">
+              <div class="form__wrap form__wrap_input">
+                <div class="form__wrap-field">
+                  <input type="password" placeholder="Type your password" class="form__input">
+                </div><i class="form__indication"></i><i class="form__eye"></i>
               </div>
-              <div class="login__form-wrap">
-                <input type="checkbox">
+              <div class="form__wrap form__wrap_checkbox clearfix">
+                <label class="form__label">
+                  <input type="checkbox" class="form__checkbox">Stay loged in
+                </label><a href="javascript:void(0);" class="form__link">Forgot password?</a>
               </div>
-              <button type="button" class="login__btn">Log In</button>
+              <button type="button" class="form__btn login__btn">Log In</button>
             </form>
           </div>
         </div>
