@@ -30,7 +30,7 @@
 
  html.open-menu, html.open-popup, body.open-menu, body.open-popup { overflow: hidden; }
 
- html { -webkit-tap-highlight-color: transparent; }
+ html { -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
 
  body { position: relative; margin: 0; padding: 0; line-height: 1.42857143; font-size: 14px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "Rubik-Regular"; color: #6f7c9b; background-color: #f7f7f7; overflow-x: hidden; }
 
@@ -120,11 +120,11 @@
 
  .header__img { position: absolute; top: 0; right: 0; width: 994px; height: 784px; background-image: url("../image/img-header.png"); background-position: top right; background-repeat: no-repeat; -webkit-background-size: 994px 994px; -moz-background-size: 994px; background-size: 994px; }
 
-@media (min-width: 290px) and (max-width: 1366px) {  .header__img { display: none; } }
+@media (min-width: 290px) and (max-width: 1279px) {  .header__img { display: none; } }
 
  .header__img_medium { display: none; }
 
-@media (min-width: 768px) and (max-width: 1366px) {  .header__img_medium { display: block; position: absolute; top: 112px; right: 0; width: 556px; height: 556px; background-image: url("../image/img-header_medium.png"); background-position: top right; background-repeat: no-repeat; -webkit-background-size: 556px 556px; -moz-background-size: 556px; background-size: 556px; } }
+@media (min-width: 768px) and (max-width: 1279px) {  .header__img_medium { display: block; position: absolute; top: 112px; right: 0; width: 556px; height: 556px; background-image: url("../image/img-header_medium.png"); background-position: top right; background-repeat: no-repeat; -webkit-background-size: 556px 556px; -moz-background-size: 556px; background-size: 556px; } }
 
  .header__login { float: right; padding-right: 20px; padding-top: 10px; }
 
@@ -381,9 +381,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {  .doit__img_medium { display: block; } }
 
- .find { position: relative; padding-bottom: 260px; }
-
-@media screen and (min-width: 992px) and (max-width: 1199px) {  .find { padding-bottom: 150px; } }
+ .find { position: relative; padding-bottom: 150px; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {  .find { padding-bottom: 60px; } }
 
@@ -635,13 +633,13 @@
 
  .contacts_right, .contacts_left { position: relative; display: inline-block; vertical-align: top; }
 
- .contacts_right { width: 420px; min-height: 252px; display: -webkit-inline-box; display: -webkit-inline-flex; display: -moz-inline-box; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -moz-box-orient: vertical; -moz-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -moz-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+ .contacts_right { width: 430px; min-height: 252px; padding-right: 30px; display: -webkit-inline-box; display: -webkit-inline-flex; display: -moz-inline-box; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -moz-box-orient: vertical; -moz-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -moz-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {  .contacts_right { display: block; width: 100%; min-height: 0; padding-bottom: 15px; } }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {  .contacts_right { display: block; width: 100%; min-height: 0; padding-bottom: 15px; } }
 
- .contacts_left { width: -webkit-calc(100% - 420px); width: -moz-calc(100% - 420px); width: calc(100% - 420px); }
+ .contacts_left { width: -webkit-calc(100% - 430px); width: -moz-calc(100% - 430px); width: calc(100% - 430px); }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {  .contacts_left { width: 100%; } }
 

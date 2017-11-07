@@ -9,10 +9,7 @@
 ///
 .find {
 	position: relative;
-	padding-bottom: 260px;
-	@include mixinRespondTo(small-desktop) {
-		padding-bottom: 150px;
-	}
+	padding-bottom: 150px;
 	@include mixinRespondTo(tablet) {
 		padding-bottom: 60px;
 	}

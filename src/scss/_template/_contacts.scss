@@ -46,8 +46,9 @@
 		vertical-align: top;
 	}
 	&_right {
-		width:420px;
+		width:430px;
 		min-height: 252px;
+		padding-right: 30px;
 		display: inline-flex;
 		flex-direction: column;
 		justify-content: center;
@@ -65,7 +66,7 @@
 		}
 	}
 	&_left {
-		width: calc(#{$w-all} - 420px);
+		width: calc(#{$w-all} - 430px);
 		@include mixinRespondTo(small-desktop) {
 			width: $w-all;
 		}
