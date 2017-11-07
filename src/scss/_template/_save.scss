@@ -13,12 +13,30 @@
 		top: 30px;
 		bottom: 140px;
 	}
+	@include mixinRespondTo(mobile) {
+		padding-bottom: 100px;
+	}
 	
 	// POSITION
 	
 	// MODIFY
 	.main__title {
 		margin-bottom: 100px;
+		@include mixinRespondTo(mobile) {
+			margin-bottom: 70px;
+		}
+		
+		&_other {
+			@include mixinRespondTo(mobile) {
+				display: none;
+			}
+		}
+		&_mobile {
+			display: none;
+			@include mixinRespondTo(mobile) {
+				display: block;
+			}
+		}
 	}
 	&_img {
 		z-index: 0;
@@ -26,6 +44,9 @@
 		top: 0;
 		left: 0;
 		@include mixinDimensions($w-all);
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		@mixin imagePosition($src, $w, $h, $pos) {
 			@include mixinDimensions($w, $h);
@@ -118,6 +139,16 @@
 				margin-right: 0;
 			}
 		}
+		@include mixinRespondTo(mobile) {
+			width: $w-all;
+			margin-bottom: 20px;
+			padding: 30px;
+			min-height: 0;
+			
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
 		
 		&-wrap {
 			display: flex;
@@ -133,6 +164,9 @@
 					right: 15px;
 					bottom: 50px;
 				};
+			}
+			@include mixinRespondTo(mobile) {
+				display: block;
 			}
 		}
 		&-icon {
@@ -199,6 +233,9 @@
 				}
 				@include mixinRespondTo(tablet) {
 					white-space: normal;
+				}
+				@include mixinRespondTo(mobile) {
+					font-size: 16px;
 				}
 			}
 		}

@@ -10,6 +10,22 @@
 .insight {
 	min-height: 532px;
 	padding-top: 142px;
+	@include mixinRespondTo(mobile) {
+		padding: {
+			top: 0;
+			bottom: 100px;
+		}
+		min-height: 0;
+	}
+	
+	.container {
+		@include mixinRespondTo(mobile) {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+	}
 	
 	// POSITION
 	&__row {
@@ -25,6 +41,9 @@
 		}
 		@include mixinRespondTo(tablet) {
 			padding-left: 275px;
+		}
+		@include mixinRespondTo(mobile) {
+			padding-left: 0;
 		}
 	}
 	&_container {
@@ -57,6 +76,9 @@
 			left: -85px;
 			@include mixinDimensions(446px);
 		}
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		&-img {
 			position: absolute;
@@ -77,6 +99,9 @@
 		@include mixinRespondTo(tablet) {
 			font-size: 24px;
 		}
+		@include mixinRespondTo(mobile) {
+			font-size: 18px;
+		}
 	}
 	
 	// BTN
@@ -91,6 +116,9 @@
 		font-size: 22px;
 		outline: none;
 		transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out;
+		@include mixinRespondTo(mobile) {
+			width: 256px;
+		}
 		
 		&:hover {
 			.insight__btn-icon {
@@ -114,6 +142,17 @@
 			top: 16px;
 			right: 35px;
 			@include retina-sprite($sp-i-corner-group);
+		}
+	}
+	
+	&__img {
+		display: none;
+		margin: {
+			left: 20px;
+			right: 20px;
+		};
+		@include mixinRespondTo(mobile) {
+			display: block;
 		}
 	}
 }

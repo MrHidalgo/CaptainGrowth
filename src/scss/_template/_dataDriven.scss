@@ -10,6 +10,9 @@
 .data {
 	position: relative;
 	padding-bottom: 120px;
+	@include mixinRespondTo(mobile) {
+		padding-bottom: 100px;
+	}
 	
 	// POSITION
 	
@@ -20,6 +23,9 @@
 		top: 0;
 		left: 0;
 		@include mixinDimensions($w-all);
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		@mixin imagePosition($src, $w, $h, $pos) {
 			@include mixinDimensions($w, $h);
@@ -84,6 +90,9 @@
 		font-size: 18px;
 		margin-bottom: 57px;
 		line-height: 1.2;
+		@include mixinRespondTo(mobile) {
+			font-size: 16px;
+		}
 	}
 	
 	// IMG
@@ -97,10 +106,22 @@
 		@include mixinRespondTo(tablet) {
 			display: none;
 		}
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		&_medium {
 			display: none;
 			@include mixinRespondTo(tablet) {
+				display: block;
+			}
+			@include mixinRespondTo(mobile) {
+				display: none;
+			}
+		}
+		&_small {
+			display: none;
+			@include mixinRespondTo(mobile) {
 				display: block;
 			}
 		}

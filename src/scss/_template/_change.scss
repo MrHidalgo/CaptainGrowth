@@ -13,6 +13,12 @@
 		top: 70px;
 		bottom: 140px;
 	}
+	@include mixinRespondTo(mobile) {
+		padding: {
+			top: 0;
+			bottom: 100px;
+		};
+	}
 	
 	// POSITION
 	// MODIFY
@@ -22,6 +28,9 @@
 		top: 0;
 		left: 0;
 		@include mixinDimensions($w-all);
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		@mixin imagePosition($src, $w, $h, $pos) {
 			@include mixinDimensions($w, $h);
@@ -81,6 +90,9 @@
 	}
 	.main__title {
 		padding-bottom: 120px;
+		@include mixinRespondTo(mobile) {
+			padding-bottom: 60px;
+		}
 	}
 	
 	// BLOCK
@@ -95,6 +107,14 @@
 		@include mixinRespondTo(tablet) {
 			display: inline-block;
 			vertical-align: top;
+		}
+		@include mixinRespondTo(mobile) {
+			width: $w-all;
+			margin-bottom: 50px;
+			
+			&:last-of-type {
+				margin-bottom: 0;
+			}
 		}
 		
 		&-wrap {
@@ -112,6 +132,10 @@
 					right: 30px;
 					bottom: 50px;
 				};
+			}
+			@include mixinRespondTo(mobile) {
+				display: block;
+				margin-bottom: 80px;
 			}
 		}
 		&-0 {
@@ -184,6 +208,16 @@
 			top: 50%;
 			right: -75px;
 			margin-top: -(((49px * 3) + (10 * 2)) / 2);
+			@include mixinRespondTo(mobile) {
+				z-index: 5;
+				top: auto;
+				right: auto;
+				margin-top: 0;
+				bottom: -115px;
+				left: 50%;
+				margin-left: -(167px / 4);
+				transform: rotate(90deg);
+			}
 			
 			&-0,
 			&-1,
@@ -223,6 +257,12 @@
 		}
 		@include mixinRespondTo(tablet) {
 			left: auto;
+		}
+		@include mixinRespondTo(mobile) {
+			left: auto;
+			width: $w-all;
+			font-size: 18px;
+			padding-left: 60px;
 		}
 		
 		&:hover,

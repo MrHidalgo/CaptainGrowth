@@ -4,6 +4,8 @@
 -
     var saveTitle = "and optimizes the whole marketing funnel";
     var saveTitleGradient = "It saves up to 50% of your ad spendings";
+    var saveTitleGradient1 = "It saves up to 50% of your";
+    var saveTitleGradient2 = "ad spendings";
     var saveBlockTitle = [
         "E-commerce",
         "Agencies",
@@ -74,7 +76,11 @@ section.save#save
 
     .container-default
 
-        +mainTitle(2, saveTitle, saveTitleGradient)
+        .main__title_other
+            +mainTitle(2, saveTitle, saveTitleGradient)
+
+        .main__title_mobile
+            +mainTitle(4, saveTitle, saveTitleGradient1, saveTitleGradient2)
 
         .save__block-wrap
             +saveBlock(saveBlockTitle, saveIconName, saveNum, saveArrData)

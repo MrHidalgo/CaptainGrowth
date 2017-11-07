@@ -10,10 +10,11 @@
 //- ====================
 //- FUNCTION/PROCEDURE
 //- ====================
-mixin imgData(imageSizeHeight, imageSizeMediumHeight)
+mixin imgData(imageSizeHeight, imageSizeMediumHeight, imageSizeSmallHeight)
     -
         var imageSize = (imageSizeHeight / 2);
         var imageSizeMedium = (imageSizeMediumHeight / 2);
+        var imageSizeSmall = (imageSizeSmallHeight / 2);
 
     img(
         src="./image/img-data.png"
@@ -26,6 +27,12 @@ mixin imgData(imageSizeHeight, imageSizeMediumHeight)
         class="data__img data__img_medium"
         title=""
         height!= imageSizeMedium
+    )
+    img(
+        src="./image/img-data_small.png"
+        class="data__img data__img_small"
+        title=""
+        height!= imageSizeSmall
     )
 
 //- ====================
@@ -45,7 +52,7 @@ section.data#data
 
         p.data__subTitle!= dataSubTitle
 
-        +imgData(1288, 1908)
+        +imgData(1288, 1908, 1560)
 
 
 

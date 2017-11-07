@@ -47,6 +47,9 @@ footer.footer#footer
     .container
 
         .footer_row
+            .footer__menu_small
+                +footerMenu(footerMenuArr)
+
             .footer_left.clearfix
                 +logotype(104, "footer_logotype")
                 +copyright()

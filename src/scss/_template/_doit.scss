@@ -13,6 +13,12 @@
 		top: 45px;
 		bottom: 150px;
 	};
+	@include mixinRespondTo(mobile) {
+		padding: {
+			top: 0;
+			bottom: 100px;
+		};
+	}
 	
 	// POSITION
 	
@@ -23,6 +29,9 @@
 		top: 0;
 		left: 0;
 		@include mixinDimensions($w-all);
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		@mixin imagePosition($src, $w, $h, $pos) {
 			@include mixinDimensions($w, $h);
@@ -97,6 +106,10 @@
 			width: calc(#{$w-all} - 300px);
 			padding-right: 50px;
 		}
+		@include mixinRespondTo(mobile) {
+			width: $w-all;
+			padding-top: 0;
+		}
 	}
 	&_right {
 		padding: {
@@ -111,11 +124,17 @@
 				top: 70px;
 			}
 		}
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 	}
 	
 	// LIST
 	&__list {
 		margin-top: 102px;
+		@include mixinRespondTo(mobile) {
+			margin-top: 60px;
+		}
 	}
 	
 	// ITEM

@@ -38,6 +38,12 @@ mixin blockTitle(titleName, subTitleName, btnName)
         h1.header__title!= titleName
         p.header__subtitle!= subTitleName
 
+        img(
+            src="./image/img-header_small.png"
+            class="header__image"
+            height!=(586 / 2)
+        )
+
         button(
             type="button"
             class="header__btn"
@@ -83,5 +89,6 @@ header.header#header
 
     .container-default
         +blockTitle(headerTitle, headerSubTitle, headerBtn)
+
         +headerSocial(socialName)
 

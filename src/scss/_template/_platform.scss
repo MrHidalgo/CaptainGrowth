@@ -10,6 +10,9 @@
 .platform {
 	position: relative;
 	padding-bottom: 110px;
+	@include mixinRespondTo(mobile) {
+		padding-bottom: 100px;
+	}
 	
 	// POSITION
 	// MODIFY
@@ -19,6 +22,9 @@
 		top: 0;
 		left: 0;
 		@include mixinDimensions($w-all);
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		@mixin imagePosition($src, $w, $h, $pos) {
 			@include mixinDimensions($w, $h);
@@ -68,6 +74,9 @@
 	}
 	.main__title {
 		margin-bottom: 120px;
+		@include mixinRespondTo(mobile) {
+			margin-bottom: 60px;
+		}
 	}
 	
 	// BLOCK
@@ -87,13 +96,23 @@
 				margin-right: 0;
 			}
 		}
+		@include mixinRespondTo(mobile) {
+			margin: {
+				right: 0;
+				bottom: 60px;
+			}
+			text-align: center;
+			
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
 		
 		&-wrap {
 			display: flex;
 			flex-direction: row;
 			align-items: baseline;
 			justify-content: flex-start;
-			
 			@include mixinRespondTo(small-desktop) {
 				position: relative;
 				white-space: nowrap;
@@ -110,6 +129,9 @@
 					bottom: 50px;
 				}
 			}
+			@include mixinRespondTo(mobile) {
+				display: block;
+			}
 		}
 		&-image,
 		&-num,
@@ -118,6 +140,12 @@
 		}
 		&-image {
 			display: block;
+			@include mixinRespondTo(mobile) {
+				margin: {
+					left: auto;
+					right: auto;
+				};
+			}
 		}
 		&-num {
 			color: $c-royalBlue;

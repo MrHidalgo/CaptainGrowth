@@ -12,6 +12,10 @@
 	@include mixinRespondTo(tablet) {
 		min-height: 170px;
 	}
+	@include mixinRespondTo(tablet) {
+		min-height: 0;
+		padding-bottom: 20px;
+	}
 	
 	// POSITION
 	&_row {
@@ -30,6 +34,10 @@
 		@include mixinRespondTo(tablet) {
 			width: 60%;
 		}
+		@include mixinRespondTo(mobile) {
+			width: 80%;
+			padding-top: 20px;
+		}
 	}
 	&_right {
 		width: calc(#{$w-all} - 270px);
@@ -38,6 +46,10 @@
 		@include mixinRespondTo(tablet) {
 			width: 40%;
 		}
+		@include mixinRespondTo(mobile) {
+			width: 20%;
+			padding-top: 25px;
+		}
 	}
 	
 	// MODIFY
@@ -45,14 +57,25 @@
 		@include mixinRespondTo(tablet) {
 			float: left;
 		}
+		@include mixinRespondTo(mobile) {
+			float: left;
+		}
+		
 		.logotype__img {
 			display: block;
+			@include mixinRespondTo(mobile) {
+				display: inline-block;
+			}
 		}
 	}
 	
 	&_copyright {
 		padding-top: 28px;
 		@include mixinRespondTo(tablet) {
+			float: right;
+			padding-top: 15px;
+		}
+		@include mixinRespondTo(mobile) {
 			float: right;
 			padding-top: 15px;
 		}
@@ -68,6 +91,9 @@
 			padding-top: 10px;
 		}
 		@include mixinRespondTo(tablet) {
+			padding-top: 0;
+		}
+		@include mixinRespondTo(mobile) {
 			padding-top: 0;
 		}
 		
@@ -88,11 +114,28 @@
 		@include mixinRespondTo(tablet) {
 			display: none;
 		}
+		@include mixinRespondTo(mobile) {
+			.footer_right & {
+				display: none;
+			}
+		}
 		
+		&_small {
+			display: none;
+			@include mixinRespondTo(mobile) {
+				display: block;
+			}
+		}
 		&-item {
 			display: inline-block;
 			vertical-align: top;
 			padding-right: 29px;
+			@include mixinRespondTo(mobile) {
+				width: (100% / 3);
+				height: 30px;
+				line-height: 30px;
+				padding-right: 0;
+			}
 			
 			&:last-child {
 				padding-right: 0;

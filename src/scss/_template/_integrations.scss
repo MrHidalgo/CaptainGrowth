@@ -13,6 +13,12 @@
 		top: 140px;
 		bottom: 250px;
 	}
+	@include mixinRespondTo(mobile) {
+		padding: {
+			top: 0;
+			bottom: 100px;
+		}
+	}
 	
 	// POSITION
 	
@@ -23,6 +29,9 @@
 		top: 0;
 		left: 0;
 		@include mixinDimensions($w-all);
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		@mixin imagePosition($src, $w, $h, $pos) {
 			@include mixinDimensions($w, $h);
@@ -49,16 +58,30 @@
 	}
 	.main__title {
 		margin-bottom: 120px;
+		@include mixinRespondTo(mobile) {
+			margin-bottom: 60px;
+		}
 	}
 	
 	// BLOCK
 	&__block {
 		width: 300px;
+		@include mixinRespondTo(mobile) {
+			width: $w-all;
+			margin-bottom: 60px;
+			
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
 		
 		&-wrap {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
+			@include mixinRespondTo(mobile) {
+				display: block;
+			}
 		}
 		&-icon {
 			display: block;

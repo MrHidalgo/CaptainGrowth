@@ -10,6 +10,13 @@
 .contacts {
 	min-height: 532px;
 	padding-top: 147px;
+	@include mixinRespondTo(mobile) {
+		min-height: 0;
+		padding: {
+			top: 0;
+			bottom: 20px;
+		}
+	}
 	
 	// POSITION
 	&__row {
@@ -38,12 +45,22 @@
 		@include mixinRespondTo(tablet) {
 			padding-left: 270px;
 		}
+		@include mixinRespondTo(mobile) {
+			padding: {
+				left: 0;
+				top: 20px;
+				bottom: 20px;
+			}
+		}
 	}
 	&_right,
 	&_left {
 		position: relative;
 		display: inline-block;
 		vertical-align: top;
+		@include mixinRespondTo(mobile) {
+			display: block;
+		}
 	}
 	&_right {
 		width:430px;
@@ -64,6 +81,11 @@
 			min-height: 0;
 			padding-bottom: 15px;
 		}
+		@include mixinRespondTo(mobile) {
+			width: $w-all;
+			min-height: 0;
+			padding-right: 0;
+		}
 	}
 	&_left {
 		width: calc(#{$w-all} - 430px);
@@ -72,6 +94,10 @@
 		}
 		@include mixinRespondTo(tablet) {
 			width: $w-all;
+		}
+		@include mixinRespondTo(mobile) {
+			width: $w-all;
+			padding-top: 20px;
 		}
 	}
 	
@@ -96,6 +122,9 @@
 			left: -85px;
 			@include mixinDimensions(446px);
 		}
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		&-img {
 			position: absolute;
@@ -116,12 +145,18 @@
 		@include mixinRespondTo(tablet) {
 			font-size: 24px;
 		}
+		@include mixinRespondTo(mobile) {
+			font-size: 18px;
+		}
 	}
 	
 	// TEXT
 	&__text {
 		font-size: 18px;
 		line-height: 1.2;
+		@include mixinRespondTo(mobile) {
+			font-size: 14px;
+		}
 	}
 	
 	// FORM
@@ -131,6 +166,9 @@
 			padding-top: 0;
 		}
 		@include mixinRespondTo(tablet) {
+			padding-top: 0;
+		}
+		@include mixinRespondTo(mobile) {
 			padding-top: 0;
 		}
 		
@@ -157,6 +195,9 @@
 			margin-bottom: 30px;
 			font-size: 18px;
 			transition: border-color 0.25s ease-in-out;
+			@include mixinRespondTo(mobile) {
+				margin-bottom: 20px;
+			}
 			
 			&:focus {
 				border-color: $c-mediumTurquoise;
@@ -183,6 +224,9 @@
 			font-size: 22px;
 			outline: none;
 			transition: background-color 0.25s ease-in-out;
+			@include mixinRespondTo(mobile) {
+				font-size: 18px;
+			}
 			
 			&:active {
 				background-color: $c-darkSlateBlue;

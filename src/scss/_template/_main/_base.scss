@@ -19,6 +19,9 @@
 		@include mixinRespondTo(tablet) {
 			font-size: 32px;
 		}
+		@include mixinRespondTo(mobile) {
+			font-size: 24px;
+		}
 	}
 }
 
