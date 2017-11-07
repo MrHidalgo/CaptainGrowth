@@ -34,6 +34,15 @@
 		left: 0;
 		@include mixinDimensions($w-all);
 		
+		
+		@mixin imagePosition($src, $w, $h, $pos) {
+			@include mixinDimensions($w, $h);
+			background-image: url($src);
+			background-position: $pos;
+			background-repeat: no-repeat;
+			background-size: $w;
+		}
+		
 		&-big,
 		&-smallS,
 		&-bigS {
@@ -43,28 +52,48 @@
 		&-big {
 			left: 0;
 			top: 0;
+			
+			$imgSrcBig: "../image/img-circle_some.png";
+			$imgBigW: (424px / 2);
+			$imgBigH: (548px / 2);
+			$imgPosBig: unquote("top left");
+			@include imagePosition($imgSrcBig, $imgBigW, $imgBigH, $imgPosBig);
 		}
 		&-smallS {
 			left: 102px;
 			top: 377px;
+			
+			$imgSrcSmallS: "../image/img-circleS-small_some.png";
+			$imgSmallSW: (112px / 2);
+			$imgSmallSH: (112px / 2);
+			$imgPosSmallS: unquote("top left");
+			@include imagePosition($imgSrcSmallS, $imgSmallSW, $imgSmallSH, $imgPosSmallS);
 		}
 		&-bigS {
 			left: 11px;
 			top: 621px;
+			
+			$imgSrcBigS: "../image/img-circleS-big_some.png";
+			$imgBigSW: (174px / 2);
+			$imgBigSH: (174px / 2);
+			$imgPosBigS: unquote("top left");
+			@include imagePosition($imgSrcBigS, $imgBigSW, $imgBigSH, $imgPosBigS);
 		}
 	}
 	
 	// IMG
 	&__img {
-		//position: absolute;
-		//top: 0;
-		//right: 0;
-		//@include mixinDimensions((1988px / 2), (1568px / 2));
-		//background-image: url("../image/img-header.png");
-		//background-position: calc(1920px - (1988px / 2)) 0;
-		//background-repeat: no-repeat;
-		//background-size: 994px;
-		//background-attachment: fixed;
+		$imageSizeWidth: (1988px / 2);
+		$imageSizeHeight: (1568px / 2);
+		
+		position: absolute;
+		top: 0;
+		right: 0;
+		@include mixinDimensions($imageSizeWidth, $imageSizeHeight);
+		background-image: url("../image/img-header.png");
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: $imageSizeWidth;
 	}
 	
 	// LOGIN

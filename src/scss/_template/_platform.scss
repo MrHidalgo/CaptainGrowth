@@ -20,6 +20,14 @@
 		left: 0;
 		@include mixinDimensions($w-all);
 		
+		@mixin imagePosition($src, $w, $h, $pos) {
+			@include mixinDimensions($w, $h);
+			background-image: url($src);
+			background-position: $pos;
+			background-repeat: no-repeat;
+			background-size: $w;
+		}
+		
 		&-left,
 		&-bigS {
 			z-index: 0;
@@ -28,6 +36,12 @@
 		&-left {
 			top: -50px;
 			left: 0;
+			
+			$imgSrcBig: "../image/img-circle-2_some.png";
+			$imgBigW: (316px / 2);
+			$imgBigH: (752px / 2);
+			$imgPosBig: unquote("-50px left");
+			@include imagePosition($imgSrcBig, $imgBigW, $imgBigH, $imgPosBig);
 		}
 		&-bigS {
 			&_0 {

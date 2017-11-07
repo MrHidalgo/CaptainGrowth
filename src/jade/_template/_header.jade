@@ -19,18 +19,8 @@
 //- ====================
 //- FUNCTION/PROCEDURE
 //- ====================
-mixin headerMainImage(imageSizeHeight)
-    -
-        var imageHeight = (imageSizeHeight / 2);
-
-    i.header__img
-
-    //img(
-    //    src="./image/img-header.png"
-    //    class="header__img"
-    //    title=""
-    //    height!= imageHeight
-    //)
+mixin headerMainImage()
+    i.header__img.resize_right
 
 
 mixin login(arrName)
@@ -80,36 +70,13 @@ mixin headerSocial(arrName)
 header.header#header
 
     .header_img
-        -
-            var imgBigSize = (548 / 2);
-            var imgSmallSmoothSize = (112 / 2);
-            var imgBigSmoothSize = (174 / 2);
+        i.header_img-big.resize_left
+        i.header_img-smallS.resize_left
+        i.header_img-bigS.resize_left
 
-        i.header_img-big
-        i.header_img-smallS
-        i.header_img-bigS
-
-        //img(
-        //    src="./image/img-circle_some.png"
-        //    class="header_img-big"
-        //    title=""
-        //    height!= imgBigSize
-        //)
-        //img(
-        //    src="./image/img-circleS-small_some.png"
-        //    class="header_img-smallS"
-        //    title=""
-        //    height!= imgSmallSmoothSize
-        //)
-        //img(
-        //    src="./image/img-circleS-big_some.png"
-        //    class="header_img-bigS"
-        //    title=""
-        //    height!= imgBigSmoothSize
-        //)
 
     .header__row
-        +headerMainImage(1568)
+        +headerMainImage()
 
     .container.clearfix
 

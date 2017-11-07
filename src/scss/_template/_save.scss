@@ -27,6 +27,14 @@
 		left: 0;
 		@include mixinDimensions($w-all);
 		
+		@mixin imagePosition($src, $w, $h, $pos) {
+			@include mixinDimensions($w, $h);
+			background-image: url($src);
+			background-position: $pos;
+			background-repeat: no-repeat;
+			background-size: $w;
+		}
+		
 		&-left,
 		&-right,
 		&-bigS,
@@ -38,10 +46,22 @@
 			top: 50%;
 			margin-top: -(752px / 4);
 			left: 0;
+			
+			$imgSrcBig: "../image/img-circle-2_some.png";
+			$imgBigW: (316px / 2);
+			$imgBigH: (752px / 2);
+			$imgPosBig: unquote("50% left");
+			@include imagePosition($imgSrcBig, $imgBigW, $imgBigH, $imgPosBig);
 		}
 		&-right {
 			bottom: 0;
 			right: 0;
+			
+			$imgSrcBig: "../image/img-circle-3_some.png";
+			$imgBigW: (1124px / 2);
+			$imgBigH: (1456px / 2);
+			$imgPosBig: unquote("bottom right");
+			@include imagePosition($imgSrcBig, $imgBigW, $imgBigH, $imgPosBig);
 		}
 		&-bigS {
 			&_0 {

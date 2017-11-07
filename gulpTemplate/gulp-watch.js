@@ -5,9 +5,9 @@ const gulp          =   require('gulp')
 
 /* GULP PATH [module] */
 const command       =   require('./gulp-command.js')
-    , config        =   require('./gulp-config.js')
+    // , config        =   require('./gulp-config.js')
     , taskJs        =   require('./gulp-js.js')
-    , taskInternalJs =  require('./gulp-internal-js.js')
+    // , taskInternalJs =  require('./gulp-internal-js.js')
     , srcWatch      =   require('./gulp-srcFilesWatch');
 
 
@@ -19,7 +19,7 @@ exports.mainWatchTask = function(taskName) {
         , srcWatchJADE  = srcWatch.jadeFiles
         , srcWatchJSON  = srcWatch.jsonFiles
         , srcWatchJS    = srcWatch.jsFiles
-        , srcWatchInternalJS = srcWatch.jsInternalFiles
+        // , srcWatchInternalJS = srcWatch.jsInternalFiles
         , srcWatchICON  = srcWatch.iconFiles
         , srcWatchIMG   = srcWatch.imageFiles;
 
@@ -38,27 +38,34 @@ exports.mainWatchTask = function(taskName) {
             gulp.start(command.buildJade);
         });
 
-        watch(srcWatchJS).on("change", function(ev) {
-
-            const strFrom   = ev.lastIndexOf('\\') + 1
-                , strTo     = ".js".length,
-                fileName    = ev.slice(strFrom, -strTo);
-
-            taskJs.mainScriptTask(command.buildScript, fileName);
-
-            gulp.start(command.buildScript)
+        watch(srcWatchJS, function() {
+            taskJs.mainScriptTask(command.buildScript);
+            gulp.start(command.buildScript);
         });
 
-        watch(srcWatchInternalJS).on("change", function(ev) {
-            
-            const fileNameChanged = ev.slice((ev.lastIndexOf('\\') + 1), -(".js".length)),
-                pathNameChanged = ev.slice(ev.lastIndexOf('_template') + "_template".length + 1),
-                mainFileCompile = pathNameChanged.substring(0, fileNameChanged.length + 3);
-
-            taskInternalJs.internalScriptTask(command.buildInternalScript, mainFileCompile);
-
-            gulp.start(command.buildInternalScript);
-        });
+        // watch(srcWatchJS).on("change", function(ev) {
+        //
+        //     const strFrom   = ev.lastIndexOf('\\') + 1
+        //         , strTo     = ".js".length,
+        //         fileName    = ev.slice(strFrom, -strTo);
+        //
+        //     console.log(fileName);
+        //
+        //     taskJs.mainScriptTask(command.buildScript, fileName);
+        //
+        //     gulp.start(command.buildScript)
+        // });
+        //
+        // watch(srcWatchInternalJS).on("change", function(ev) {
+        //
+        //     const fileNameChanged = ev.slice((ev.lastIndexOf('\\') + 1), -(".js".length)),
+        //         pathNameChanged = ev.slice(ev.lastIndexOf('_template') + "_template".length + 1),
+        //         mainFileCompile = pathNameChanged.substring(0, fileNameChanged.length + 3);
+        //
+        //     taskInternalJs.internalScriptTask(command.buildInternalScript, mainFileCompile);
+        //
+        //     gulp.start(command.buildInternalScript);
+        // });
 
         watch(srcWatchJSON, function() {
             gulp.start(command.buildJade);

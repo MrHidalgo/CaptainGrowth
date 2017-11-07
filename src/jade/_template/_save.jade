@@ -65,24 +65,16 @@ mixin saveBlock(arrTitle, arrIconName, arrNum, arrList)
 section.save#save
 
     .save_img
+        i.save_img-left.resize_left
+        i.save_img-right.resize_right
+        i.save_img-smallS
+        i.save_img-bigS
+        i.save_img-bigS
+
         -
-            var imgSizeLeft = (752 / 2);
-            var imgSizeRight = (1456 / 2);
             var imgSmallSmoothSize = (112 / 2);
             var imgBigSmoothSize = (174 / 2);
 
-        //img(
-        //    src="./image/img-circle-2_some.png"
-        //    title=""
-        //    class="save_img-left"
-        //    height!= imgSizeLeft
-        //)
-        //img(
-        //    src="./image/img-circle-3_some.png"
-        //    title=""
-        //    class="save_img-right"
-        //    height!= imgSizeRight
-        //)
         //img(
         //    src="./image/img-circleS-big_some.png"
         //    class="save_img-bigS save_img-bigS_0"

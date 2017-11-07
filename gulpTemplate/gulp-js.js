@@ -29,23 +29,23 @@ const renameOption = {
 };
 
 
-exports.mainScriptTask = function (taskName, fileName) {
+exports.mainScriptTask = function (taskName) {
 
-    console.log("fileName: ", fileName);
+    // console.log("fileName: ", fileName);
 
-    const srcFiles                = './src/js/'  + fileName +  '.js'
-        , srcFilesConcat          = './src/js/_template/' + fileName + "/**.js"
+    const srcFiles                = './src/js/**.js'
+        // , srcFilesConcat          = './src/js/_template/' + fileName + "/**.js"
         , distFolderDeveloper     = './distDeveloper/script/'
         , distFolderProduction    = './distProduction/script/';
 
 
-    return gulp.task(taskName, function (file) {
+    return gulp.task(taskName, function () {
 
-        gulp.src([srcFilesConcat, srcFiles])
+        gulp.src(srcFiles)
             .pipe(
                 plumber(plumberOption)
             )
-            .pipe(concat(fileName + ".js"))
+            // .pipe(concat(fileName + ".js"))
             .pipe(babel({
                 presets: ['es2015']
             }))

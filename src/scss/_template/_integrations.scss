@@ -24,6 +24,14 @@
 		left: 0;
 		@include mixinDimensions($w-all);
 		
+		@mixin imagePosition($src, $w, $h, $pos) {
+			@include mixinDimensions($w, $h);
+			background-image: url($src);
+			background-position: $pos;
+			background-repeat: no-repeat;
+			background-size: $w;
+		}
+		
 		&-right {
 			z-index: 0;
 			position: absolute;
@@ -31,6 +39,12 @@
 		&-right {
 			top: 0;
 			right: 0;
+			
+			$imgSrcBig: "../image/img-circle-3_some.png";
+			$imgBigW: (1124px / 2);
+			$imgBigH: (1456px / 2);
+			$imgPosBig: unquote("top right");
+			@include imagePosition($imgSrcBig, $imgBigW, $imgBigH, $imgPosBig);
 		}
 	}
 	.main__title {

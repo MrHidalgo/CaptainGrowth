@@ -23,6 +23,14 @@
 		left: 0;
 		@include mixinDimensions($w-all);
 		
+		@mixin imagePosition($src, $w, $h, $pos) {
+			@include mixinDimensions($w, $h);
+			background-image: url($src);
+			background-position: $pos;
+			background-repeat: no-repeat;
+			background-size: $w;
+		}
+		
 		&-left,
 		&-right,
 		&-bigS,
@@ -33,10 +41,22 @@
 		&-left {
 			top: 150px;
 			left: 0;
+			
+			$imgSrcBig: "../image/img-circle-0_some.png";
+			$imgBigW: (446px / 2);
+			$imgBigH: (1458px / 2);
+			$imgPosBig: unquote("150px left");
+			@include imagePosition($imgSrcBig, $imgBigW, $imgBigH, $imgPosBig);
 		}
 		&-right {
 			top: 0;
 			right: 0;
+			
+			$imgSrcBig: "../image/img-circle-4_some.png";
+			$imgBigW: (446px / 2);
+			$imgBigH: (1052px / 2);
+			$imgPosBig: unquote("top right");
+			@include imagePosition($imgSrcBig, $imgBigW, $imgBigH, $imgPosBig);
 		}
 		&-bigS {
 			top: 50%;
