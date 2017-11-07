@@ -26,6 +26,9 @@
 	}
 	.container-default {
 		padding-top: 161px;
+		@include mixinRespondTo(small-desktop) {
+			padding-top: 111px;
+		}
 	}
 	&_img {
 		z-index: 0;
@@ -94,6 +97,27 @@
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: $imageSizeWidth;
+		@media (min-width: 290px) and (max-width: 1366px) {
+			display: none;
+		}
+		
+		&_medium {
+			display: none;
+			@media (min-width: 992px) and (max-width: 1366px) {
+				$imageSizeWidth: (1112px / 2);
+				$imageSizeHeight: (1112px / 2);
+				
+				display: block;
+				position: absolute;
+				top: 112px;
+				right: 0;
+				@include mixinDimensions($imageSizeWidth, $imageSizeHeight);
+				background-image: url("../image/img-header_medium.png");
+				background-position: top right;
+				background-repeat: no-repeat;
+				background-size: $imageSizeWidth;
+			}
+		}
 	}
 	
 	// LOGIN

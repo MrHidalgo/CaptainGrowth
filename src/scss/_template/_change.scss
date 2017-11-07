@@ -201,6 +201,9 @@
 		color: $c-white;
 		outline: none;
 		transition: background-color 0.25s ease-in-out;
+		@include mixinRespondTo(small-desktop) {
+			left: auto;
+		}
 		
 		&:hover,
 		&:active {

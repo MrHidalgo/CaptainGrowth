@@ -20,6 +20,9 @@
 		font-size: 0;
 		padding-left: 570px;
 		color: $c-white;
+		@include mixinRespondTo(small-desktop) {
+			padding-left: 460px;
+		}
 	}
 	&_container {
 		@include mixinDimensions(#{$w-all}, 252px);

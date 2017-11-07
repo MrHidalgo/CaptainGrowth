@@ -47,6 +47,9 @@
 	}
 	.footer_social {
 		padding-top: 30px;
+		@include mixinRespondTo(small-desktop) {
+			padding-top: 10px;
+		}
 		
 		.social {
 			&__btn {

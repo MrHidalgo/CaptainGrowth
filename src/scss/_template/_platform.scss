@@ -74,11 +74,22 @@
 	&__block {
 		margin-right: 70px;
 		
+		@include mixinRespondTo(small-desktop) {
+			display: inline-block;
+			vertical-align: top;
+		}
+		
 		&-wrap {
 			display: flex;
 			flex-direction: row;
 			align-items: baseline;
 			justify-content: flex-start;
+			
+			@include mixinRespondTo(small-desktop) {
+				position: relative;
+				white-space: nowrap;
+				overflow-y: auto;
+			}
 		}
 		&-image,
 		&-num,

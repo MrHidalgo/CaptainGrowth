@@ -1,15 +1,12 @@
 include _mixin/mixin
 include _mixin/macrosMixin
 
-
 doctype html
-
 
 html(
     lang="en"
     class="js"
 )
-
     +headSite("Captain Growth", linkSite.styleLinkIndex, "")
 
     body.body#body
@@ -25,7 +22,6 @@ html(
         include _template/_change
         include _template/_contacts
         include _template/_footer
-
 
     - for(var i = 0; i < linkSite.scriptLink.length; i++)
         script(src= linkSite.scriptLink[i])

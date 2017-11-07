@@ -13,13 +13,22 @@
 	
 	// POSITION
 	&__row {
-		height: 252px;
+		min-height: 252px;
 		background-color: $c-royalBlue;
+		@include mixinRespondTo(small-desktop) {
+			padding: {
+				top: 25px;
+				bottom: 25px;
+			}
+		}
 	}
 	&_row {
 		font-size: 0;
 		padding-left: 380px;
 		color: $c-white;
+		@include mixinRespondTo(small-desktop) {
+			padding-left: 430px;
+		}
 	}
 	&_right,
 	&_left {
@@ -28,13 +37,23 @@
 		vertical-align: top;
 	}
 	&_right {
-		@include mixinDimensions(420px, 252px);
+		width:420px;
+		min-height: 252px;
 		display: inline-flex;
 		flex-direction: column;
 		justify-content: center;
+		@include mixinRespondTo(small-desktop) {
+			display: block;
+			width: $w-all;
+			min-height: 0;
+			padding-bottom: 15px;
+		}
 	}
 	&_left {
 		width: calc(#{$w-all} - 420px);
+		@include mixinRespondTo(small-desktop) {
+			width: $w-all;
+		}
 	}
 	
 	// ECLIPSE
@@ -50,6 +69,9 @@
 			color: $c-royalBlue;
 		}
 		background-color: $c-whiteSmoke;
+		@include mixinRespondTo(small-desktop) {
+			top: -137px;
+		}
 		
 		&-img {
 			position: absolute;
@@ -78,6 +100,9 @@
 	// FORM
 	&__form {
 		padding-top: 55px;
+		@include mixinRespondTo(small-desktop) {
+			padding-top: 0;
+		}
 		
 		&-input,
 		&-btn {

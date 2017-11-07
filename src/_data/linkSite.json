@@ -1,6 +1,7 @@
 {
   "styleLinkIndex" : [
-    "./style/common.css"
+    "./style/common.css",
+    "./vendor/css/animate.min.css"
   ],
 
   "scriptLink" : [

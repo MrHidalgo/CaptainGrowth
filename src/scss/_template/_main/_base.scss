@@ -18,3 +18,28 @@
 		text-transform: uppercase;
 	}
 }
+
+.mainLarge_right,
+.mainMedium_right,
+.resize_right,
+.resize_left,
+.resize_left-s,
+.resize_right-s {
+	opacity: 0;
+	
+	&.visible {
+		animation-duration: 2s;
+		animation-fill-mode: both;
+		animation-name: fadeIn;
+	}
+}
+.resize_left-s,
+.resize_right-s {
+	@include mixinRespondTo(small-desktop-max) {
+		display: none;
+	}
+}
+@keyframes fadeIn {
+	from {  opacity: 0;  }
+	to {  opacity: 1;  }
+}
