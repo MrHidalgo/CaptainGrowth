@@ -78,6 +78,10 @@
 
 @media screen and (min-width: 290px) and (max-width: 767px) {  .main__title { font-size: 24px; } }
 
+ .main__title svg { height: 30px; }
+
+@media screen and (min-width: 290px) and (max-width: 767px) {  .main__title svg { height: 20px; } }
+
  .mainLarge_right, .mainMedium_right, .resize_right, .resize_left, .resize_left-s, .resize_right-s { opacity: 0; }
 
  .mainLarge_right.visible, .mainMedium_right.visible, .resize_right.visible, .resize_left.visible, .resize_left-s.visible, .resize_right-s.visible { -webkit-animation-duration: 2s; -moz-animation-duration: 2s; -o-animation-duration: 2s; animation-duration: 2s; -webkit-animation-fill-mode: both; -moz-animation-fill-mode: both; -o-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-name: fadeIn; -moz-animation-name: fadeIn; -o-animation-name: fadeIn; animation-name: fadeIn; }
