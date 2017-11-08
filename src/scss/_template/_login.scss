@@ -15,6 +15,10 @@
 	
 	.main__title {
 		margin-bottom: 15px;
+		
+		svg {
+			height: 30px;
+		}
 	}
 	
 	// IMG
@@ -24,6 +28,9 @@
 		top: 0;
 		left: 0;
 		@include mixinDimensions($w-all);
+		@include mixinRespondTo(mobile) {
+			display: none;
+		}
 		
 		@mixin imagePosition($src, $w, $h, $pos) {
 			@include mixinDimensions($w, $h);
@@ -113,14 +120,19 @@
 			left: auto;
 			right: auto;
 		};
+		@include mixinRespondTo(mobile) {
+			width: $w-all;
+		}
 	}
 	
 	// FORM
 	&__form {
 		width: $w-all;
+		height: 363px;
 		min-height: 352px;
 		padding: 35px;
 		border-radius: 15px;
+		background-color: $c-white;
 		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
 	}
 	
