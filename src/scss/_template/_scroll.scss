@@ -1,0 +1,54 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.scroll {
+	z-index: 100;
+	position: fixed;
+	left: 276px;
+	top: 331px;
+	width: 6px;
+	
+	&__btn {
+		display: block;
+		@include mixinDimensions(6px);
+		margin-bottom: 15px;
+		background-color: transparent;
+		border-radius: $w-all;
+		box-shadow: inset 0 0 0 1px rgba($c-eclipse, 0.75);
+		transition: box-shadow 0.25s ease-in-out;
+		
+		&.active {
+			box-shadow: inset 0 0 0 0 rgba($c-eclipse, 0.75), 0 0 0 2px $c-royalBlue;
+			transition: box-shadow 0.25s ease-in-out;
+		}
+		&:hover {
+			box-shadow: inset 0 0 0 0 rgba($c-eclipse, 0.75), 0 0 0 2px $c-royalBlue;
+			transition: box-shadow 0.25s ease-in-out;
+		}
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	
+	&__line {
+		@include mixinDimensions(1px, 84px);
+		background-color: rgba($c-eclipse, 0.75);
+		margin: {
+			top: 30px;
+			bottom: 50px;
+			left: auto;
+			right: auto;
+		};
+	}
+	&__text {
+		font-size: 14px;
+		transform: rotate(-90deg);
+	}
+}
+

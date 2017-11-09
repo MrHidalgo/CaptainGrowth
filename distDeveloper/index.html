@@ -10,7 +10,7 @@
     <link href="./vendor/css/animate.min.css" rel="stylesheet"/>
   </head>
   <body id="body" class="body">
-    <header id="header" class="header">
+    <header id="header" class="header scrollSpy">
       <div class="header_img"><i class="header_img-big resize_left"></i><i class="header_img-smallS resize_left-s"></i><i class="header_img-bigS resize_left-s"></i></div>
       <div class="header__row"><i class="header__img mainLarge_right"></i><i class="header__img_medium mainMedium_right"></i>
       </div>
@@ -35,7 +35,7 @@
             </div>
       </div>
     </header>
-    <section id="data" class="data">
+    <section id="data" class="data scrollSpy">
       <div class="data_img"><i class="data_img-left resize_left"></i><i class="data_img-right resize_right"></i><i class="data_img-smallS resize_right-s"></i><i class="data_img-bigS resize_right-s"></i></div>
       <div class="container-default">
         <p class="main__title">It’s never been so easy 
@@ -52,7 +52,7 @@
         <p class="data__subTitle">With a Captain you get ideas on what to improve and how to grow every day. All based on your data </br> Get your insights, make right decisions, act and grow.</p><img src="./image/img-data.png" title="" height="644" class="data__img"><img src="./image/img-data_medium.png" title="" height="954" class="data__img data__img_medium"><img src="./image/img-data_small.png" title="" height="780" class="data__img data__img_small">
       </div>
     </section>
-    <section id="save" class="save">
+    <section id="save" class="save scrollSpy">
       <div class="save_img"><i class="save_img-left resize_left"></i><i class="save_img-right resize_right"></i><i class="save_img-smallS resize_right-s"></i><i class="save_img-bigS save_img-bigS_0 resize_left-s"></i><i class="save_img-bigS save_img-bigS_1 resize_right-s"></i></div>
       <div class="container-default">
         <div class="main__title_other">
@@ -121,7 +121,7 @@
         </div>
       </div>
     </section>
-    <section id="insight" class="insight">
+    <section id="insight" class="insight scrollSpy">
       <div class="insight__row">
         <div class="container"><img src="./image/img-insight_small.png" height="126" class="insight__img">
           <div class="insight_row">
@@ -134,7 +134,7 @@
         </div>
       </div>
     </section>
-    <section id="doit" class="doit">
+    <section id="doit" class="doit scrollSpy">
       <div class="doit_img"><i class="doit_img-smallS doit_img-smallS_1 resize_right-s"></i><i class="doit_img-smallS doit_img-smallS_1 resize_right-s"></i><i class="doit_img-bigS doit_img-bigS_0 resize_left-s"></i><i class="doit_img-bigS doit_img-bigS_1 resize_right-s"></i></div>
       <div class="container-default">
         <div class="doit_row">
@@ -176,7 +176,7 @@
         </div>
       </div>
     </section>
-    <section id="find" class="find">
+    <section id="find" class="find scrollSpy">
       <div class="find_img"><i class="find_img-left resize_left"></i><i class="find_img-right resize_right"></i><i class="find_img-smallS resize_left-s"></i><i class="find_img-bigS find_img-bigS_0 resize_left-s"></i><i class="find_img-bigS find_img-bigS_1 resize_right-s"></i></div>
       <div class="container-default">
         <p class="main__title">
@@ -219,7 +219,7 @@
         </div>
       </div>
     </section>
-    <section id="integrations" class="integrations">
+    <section id="integrations" class="integrations scrollSpy">
       <div class="integrations_img"><i class="integrations_img-right resize_right"></i></div>
       <div class="container-default">
         <p class="main__title">
@@ -246,7 +246,7 @@
             </div>
       </div>
     </section>
-    <section id="platform" class="platform">
+    <section id="platform" class="platform scrollSpy">
       <div class="platform_img"><i class="platform_img-left resize_left"></i><i class="platform_img-bigS platform_img-bigS_0 resize_left-s"></i><i class="platform_img-bigS platform_img-bigS_1 resize_right-s"></i></div>
       <div class="container-default">
         <p class="main__title">
@@ -279,7 +279,7 @@
             </div>
       </div>
     </section>
-    <section id="change" class="change">
+    <section id="change" class="change scrollSpy">
       <div class="change_img"><i class="change_img-left resize_left"></i><i class="change_img-right resize_right"></i><i class="change_img-smallS resize_left-s"></i><i class="change_img-bigS resize_left-s"></i>
         <!--img(-->
         <!--	src="./image/img-circleS-big_some.png"-->
@@ -324,7 +324,7 @@
             <button type="button" class="change__btn">Captain, please change it!</button>
       </div>
     </section>
-    <section id="contacts" class="contacts">
+    <section id="contacts" class="contacts scrollSpy">
       <div class="contacts__row">
         <div class="container">
           <div class="contacts_row">
@@ -384,7 +384,11 @@
         </div>
       </div>
     </footer>
-    <section id="modal" class="modal">
+    <div id="scroll" class="scroll"><a href="#header" class="scroll__btn"></a><a href="#data" class="scroll__btn"></a><a href="#save" class="scroll__btn"></a><a href="#insight" class="scroll__btn"></a><a href="#doit" class="scroll__btn"></a><a href="#find" class="scroll__btn"></a><a href="#integrations" class="scroll__btn"></a><a href="#platform" class="scroll__btn"></a><a href="#change" class="scroll__btn"></a><a href="#contacts" class="scroll__btn"></a>
+      <div class="scroll__line"></div>
+      <p class="scroll__text">Scroll</p>
+    </div>
+    <div id="modal" class="modal">
       <div class="modal__container">
         <div class="modal__row"><a href="javascript:void(0);" class="modal__close"></a>
           <div class="modal__content modal__content_main">
@@ -412,7 +416,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </body>
   <script src="./vendor/js/jquery-3.2.1.min.js"></script>
   <script src="./script/main.js"></script>

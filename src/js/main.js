@@ -29,7 +29,8 @@ function listenerWindowModify(arrLeftImg, arrRightImg) {
 		imgRight        = $(".resize_right"),
 		imgLeft         = $(".resize_left"),
 		imgLeftSmooth   = $('.resize_left-s'),
-		imgRightSmooth  = $('.resize_right-s');
+		imgRightSmooth  = $('.resize_right-s'),
+		scrollBlock		= $("#scroll");
   
 	const WINWIDTH_LARGE    = 1920,
 		WINWIDTH_MEDIUM     = 1366;
@@ -81,7 +82,7 @@ function listenerWindowModify(arrLeftImg, arrRightImg) {
 				left: -(offsetEl)
 			});
 		});
-		
+
 		imgRight.each(function(idx, item) {
 			$(item).css({
 				right: -(offsetEl)
@@ -93,18 +94,26 @@ function listenerWindowModify(arrLeftImg, arrRightImg) {
 				left: arrLeftImg[idx] - offsetEl
 			});
 		});
-		
+
+        scrollBlock.each(function(idx, item) {
+			$(item).css({
+				left: arrStickyElem[idx] - offsetEl
+			});
+		});
+
 		imgRightSmooth.each(function(idx, item) {
 			$(item).css({
 				left: arrRightImg[idx] - offsetEl,
 			});
 		});
-		
-	} else {
+
+
+    } else {
 		imgLeft.removeAttr("style");
 		imgRight.removeAttr("style");
 		imgLeftSmooth.removeAttr("style");
 		imgRightSmooth.removeAttr("style");
+        scrollBlock.removeAttr("style");
 	}
 }
 
@@ -114,6 +123,8 @@ function listenerWindowModify(arrLeftImg, arrRightImg) {
  */
 let arrLeftSmoothImage  = [],
 	arrRightSmoothImage = [],
+	arrStickyElem = [],
+    stickyElem   	= $('#scroll'),
 	imgLeftSmooth   	= $('.resize_left-s'),
 	imgRightSmooth  	= $('.resize_right-s');
 
@@ -122,6 +133,7 @@ let arrLeftSmoothImage  = [],
  */
 pushOffsetValue(imgLeftSmooth, arrLeftSmoothImage);
 pushOffsetValue(imgRightSmooth, arrRightSmoothImage);
+pushOffsetValue(stickyElem, arrStickyElem);
 
 /**
  *
@@ -162,7 +174,10 @@ function modalSendEmail(btnName) {
     });
 }
 
-
+/**
+ *
+ * @param btnName
+ */
 function modalOpen(btnName) {
     $(btnName).on("click", function(e) {
         e.preventDefault();
@@ -173,10 +188,37 @@ function modalOpen(btnName) {
 
 /**
  *
+ * @param className
+ */
+function smoothScrollClick(className) {
+    $(className).on("click", function (e) {
+        e.preventDefault();
+
+        let id          = $(this).attr('href'),
+            top         = $(id).offset().top;
+
+        $(className).removeClass("active");
+        $(this).addClass("active");
+
+        $('body, html').animate(
+            {
+                scrollTop: top - 50
+            }, 1000);
+    });
+}
+
+
+/**
+ *
  */
 $(function() {
 	// Fade In image, fixed jump in load page
-	const allImage = $(".mainLarge_right, .mainMedium_right, .resize_right, .resize_left, .resize_left-s, .resize_right-s")
+	const str = ".mainLarge_right, .mainMedium_right, " +
+		".resize_right, .resize_left, " +
+		".resize_left-s, .resize_right-s, " +
+		"#scroll";
+
+	const allImage = $(str);
 	
 	allImage.addClass("visible");
 
@@ -184,4 +226,34 @@ $(function() {
     modalClose(".modal__close");
     modalSendEmail(".modal__btn");
     modalOpen(".header__btn, .change__btn, .footer__menu-btn");
+
+    // ...
+    smoothScrollClick(".scroll__btn");
 });
+
+{
+    let lastID;
+    let elemID;
+
+    $(window).on("scroll load", function () {
+            let y = $(this).scrollTop() + 50;
+
+            $('.scrollSpy').each(function () {
+
+                let yElem = $(this).offset().top;
+
+                if (y >= yElem) {
+                    elemID = $(this).attr('id');
+
+                    console.log(elemID);
+
+                    if (elemID !== lastID) {
+                        lastID = elemID;
+
+                        $(".scroll__btn").removeClass("active");
+                        $('#scroll a[href="#' + elemID + '"]').addClass("active");
+                    }
+                }
+            });
+    });
+}

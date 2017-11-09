@@ -30,7 +30,8 @@ function listenerWindowModify(arrLeftImg, arrRightImg) {
 	    imgRight = $(".resize_right"),
 	    imgLeft = $(".resize_left"),
 	    imgLeftSmooth = $('.resize_left-s'),
-	    imgRightSmooth = $('.resize_right-s');
+	    imgRightSmooth = $('.resize_right-s'),
+	    scrollBlock = $("#scroll");
 
 	var WINWIDTH_LARGE = 1920,
 	    WINWIDTH_MEDIUM = 1366;
@@ -93,6 +94,12 @@ function listenerWindowModify(arrLeftImg, arrRightImg) {
 			});
 		});
 
+		scrollBlock.each(function (idx, item) {
+			$(item).css({
+				left: arrStickyElem[idx] - offsetEl
+			});
+		});
+
 		imgRightSmooth.each(function (idx, item) {
 			$(item).css({
 				left: arrRightImg[idx] - offsetEl
@@ -103,6 +110,7 @@ function listenerWindowModify(arrLeftImg, arrRightImg) {
 		imgRight.removeAttr("style");
 		imgLeftSmooth.removeAttr("style");
 		imgRightSmooth.removeAttr("style");
+		scrollBlock.removeAttr("style");
 	}
 }
 
@@ -112,6 +120,8 @@ function listenerWindowModify(arrLeftImg, arrRightImg) {
  */
 var arrLeftSmoothImage = [],
     arrRightSmoothImage = [],
+    arrStickyElem = [],
+    stickyElem = $('#scroll'),
     imgLeftSmooth = $('.resize_left-s'),
     imgRightSmooth = $('.resize_right-s');
 
@@ -120,6 +130,7 @@ var arrLeftSmoothImage = [],
  */
 pushOffsetValue(imgLeftSmooth, arrLeftSmoothImage);
 pushOffsetValue(imgRightSmooth, arrRightSmoothImage);
+pushOffsetValue(stickyElem, arrStickyElem);
 
 /**
  *
@@ -160,6 +171,10 @@ function modalSendEmail(btnName) {
 	});
 }
 
+/**
+ *
+ * @param btnName
+ */
 function modalOpen(btnName) {
 	$(btnName).on("click", function (e) {
 		e.preventDefault();
@@ -170,10 +185,32 @@ function modalOpen(btnName) {
 
 /**
  *
+ * @param className
+ */
+function smoothScrollClick(className) {
+	$(className).on("click", function (e) {
+		e.preventDefault();
+
+		var id = $(this).attr('href'),
+		    top = $(id).offset().top;
+
+		$(className).removeClass("active");
+		$(this).addClass("active");
+
+		$('body, html').animate({
+			scrollTop: top - 50
+		}, 1000);
+	});
+}
+
+/**
+ *
  */
 $(function () {
 	// Fade In image, fixed jump in load page
-	var allImage = $(".mainLarge_right, .mainMedium_right, .resize_right, .resize_left, .resize_left-s, .resize_right-s");
+	var str = ".mainLarge_right, .mainMedium_right, " + ".resize_right, .resize_left, " + ".resize_left-s, .resize_right-s, " + "#scroll";
+
+	var allImage = $(str);
 
 	allImage.addClass("visible");
 
@@ -181,4 +218,34 @@ $(function () {
 	modalClose(".modal__close");
 	modalSendEmail(".modal__btn");
 	modalOpen(".header__btn, .change__btn, .footer__menu-btn");
+
+	// ...
+	smoothScrollClick(".scroll__btn");
 });
+
+{
+	var lastID = void 0;
+	var elemID = void 0;
+
+	$(window).on("scroll load", function () {
+		var y = $(this).scrollTop() + 50;
+
+		$('.scrollSpy').each(function () {
+
+			var yElem = $(this).offset().top;
+
+			if (y >= yElem) {
+				elemID = $(this).attr('id');
+
+				console.log(elemID);
+
+				if (elemID !== lastID) {
+					lastID = elemID;
+
+					$(".scroll__btn").removeClass("active");
+					$('#scroll a[href="#' + elemID + '"]').addClass("active");
+				}
+			}
+		});
+	});
+}

@@ -23,7 +23,7 @@
 	
 	&.active {
 		display: table;
-		@include mixinRespondTo(small-mobile) {
+		@include mixinRespondTo(mobile-small) {
 			display: block;
 		}
 	}

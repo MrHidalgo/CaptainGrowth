@@ -1,0 +1,24 @@
+-
+    var scrollBtnArr = [
+        "#header",
+        "#data",
+        "#save",
+        "#insight",
+        "#doit",
+        "#find",
+        "#integrations",
+        "#platform",
+        "#change",
+        "#contacts"
+    ];
+
+
+.scroll#scroll
+    -for(var i = 0; i < scrollBtnArr.length; i++)
+        a(
+            href!= scrollBtnArr[i]
+            class="scroll__btn"
+        )
+
+    .scroll__line
+    p.scroll__text!= "Scroll"
