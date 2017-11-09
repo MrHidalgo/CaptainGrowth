@@ -1,0 +1,169 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_variable/variable";
+@import "../_variable/sprite";
+///
+/// MAIN BLOCK
+///
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	outline: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	@include mixinDimensions($w-all);
+	background-color: rgba(0, 0, 0, 0.55);
+	
+	&.active {
+		display: table;
+		@include mixinRespondTo(small-mobile) {
+			display: block;
+		}
+	}
+
+	
+	&__container {
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+		@include mixinRespondTo(mobile-small) {
+			display: block;
+		}
+	}
+	&__row {
+		z-index: 0;
+		position: relative;
+		max-width: 450px;
+		min-height: 352px;
+		width: 450px;
+		margin: {
+			left: auto;
+			right: auto;
+		}
+	}
+	&__content {
+		position: relative;
+		@include mixinDimensions($w-all);
+		padding: 35px;
+		border-radius: 15px;
+		background-color: $c-white;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		
+		&_main {
+			&.hide {
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+			}
+		}
+		&_additional {
+			opacity: 0;
+			visibility: hidden;
+			z-index: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include mixinDimensions($w-all);
+			transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+			
+			&.show {
+				opacity: 1;
+				visibility: visible;
+				transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+			}
+			
+			.modal__body {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: $w-all;
+			}
+		}
+	}
+	&__header {}
+	&__body {}
+	&__footer {}
+	&__close {
+		z-index: 5;
+		position: absolute;
+		top: -16px;
+		right: -16px;
+		@include retina-sprite($sp-i-close-group);
+	}
+	&__title {
+		font-size: 22px;
+		color: $c-royalBlue;
+		margin-bottom: 15px;
+	}
+	&__subtitle {
+		font-size: 18px;
+		margin-bottom: 30px;
+	}
+	&__text {
+		font-size: 18px;
+		text-align: center;
+	}
+	&__btn {
+		position: relative;
+		display: block;
+		@include mixinDimensions($w-all, 84px);
+		margin: {
+			left: auto;
+			right: auto;
+		};
+		background-color: $c-mediumTurquoise;
+		border: none;
+		border-radius: 5em;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		font-size: 22px;
+		color: $c-white;
+		outline: none;
+		padding-left: 60px;
+		transition: padding-left 0.25s ease-in-out, background-color 0.25s ease-in-out;
+		@include mixinRespondTo(tablet) {
+			font-size: 20px;
+			width: 300px;
+			padding-left: 65px;
+			margin-bottom: 100px;
+		}
+		
+		&:hover,
+		&:active {
+			&:before {
+				opacity: 0;
+				transition: opacity 0.25s ease-in-out;
+			}
+		}
+		&:hover {
+			padding-left: 0;
+			background-color: $c-royalBlue;
+			transition: padding-left 0.25s ease-in-out, background-color 0.25s ease-in-out;
+		}
+		&:active {
+			padding-left: 0;
+			background-color: $c-darkSlateBlue;
+			transition: padding-left 0.25s ease-in-out, background-color 0.25s ease-in-out;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			border-radius: 5em;
+			@include mixinDimensions(84px);
+			border: {
+				width: 12px;
+				style: solid;
+				color: $c-royalBlue;
+			}
+			transition: opacity 0.25s ease-in-out;
+		}
+	}
+}

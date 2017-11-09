@@ -1,0 +1,53 @@
+//- ====================
+//- DATA
+//- ====================
+-
+    var modalTitle = "We are at a Closed Beta Stage now";
+    var modalSubtitle = "Leave your e-mail to join it and become one of the first users of Captain Growth.";
+    var modalBtnName = "Apply for a beta test";
+    var modalText = "Thanks for joining us. We will contact you soon and invite you to the Captain Growth.";
+
+
+//- ====================
+//- FUNCTION/PROCEDURE
+//- ====================
+
+//- ====================
+//- MAIN
+//- ====================
+section.modal#modal
+    .modal__container
+
+        .modal__row
+            a(
+                href="javascript:void(0);"
+                class="modal__close"
+            )
+
+            .modal__content.modal__content_main
+                form.form
+                    .modal__header
+
+                    .modal__body
+                        p.modal__title!= modalTitle
+                        p.modal__subtitle!= modalSubtitle
+
+                        .form__wrap.form__wrap_input
+                            .form__wrap-field
+                                input(type="text" class="form__input" placeholder="Enter your e-mail")
+                            i.form__indication
+
+                        button(
+                            type="button"
+                            class="form__btn modal__btn"
+                        )!= modalBtnName
+
+                    .modal__footer
+
+
+            .modal__content.modal__content_additional
+                .modal__header
+                .modal__body
+                    p.modal__text!= modalText
+
+                .modal__footer

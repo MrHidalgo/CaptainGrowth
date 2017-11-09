@@ -132,10 +132,56 @@ $(window).on("change resize load", function(e) {
 
 /**
  *
+ * @param btnName
+ */
+function modalClose(btnName) {
+	$(btnName).on("click", function(e) {
+		e.preventDefault();
+
+        $(".modal").removeClass("active");
+        $(".modal__content_main").removeClass("hide");
+        $(".modal__content_additional").removeClass("show");
+	});
+}
+
+/**
+ *
+ * @param btnName
+ */
+function modalSendEmail(btnName) {
+    $(btnName).on("click", function(e) {
+        e.preventDefault();
+
+        // require email
+        if(true) {
+        	$(".modal__content_main").addClass("hide");
+        	$(".modal__content_additional").addClass("show");
+		} else {
+        	// ...
+		}
+    });
+}
+
+
+function modalOpen(btnName) {
+    $(btnName).on("click", function(e) {
+        e.preventDefault();
+
+        $(".modal").addClass("active");
+    });
+}
+
+/**
+ *
  */
 $(function() {
 	// Fade In image, fixed jump in load page
 	const allImage = $(".mainLarge_right, .mainMedium_right, .resize_right, .resize_left, .resize_left-s, .resize_right-s")
 	
 	allImage.addClass("visible");
+
+	// ...
+    modalClose(".modal__close");
+    modalSendEmail(".modal__btn");
+    modalOpen(".header__btn, .change__btn, .footer__menu-btn");
 });
