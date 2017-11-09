@@ -50,6 +50,7 @@ mixin changeBlock(arrTitle, arrSubTitle, arrBadge, arrText, arrIcon)
 						i.change__block-arrow-1
 						i.change__block-arrow-2
 
+	+swap()
 
 mixin changeBtn(btnValue)
 	button(
@@ -68,23 +69,6 @@ section.change.scrollSpy#change
 		i.change_img-smallS.resize_left-s
 		i.change_img-bigS.resize_left-s
 
-		-
-			var imgSmallSmoothSize = (112 / 2);
-			var imgBigSmoothSize = (174 / 2);
-
-		//img(
-		//	src="./image/img-circleS-big_some.png"
-		//	class="change_img-bigS"
-		//	title=""
-		//	height!= imgBigSmoothSize
-		//)
-		//img(
-		//	src="./image/img-circleS-small_some.png"
-		//	class="change_img-smallS"
-		//	title=""
-		//	height!= imgSmallSmoothSize
-		//)
-
 	.container-default
 
 		+mainTitle(2, changeTitle, changeTitleGradient)
@@ -92,3 +76,4 @@ section.change.scrollSpy#change
 		+changeBlock(changeArrTitle, changeArrSubTitle, changeArrBadge, changeArrText, changeArrIcon)
 
 		+changeBtn(changeBtn)
+

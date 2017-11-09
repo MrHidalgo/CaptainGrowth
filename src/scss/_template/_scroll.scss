@@ -10,9 +10,12 @@
 .scroll {
 	z-index: 100;
 	position: fixed;
-	left: 276px;
+	left: 300px;
 	top: 331px;
 	width: 6px;
+	@include mixinRespondTo(tablet-max) {
+		display: none;
+	}
 	
 	&__btn {
 		display: block;

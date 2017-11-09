@@ -14,6 +14,7 @@ mixin logotype(imageSizeHeight, classNameWrapModify)
                 height!= heightImage
             )
 
+
 //- ====================
 //- TITLE
 //- ====================
@@ -51,3 +52,14 @@ mixin mainTitle(caseNum, titleText, gradientText, gradientText1)
                 +title(titleText)
             default
                 | Error
+
+
+//- ====================
+//- SWAP
+//- ====================
+mixin swap()
+    .swap
+        p.swap__text!= "Swipe left"
+        .swap__line
+        i.swap__circle.active
+        i.swap__circle

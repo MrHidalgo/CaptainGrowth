@@ -132,10 +132,11 @@
 					right: 30px;
 					bottom: 50px;
 				};
+				margin-bottom: 0;
 			}
 			@include mixinRespondTo(mobile) {
 				display: block;
-				margin-bottom: 80px;
+				margin-bottom: 0;
 			}
 		}
 		&-0 {
@@ -256,6 +257,7 @@
 			left: auto;
 		}
 		@include mixinRespondTo(tablet) {
+			margin-top: 80px;
 			left: auto;
 		}
 		@include mixinRespondTo(mobile) {
@@ -263,6 +265,7 @@
 			width: $w-all;
 			font-size: 18px;
 			padding-left: 60px;
+			margin-top: 60px;
 		}
 		
 		&:hover,
