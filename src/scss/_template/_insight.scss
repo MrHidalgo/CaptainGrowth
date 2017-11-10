@@ -45,6 +45,9 @@
 		@include mixinRespondTo(mobile) {
 			padding-left: 0;
 		}
+		@include mixinRespondTo(small-mobile) {
+			width: calc(#{$w-all} - 90px);
+		}
 	}
 	&_container {
 		@include mixinDimensions(#{$w-all}, 252px);
@@ -119,6 +122,10 @@
 		@include mixinRespondTo(mobile) {
 			width: 256px;
 		}
+		@include mixinRespondTo(small-mobile) {
+			font-size: 19px;
+			width: $w-all;
+		}
 		
 		&:hover {
 			.insight__btn-icon {
@@ -153,6 +160,12 @@
 		};
 		@include mixinRespondTo(mobile) {
 			display: block;
+		}
+		@include mixinRespondTo(small-mobile) {
+			margin: {
+				left: 0;
+				right: 15px;
+			}
 		}
 	}
 }

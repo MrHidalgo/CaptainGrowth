@@ -194,6 +194,9 @@
 			@include mixinRespondTo(small-desktop) {
 				font-size: 20px;
 			}
+			@include mixinRespondTo(small-mobile) {
+				font-size: 18px;
+			}
 		}
 		&-btn {
 			float: right;
@@ -209,6 +212,10 @@
 			transition: background-color 0.25s ease-in-out;
 			@include mixinRespondTo(small-desktop) {
 				@include mixinDimensions(122px, 35px);
+				font-size: 16px;
+			}
+			@include mixinRespondTo(small-mobile) {
+				@include mixinDimensions(112px, 35px);
 				font-size: 16px;
 			}
 			

@@ -39,6 +39,12 @@
 	.header_logotype {
 		.logotype {
 			float: left;
+			
+			>img {
+				@media (max-width: 374px) {
+					height: (104px / 4) !important;
+				}
+			}
 		}
 	}
 	.container-default {
@@ -161,6 +167,9 @@
 		}
 		@include mixinRespondTo(mobile) {
 			padding-right: 0;
+		}
+		@media (max-width: 374px) {
+			padding-top: 0;
 		}
 		
 		
@@ -366,6 +375,9 @@
 				color: $c-royalBlue;
 			}
 			transition: opacity 0.25s ease-in-out;
+			@include mixinRespondTo(mobile) {
+				display: none;
+			}
 		}
 	}
 	
@@ -379,11 +391,17 @@
 			@include mixinRespondTo(mobile) {
 				width: 80px;
 			}
+			@include mixinRespondTo(small-mobile) {
+				width: calc((#{$w-all} - (120px + 11px)) / 3);
+			}
 			
 			&:first-child {
 				padding-top: 21px;
 				width: 123px;
 				font-size: 16px;
+				@include mixinRespondTo(small-mobile) {
+					width: 120px;
+				}
 			}
 		}
 		

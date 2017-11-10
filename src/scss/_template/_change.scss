@@ -264,7 +264,6 @@
 			left: auto;
 			width: $w-all;
 			font-size: 18px;
-			padding-left: 60px;
 			margin-top: 60px;
 		}
 		
@@ -297,6 +296,9 @@
 				color: $c-royalBlue;
 			}
 			transition: opacity 0.25s ease-in-out;
+			@include mixinRespondTo(mobile) {
+				display: none;
+			}
 		}
 	}
 }

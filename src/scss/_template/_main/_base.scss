@@ -22,6 +22,9 @@
 		@include mixinRespondTo(mobile) {
 			font-size: 24px;
 		}
+		@include mixinRespondTo(small-mobile) {
+			font-size: 19px;
+		}
 		
 		svg {
 			height: 30px;

@@ -66,6 +66,10 @@
 			@include mixinRespondTo(mobile) {
 				display: inline-block;
 			}
+			@media (max-width: 374px) {
+				margin-top: 15px;
+				height: (104px / 4) !important;
+			}
 		}
 	}
 	
@@ -132,9 +136,8 @@
 			padding-right: 29px;
 			@include mixinRespondTo(mobile) {
 				width: (100% / 3);
-				height: 30px;
-				line-height: 30px;
-				padding-right: 0;
+				min-height: 30px;
+				padding-right: 5px;
 			}
 			
 			&:last-child {

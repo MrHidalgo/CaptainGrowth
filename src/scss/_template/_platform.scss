@@ -141,10 +141,11 @@
 		&-image {
 			display: block;
 			@include mixinRespondTo(mobile) {
+				height: calc(728px / 5);
 				margin: {
 					left: auto;
 					right: auto;
-				};
+				}
 			}
 		}
 		&-num {
