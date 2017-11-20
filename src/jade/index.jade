@@ -26,5 +26,17 @@ html(
         include _template/_scroll
         include _template/_modal
 
+        .cookie
+            .container-default
+                .cookie__row
+                    .cookie_left
+                        p.cookie__tille!= "We use cookies on our website to support technical </br> features that enhance your user experience."
+                        p.cookie__text!= "We also use analytics. To opt-our from analytic"
+                    .cookie_right
+                        button(
+                            type="button"
+                            class="cookie__btn"
+                        )!= "OK"
+
     - for(var i = 0; i < linkSite.scriptLink.length; i++)
         script(src= linkSite.scriptLink[i])

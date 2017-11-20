@@ -101,3 +101,90 @@
 	from {  opacity: 0;  }
 	to {  opacity: 1;  }
 }
+
+// cookie
+.cookie {
+	position: fixed;
+	z-index: 1000;
+	bottom: 0;
+	left: 0;
+	@include mixinDimensions($w-all, 180px);
+	background-color: $c-royalBlue;
+	@include mixinRespondTo(mobile) {
+		height: auto;
+		min-height: 180px;
+		padding: 15px 0;
+	}
+	
+	&__row {
+		height: 180px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include mixinRespondTo(mobile) {
+			flex-direction: column;
+			height: auto;
+		}
+	}
+	&_left,
+	&_right {
+		@include mixinRespondTo(mobile) {
+			width: $w-all;
+		}
+	}
+	&__tille {
+		font: {
+			size: 24px;
+			family: $f-RubikBold;
+		}
+		margin-bottom: 10px;
+		color: $c-white;
+		@include mixinRespondTo(mobile) {
+			br {
+				display: none;
+			}
+		}
+	}
+	&__text {
+		font-size: 18px;
+		color: $c-white;
+		@include mixinRespondTo(mobile) {
+			margin-bottom: 20px;
+		}
+	}
+	&__btn {
+		position: relative;
+		@include mixinDimensions(250px, 52px);
+		color: $c-white;
+		border-radius: 2em;
+		border: none;
+		box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14);
+		background-color: $c-mediumTurquoise;
+		font-size: 22px;
+		outline: none;
+		transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out;
+		@include mixinRespondTo(mobile) {
+			width: 256px;
+		}
+		@include mixinRespondTo(small-mobile) {
+			font-size: 19px;
+			width: $w-all;
+		}
+		
+		&:hover {
+			.insight__btn-icon {
+				opacity: 1;
+				transition: opacity 0.25s ease-in-out;
+			}
+		}
+		&:active {
+			background-color: $c-darkSlateBlue;
+			transition: background-color 0.25s ease-in-out;
+			
+			.insight__btn-icon {
+				opacity: 0;
+				transition: opacity 0.25s ease-in-out;
+			}
+		}
+	}
+}

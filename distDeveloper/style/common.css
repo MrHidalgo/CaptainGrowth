@@ -118,6 +118,36 @@
 @keyframes fadeIn { from { opacity: 0; }
   to { opacity: 1; } }
 
+ .cookie { position: fixed; z-index: 1000; bottom: 0; left: 0; width: 100%; height: 180px; background-color: #3564db; }
+
+@media screen and (min-width: 290px) and (max-width: 767px) {  .cookie { height: auto; min-height: 180px; padding: 15px 0; } }
+
+ .cookie__row { height: 180px; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -moz-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -webkit-justify-content: space-between; -moz-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+@media screen and (min-width: 290px) and (max-width: 767px) {  .cookie__row { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -moz-box-orient: vertical; -moz-box-direction: normal; -ms-flex-direction: column; flex-direction: column; height: auto; } }
+
+@media screen and (min-width: 290px) and (max-width: 767px) {  .cookie_left, .cookie_right { width: 100%; } }
+
+ .cookie__tille { font-size: 24px; font-family: "Rubik-Bold"; margin-bottom: 10px; color: #fff; }
+
+@media screen and (min-width: 290px) and (max-width: 767px) {  .cookie__tille br { display: none; } }
+
+ .cookie__text { font-size: 18px; color: #fff; }
+
+@media screen and (min-width: 290px) and (max-width: 767px) {  .cookie__text { margin-bottom: 20px; } }
+
+ .cookie__btn { position: relative; width: 250px; height: 52px; color: #fff; -webkit-border-radius: 2em; -moz-border-radius: 2em; border-radius: 2em; border: none; -webkit-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); -moz-box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); box-shadow: 0 15px 48px 0 rgba(53, 99, 219, 0.14); background-color: #51d5cf; font-size: 22px; outline: none; -webkit-transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out; -o-transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out; -moz-transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out; transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out; }
+
+@media screen and (min-width: 290px) and (max-width: 767px) {  .cookie__btn { width: 256px; } }
+
+@media screen and (max-width: 575px) {  .cookie__btn { font-size: 19px; width: 100%; } }
+
+ .cookie__btn:hover .insight__btn-icon { opacity: 1; -webkit-transition: opacity 0.25s ease-in-out; -o-transition: opacity 0.25s ease-in-out; -moz-transition: opacity 0.25s ease-in-out; transition: opacity 0.25s ease-in-out; }
+
+ .cookie__btn:active { background-color: #484299; -webkit-transition: background-color 0.25s ease-in-out; -o-transition: background-color 0.25s ease-in-out; -moz-transition: background-color 0.25s ease-in-out; transition: background-color 0.25s ease-in-out; }
+
+ .cookie__btn:active .insight__btn-icon { opacity: 0; -webkit-transition: opacity 0.25s ease-in-out; -o-transition: opacity 0.25s ease-in-out; -moz-transition: opacity 0.25s ease-in-out; transition: opacity 0.25s ease-in-out; }
+
  .header { position: relative; min-height: 882px; padding-top: 57px; padding-bottom: 127px; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {  .header { padding-top: 47px; padding-bottom: 200px; } }
@@ -1060,7 +1090,11 @@
 
  .modal.active { display: table; }
 
+@media screen and (max-width: 575px) {  .modal.active { display: block; } }
+
  .modal__container { position: relative; display: table-cell; vertical-align: middle; }
+
+@media screen and (max-width: 575px) {  .modal__container { display: block; } }
 
  .modal__row { z-index: 0; position: relative; max-width: 450px; height: 352px; width: 450px; margin-left: auto; margin-right: auto; }
 

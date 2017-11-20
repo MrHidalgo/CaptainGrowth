@@ -23,7 +23,7 @@
 	
 	&.active {
 		display: table;
-		@include mixinRespondTo(mobile-small) {
+		@include mixinRespondTo(small-mobile) {
 			display: block;
 		}
 	}
@@ -33,7 +33,7 @@
 		position: relative;
 		display: table-cell;
 		vertical-align: middle;
-		@include mixinRespondTo(mobile-small) {
+		@include mixinRespondTo(small-mobile) {
 			display: block;
 		}
 	}
